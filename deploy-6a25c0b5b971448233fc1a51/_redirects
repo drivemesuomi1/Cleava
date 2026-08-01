@@ -1,0 +1,165 @@
+# ============================================================================
+#  CLEAVA.FI — _redirects (v17 — HUB ROUTING FIX)
+# ============================================================================
+#  Korjaus: hub-säännöt ENSIMMÄISINÄ jotta Netlify ei pudota niitä SPA-fallbackiin
+# ============================================================================
+
+# === 1. HUB-SIVUT (ENSIMMÄISINÄ — must come before catchalls) ===
+/kotisiivous              /kotisiivous/index.html       200!
+/kotisiivous/             /kotisiivous/index.html       200!
+/muuttosiivous            /muuttosiivous/index.html     200!
+/muuttosiivous/           /muuttosiivous/index.html     200!
+/ikkunanpesu              /ikkunanpesu/index.html       200!
+/ikkunanpesu/             /ikkunanpesu/index.html       200!
+/suursiivous              /suursiivous/index.html       200!
+/suursiivous/             /suursiivous/index.html       200!
+/erikoissiivous           /erikoissiivous/index.html    200!
+/erikoissiivous/          /erikoissiivous/index.html    200!
+
+# === 2. CITY-SIVUT (kotisiivous/vantaa jne.) ===
+/kotisiivous/helsinki       /kotisiivous/helsinki/index.html        200!
+/kotisiivous/helsinki/      /kotisiivous/helsinki/index.html        200!
+/kotisiivous/espoo          /kotisiivous/espoo/index.html           200!
+/kotisiivous/espoo/         /kotisiivous/espoo/index.html           200!
+/kotisiivous/vantaa         /kotisiivous/vantaa/index.html          200!
+/kotisiivous/vantaa/        /kotisiivous/vantaa/index.html          200!
+/kotisiivous/kauniainen     /kotisiivous/kauniainen/index.html      200!
+/kotisiivous/kauniainen/    /kotisiivous/kauniainen/index.html      200!
+/kotisiivous/kerava         /kotisiivous/kerava/index.html          200!
+/kotisiivous/kerava/        /kotisiivous/kerava/index.html          200!
+/kotisiivous/jarvenpaa      /kotisiivous/jarvenpaa/index.html       200!
+/kotisiivous/jarvenpaa/     /kotisiivous/jarvenpaa/index.html       200!
+/kotisiivous/tuusula        /kotisiivous/tuusula/index.html         200!
+/kotisiivous/tuusula/       /kotisiivous/tuusula/index.html         200!
+/kotisiivous/sipoo          /kotisiivous/sipoo/index.html           200!
+/kotisiivous/sipoo/         /kotisiivous/sipoo/index.html           200!
+/kotisiivous/kirkkonummi    /kotisiivous/kirkkonummi/index.html     200!
+/kotisiivous/kirkkonummi/   /kotisiivous/kirkkonummi/index.html     200!
+/kotisiivous/nurmijarvi     /kotisiivous/nurmijarvi/index.html      200!
+/kotisiivous/nurmijarvi/    /kotisiivous/nurmijarvi/index.html      200!
+
+# === TOIMISTOSIIVOUS ===
+/toimistosiivous              /toimistosiivous/index.html       200!
+/toimistosiivous/             /toimistosiivous/index.html       200!
+# === TOIMISTOSIIVOUS CITY-SIVUT ===
+/toimistosiivous/helsinki       /toimistosiivous/helsinki/index.html        200!
+/toimistosiivous/helsinki/      /toimistosiivous/helsinki/index.html        200!
+/toimistosiivous/espoo          /toimistosiivous/espoo/index.html           200!
+/toimistosiivous/espoo/         /toimistosiivous/espoo/index.html           200!
+/toimistosiivous/vantaa         /toimistosiivous/vantaa/index.html          200!
+/toimistosiivous/vantaa/        /toimistosiivous/vantaa/index.html          200!
+/toimistosiivous/kauniainen     /toimistosiivous/kauniainen/index.html      200!
+/toimistosiivous/kauniainen/    /toimistosiivous/kauniainen/index.html      200!
+/toimistosiivous/kerava         /toimistosiivous/kerava/index.html          200!
+/toimistosiivous/kerava/        /toimistosiivous/kerava/index.html          200!
+/toimistosiivous/jarvenpaa      /toimistosiivous/jarvenpaa/index.html       200!
+/toimistosiivous/jarvenpaa/     /toimistosiivous/jarvenpaa/index.html       200!
+/toimistosiivous/tuusula        /toimistosiivous/tuusula/index.html         200!
+/toimistosiivous/tuusula/       /toimistosiivous/tuusula/index.html         200!
+/toimistosiivous/sipoo          /toimistosiivous/sipoo/index.html           200!
+/toimistosiivous/sipoo/         /toimistosiivous/sipoo/index.html           200!
+/toimistosiivous/kirkkonummi    /toimistosiivous/kirkkonummi/index.html     200!
+/toimistosiivous/kirkkonummi/   /toimistosiivous/kirkkonummi/index.html     200!
+/toimistosiivous/nurmijarvi     /toimistosiivous/nurmijarvi/index.html      200!
+/toimistosiivous/nurmijarvi/    /toimistosiivous/nurmijarvi/index.html      200!
+
+/muuttosiivous/helsinki     /muuttosiivous/helsinki/index.html      200!
+/muuttosiivous/helsinki/    /muuttosiivous/helsinki/index.html      200!
+/muuttosiivous/espoo        /muuttosiivous/espoo/index.html         200!
+/muuttosiivous/espoo/       /muuttosiivous/espoo/index.html         200!
+/muuttosiivous/vantaa       /muuttosiivous/vantaa/index.html        200!
+/muuttosiivous/vantaa/      /muuttosiivous/vantaa/index.html        200!
+/muuttosiivous/kauniainen   /muuttosiivous/kauniainen/index.html    200!
+/muuttosiivous/kauniainen/  /muuttosiivous/kauniainen/index.html    200!
+/muuttosiivous/kerava       /muuttosiivous/kerava/index.html        200!
+/muuttosiivous/kerava/      /muuttosiivous/kerava/index.html        200!
+/muuttosiivous/jarvenpaa    /muuttosiivous/jarvenpaa/index.html     200!
+/muuttosiivous/jarvenpaa/   /muuttosiivous/jarvenpaa/index.html     200!
+/muuttosiivous/tuusula      /muuttosiivous/tuusula/index.html       200!
+/muuttosiivous/tuusula/     /muuttosiivous/tuusula/index.html       200!
+/muuttosiivous/sipoo        /muuttosiivous/sipoo/index.html         200!
+/muuttosiivous/sipoo/       /muuttosiivous/sipoo/index.html         200!
+/muuttosiivous/kirkkonummi  /muuttosiivous/kirkkonummi/index.html   200!
+/muuttosiivous/kirkkonummi/ /muuttosiivous/kirkkonummi/index.html   200!
+/muuttosiivous/nurmijarvi   /muuttosiivous/nurmijarvi/index.html    200!
+/muuttosiivous/nurmijarvi/  /muuttosiivous/nurmijarvi/index.html    200!
+
+/ikkunanpesu/helsinki       /ikkunanpesu/helsinki/index.html        200!
+/ikkunanpesu/helsinki/      /ikkunanpesu/helsinki/index.html        200!
+/ikkunanpesu/espoo          /ikkunanpesu/espoo/index.html           200!
+/ikkunanpesu/espoo/         /ikkunanpesu/espoo/index.html           200!
+/ikkunanpesu/vantaa         /ikkunanpesu/vantaa/index.html          200!
+/ikkunanpesu/vantaa/        /ikkunanpesu/vantaa/index.html          200!
+/ikkunanpesu/kauniainen     /ikkunanpesu/kauniainen/index.html      200!
+/ikkunanpesu/kauniainen/    /ikkunanpesu/kauniainen/index.html      200!
+/ikkunanpesu/kerava         /ikkunanpesu/kerava/index.html          200!
+/ikkunanpesu/kerava/        /ikkunanpesu/kerava/index.html          200!
+/ikkunanpesu/jarvenpaa      /ikkunanpesu/jarvenpaa/index.html       200!
+/ikkunanpesu/jarvenpaa/     /ikkunanpesu/jarvenpaa/index.html       200!
+/ikkunanpesu/tuusula        /ikkunanpesu/tuusula/index.html         200!
+/ikkunanpesu/tuusula/       /ikkunanpesu/tuusula/index.html         200!
+/ikkunanpesu/sipoo          /ikkunanpesu/sipoo/index.html           200!
+/ikkunanpesu/sipoo/         /ikkunanpesu/sipoo/index.html           200!
+/ikkunanpesu/kirkkonummi    /ikkunanpesu/kirkkonummi/index.html     200!
+/ikkunanpesu/kirkkonummi/   /ikkunanpesu/kirkkonummi/index.html     200!
+/ikkunanpesu/nurmijarvi     /ikkunanpesu/nurmijarvi/index.html      200!
+/ikkunanpesu/nurmijarvi/    /ikkunanpesu/nurmijarvi/index.html      200!
+
+/suursiivous/helsinki       /suursiivous/helsinki/index.html        200!
+/suursiivous/helsinki/      /suursiivous/helsinki/index.html        200!
+/suursiivous/espoo          /suursiivous/espoo/index.html           200!
+/suursiivous/espoo/         /suursiivous/espoo/index.html           200!
+/suursiivous/vantaa         /suursiivous/vantaa/index.html          200!
+/suursiivous/vantaa/        /suursiivous/vantaa/index.html          200!
+/suursiivous/kauniainen     /suursiivous/kauniainen/index.html      200!
+/suursiivous/kauniainen/    /suursiivous/kauniainen/index.html      200!
+/suursiivous/kerava         /suursiivous/kerava/index.html          200!
+/suursiivous/kerava/        /suursiivous/kerava/index.html          200!
+/suursiivous/jarvenpaa      /suursiivous/jarvenpaa/index.html       200!
+/suursiivous/jarvenpaa/     /suursiivous/jarvenpaa/index.html       200!
+/suursiivous/tuusula        /suursiivous/tuusula/index.html         200!
+/suursiivous/tuusula/       /suursiivous/tuusula/index.html         200!
+/suursiivous/sipoo          /suursiivous/sipoo/index.html           200!
+/suursiivous/sipoo/         /suursiivous/sipoo/index.html           200!
+/suursiivous/kirkkonummi    /suursiivous/kirkkonummi/index.html     200!
+/suursiivous/kirkkonummi/   /suursiivous/kirkkonummi/index.html     200!
+/suursiivous/nurmijarvi     /suursiivous/nurmijarvi/index.html      200!
+/suursiivous/nurmijarvi/    /suursiivous/nurmijarvi/index.html      200!
+
+# === 3. ENGLANNINKIELISET SLUGIT ===
+/home-cleaning      /en/home-cleaning/      301!
+
+/moving-cleaning    /en/moving-cleaning/    301!
+
+/window-cleaning    /ikkunanpesu/     301!
+/deep-cleaning      /suursiivous/     301!
+/special-cleaning   /erikoissiivous/  301!
+
+/our-story          /tarinamme        301!
+/gift-cards         /lahjakortti      301!
+/gift-card          /lahjakortti      301!
+/office-cleaning    /en/office-cleaning/    301!
+
+/stairwell-cleaning /porrassiivous    301!
+
+# === 4. /index.html → / ===
+/index.html         /                 301!
+
+# === 5. BLOG ===
+/blogi                                        /blogi/index.html                                  200
+/blog                                         /blog/index.html                                   200
+
+# === 6. SPA-FALLBACK (näille on vain SPA-näkymä) ===
+/hinnasto         /index.html  200
+/tarinamme        /index.html  200
+/lahjakortti      /index.html  200
+# /toimistosiivous — now served from /toimistosiivous/index.html (real page)
+/porrassiivous    /index.html  200
+/yrityssiivous    /index.html  200
+/myymalasiivous   /index.html  200
+/ravintolasiivous /index.html  200
+/lattiahoito      /index.html  200
+/rakennussiivous  /index.html  200
+/kiitos           /index.html  200
+/varaa             /varaa/index.html  200!
+/varaa/            /varaa/index.html  200!

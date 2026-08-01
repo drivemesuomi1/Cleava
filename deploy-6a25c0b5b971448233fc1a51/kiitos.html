@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+<script>/*v94-langcleanup*/try{localStorage.removeItem("cleava_lang");}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://lh3.googleusercontent.com">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://maps.googleapis.com">
+<link rel="preload" as="image" href="/assets/extracted/cleava-logo.png" fetchpriority="high">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="canonical" href="https://cleava.fi/kiitos.html">
+<meta name="description" content="Thank you for your order — Cleava.">
+<title>Kiitos yhteydenotostasi | Cleava</title>
+<meta name="robots" content="noindex,nofollow">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!="dataLayer"?"&l="+l:"";j.async=true;j.src="https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);})(window,document,"script","dataLayer","GTM-MX8GWWXT");</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9DXVWGBG6G"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag("js",new Date());
+gtag("config","G-9DXVWGBG6G",{page_path:"/kiitos"});
+gtag("event","generate_lead",{currency:"EUR",value:0});
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#0f2444;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;}
+a.logo{font-size:13px;font-weight:800;letter-spacing:.14em;color:rgba(255,255,255,.5);margin-bottom:48px;text-decoration:none;}
+.card{background:#fff;border-radius:24px;padding:64px 52px;max-width:500px;width:100%;text-align:center;box-shadow:0 32px 80px rgba(0,0,0,.3);}
+.check-wrap{width:88px;height:88px;background:#f0fdf4;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 32px;}
+h1{font-size:2rem;font-weight:600;color:#0f2444;margin-bottom:14px;}
+p{font-size:16px;color:#64748b;line-height:1.75;margin-bottom:36px;}
+.btn{display:inline-block;padding:16px 44px;background:#0f2444;color:#fff;border-radius:12px;font-size:16px;font-weight:700;text-decoration:none;}
+@media(max-width:600px){.card{padding:48px 28px;}}
+
+
+
+
+
+
+
+
+
+</style>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kiitos yhteydenotostasi | Cleava">
+<meta name="twitter:description" content="">
+<meta name="twitter:image" content="https://cleava.fi/assets/kotisiivous-hero.png">
+</head>
+<body>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX8GWWXT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<a href="/" class="logo">CLEAVA</a>
+<div class="card">
+  <div class="check-wrap">
+    <svg width="44" height="44" viewBox="0 0 52 52" fill="none">
+      <circle cx="26" cy="26" r="24" stroke="#22c55e" stroke-width="2.5"/>
+      <polyline id="chk" points="15,27 23,35 37,19" stroke="#22c55e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:42;stroke-dashoffset:42;transition:stroke-dashoffset .6s ease .2s;"/>
+    </svg>
+  </div>
+  <h1>Kiitos!</h1>
+  <p>Olemme yhteydess&#228; saman p&#228;iv&#228;n aikana ja sovimme ajankohdan.</p>
+  <a href="/" class="btn">Takaisin etusivulle</a>
+</div>
+<script>setTimeout(function(){document.getElementById("chk").style.strokeDashoffset="0";},100);</script>
+<script>
+// === FORM WIRING — attaches handlers via addEventListener ===
+(function() {
+  function wire(form, handler) {
+    if (!form || form.dataset.wired) return;
+    form.dataset.wired = '1';
+    form.addEventListener('submit', handler, false);
+  }
+  function attach() {
+    var hero = document.querySelector('form[name="hero-lead"]');
+    var modal = document.querySelector('form[name="contact-quick"]');
+    var ctas = document.querySelectorAll('form[name="footer-cta"]');
+    var booking = document.querySelector('form[name="booking"]');
+    if (hero && typeof submitForm === 'function') {
+      wire(hero, function(e) { return submitForm(e, 'hero'); });
+    }
+    if (modal && typeof submitForm === 'function') {
+      wire(modal, function(e) { return submitForm(e, 'modal'); });
+    }
+    ctas.forEach(function(form) {
+      if (typeof submitCtaForm === 'function') {
+        wire(form, function(e) { return submitCtaForm(e, 'footer-cta'); });
+      }
+    });
+    if (booking && typeof submitBookingForm === 'function') {
+      wire(booking, function(e) { return submitBookingForm(e); });
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', attach);
+  } else {
+    attach();
+  }
+  window.addEventListener('load', attach);
+})();
+</script>
+
+</body>
+</html>

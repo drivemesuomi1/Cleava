@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<!-- saved from url=(0053)https://cleava-booking-site-v1.netlify.app/varaa.html -->
+<html lang="fi"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Block Cookiebot inside iframe (parent site handles consent) -->
+    <script>
+    if(window.self!==window.top){
+      window.CookieConsent={show:function(){},renew:function(){},submitCustomConsent:function(){}};
+      var _cbStyle=document.createElement('style');
+      _cbStyle.textContent='#CybotCookiebotDialog,#CybotCookiebotDialogBodyUnderlay,#CookiebotWidget,[id*="Cookiebot"],[class*="cookiebot"],iframe[src*="consentcdn.cookiebot.com"]{display:none!important;visibility:hidden!important;height:0!important;width:0!important;position:absolute!important;overflow:hidden!important;}';
+      document.head.appendChild(_cbStyle);
+      new MutationObserver(function(mutations){
+        mutations.forEach(function(m){
+          m.addedNodes.forEach(function(n){
+            if(n.nodeType===1){
+              if((n.id&&n.id.indexOf('Cookiebot')>-1)||(n.src&&n.src.indexOf('cookiebot')>-1)||(n.id&&n.id.indexOf('CybotCookiebot')>-1))n.remove();
+            }
+          });
+        });
+      }).observe(document.documentElement,{childList:true,subtree:true});
+    }
+    </script>
+    <!-- Google Tag Manager (skip in iframe to prevent duplicate Cookiebot banner) -->
+    <script>if(window.self===window.top){(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MX8GWWXT');}</script>
+    <!-- End Google Tag Manager -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Varaa Siivous | Cleava</title>
+    <link href="./Varaa Siivous _ Cleava_files/css2" rel="stylesheet">
+    <script src="./Varaa Siivous _ Cleava_files/saved_resource"></script>
+    <style>
+        :root {
+            --cleava-blue: #002350;
+            --cleava-blue-dark: #001c3c;
+            --cleava-teal: #62cdd4;
+            --cleava-teal-light: #e0f4f5;
+        }
+        body { font-family: 'Poppins', sans-serif; background-color: #f7f9fc; color: var(--cleava-blue); overflow-x: hidden; }
+        .serif { font-family: 'Playfair Display', serif; }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .step { display: none; }
+        .step.active { display: block; animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+        
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .option-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border: 2px solid #edf2f7;
+        }
+        .option-card:hover {
+            border-color: var(--cleava-teal);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px -5px rgba(0, 35, 80, 0.1);
+        }
+        .option-card.selected {
+            border-color: var(--cleava-blue);
+            background-color: #fff;
+            box-shadow: 0 4px 6px -1px rgba(0, 35, 80, 0.05);
+        }
+        .option-card.selected .check-circle {
+            background-color: var(--cleava-blue);
+            border-color: var(--cleava-blue);
+        }
+
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 4px;
+        }
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            outline: none;
+            user-select: none;
+            -webkit-user-select: none;
+            caret-color: transparent;
+        }
+        .calendar-day:hover:not(.empty):not(.disabled) {
+            background-color: var(--cleava-teal-light);
+            color: var(--cleava-blue);
+        }
+        .calendar-day.selected {
+            background-color: var(--cleava-blue);
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 35, 80, 0.3);
+        }
+        .calendar-day.disabled {
+            color: #cbd5e1;
+            cursor: not-allowed;
+            text-decoration: line-through;
+        }
+        .calendar-day.empty { cursor: default; }
+
+        .time-slot {
+            padding: 12px;
+            border: 1.5px solid #edf2f7;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .time-slot:hover { border-color: var(--cleava-teal); background-color: var(--cleava-teal-light); }
+        .time-slot.selected { background-color: var(--cleava-blue); color: white; border-color: var(--cleava-blue); }
+
+        .btn-primary {
+            background-color: var(--cleava-blue);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 35, 80, 0.2);
+        }
+        .btn-primary:hover:not(:disabled) {
+            background-color: var(--cleava-blue-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 35, 80, 0.3);
+        }
+        .btn-primary:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 1.5px solid #edf2f7;
+            border-radius: 1rem;
+            outline: none;
+            transition: all 0.2s;
+            font-size: 1rem;
+        }
+        .input-field:focus {
+            border-color: var(--cleava-blue);
+            box-shadow: 0 0 0 4px rgba(0, 35, 80, 0.05);
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.relative{position:relative}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.mt-1{margin-top:0.25rem}.mt-12{margin-top:3rem}.mt-6{margin-top:1.5rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-12{height:3rem}.h-5{height:1.25rem}.h-8{height:2rem}.min-h-screen{min-height:100vh}.w-12{width:3rem}.w-5{width:1.25rem}.w-8{width:2rem}.max-w-4xl{max-width:56rem}.flex-1{flex:1 1 0%}.rotate-180{--tw-rotate:180deg;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes pulse{50%{opacity:.5}}.animate-pulse{animation:pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite}.cursor-pointer{cursor:pointer}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-x-auto{overflow-x:auto}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-t{border-top-width:1px}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254 / var(--tw-border-opacity, 1))}.border-gray-200{--tw-border-opacity:1;border-color:rgb(229 231 235 / var(--tw-border-opacity, 1))}.border-gray-300{--tw-border-opacity:1;border-color:rgb(209 213 219 / var(--tw-border-opacity, 1))}.border-white\/20{border-color:rgb(255 255 255 / 0.2)}.border-white\/40{border-color:rgb(255 255 255 / 0.4)}.bg-\[\#002350\]{--tw-bg-opacity:1;background-color:rgb(0 35 80 / var(--tw-bg-opacity, 1))}.bg-\[\#f1f5f9\]{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-\[\#f8fafc\]{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-blue-50\/50{background-color:rgb(239 246 255 / 0.5)}.bg-teal-50{--tw-bg-opacity:1;background-color:rgb(240 253 250 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/20{background-color:rgb(255 255 255 / 0.2)}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-8{padding-left:2rem;padding-right:2rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.pb-2{padding-bottom:0.5rem}.pt-8{padding-top:2rem}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-\[10px\]{font-size:10px}.text-\[12px\]{font-size:12px}.text-base{font-size:1rem;line-height:1.5rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.italic{font-style:italic}.leading-tight{line-height:1.25}.text-gray-400{--tw-text-opacity:1;color:rgb(156 163 175 / var(--tw-text-opacity, 1))}.text-gray-500{--tw-text-opacity:1;color:rgb(107 114 128 / var(--tw-text-opacity, 1))}.text-gray-700{--tw-text-opacity:1;color:rgb(55 65 81 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.opacity-100{opacity:1}.opacity-40{opacity:0.4}.shadow-\[0_32px_64px_-16px_rgba\(0\2c 35\2c 80\2c 0\.1\)\]{--tw-shadow:0 32px 64px -16px rgba(0,35,80,0.1);--tw-shadow-colored:0 32px 64px -16px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-white:hover{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.hover\:opacity-80:hover{opacity:0.8}@media (min-width: 768px){.md\:mb-12{margin-bottom:3rem}.md\:h-16{height:4rem}.md\:w-16{width:4rem}.md\:flex-row{flex-direction:row}.md\:gap-6{gap:1.5rem}.md\:rounded-2xl{border-radius:1rem}.md\:rounded-\[2\.5rem\]{border-radius:2.5rem}.md\:p-12{padding:3rem}.md\:p-16{padding:4rem}.md\:p-6{padding:1.5rem}.md\:py-16{padding-top:4rem;padding-bottom:4rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-base{font-size:1rem;line-height:1.5rem}.md\:text-lg{font-size:1.125rem;line-height:1.75rem}.md\:text-sm{font-size:0.875rem;line-height:1.25rem}}@media (min-width: 1024px){.lg\:col-span-4{grid-column:span 4 / span 4}.lg\:col-span-8{grid-column:span 8 / span 8}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.lg\:flex-col{flex-direction:column}.lg\:overflow-visible{overflow:visible}.lg\:pb-0{padding-bottom:0px}}</style></head>
+<body class="min-h-screen py-4 px-3 md:py-16 bg-[#f8fafc] text-sm md:text-base">
+    <!-- Google Tag Manager (noscript) – hidden in iframe -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MX8GWWXT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <script>if(window.self!==window.top){document.querySelectorAll('script[src*="googletagmanager"]').forEach(function(s){s.remove();});}</script>
+    <script>if(window.self !== window.top){document.documentElement.classList.add('in-iframe');}</script>
+    <style>.in-iframe #formNavBar,.in-iframe #formFooter{display:none !important;}</style>
+
+    <!-- Navigation Placeholder -->
+    <div id="formNavBar" class="max-w-4xl mx-auto flex items-center justify-between mb-8 px-4">
+        <a href="https://cleava.fi" class="flex items-center gap-2 text-cleava-blue font-semibold hover:opacity-80 transition-opacity">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" class="rotate-180"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            Takaisin etusivulle
+        </a>
+        <div class="serif italic text-2xl font-semibold opacity-40">Cleava</div>
+    </div>
+
+    <div class="max-w-4xl mx-auto glass rounded-3xl md:rounded-[2.5rem] shadow-[0_32px_64px_-16px_rgba(0,35,80,0.1)] overflow-hidden">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12">
+            
+            <!-- Left Sidebar (Steps Progress) -->
+            <div class="lg:col-span-4 bg-[#002350] p-6 md:p-12 text-white">
+                <h1 class="serif text-2xl md:text-3xl italic mb-6 md:mb-12 text-white">Varaa aikasi</h1>
+                <div class="flex lg:flex-col gap-4 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0 scrollbar-hide relative no-scrollbar">
+                    <div id="step-nav-1" class="flex items-center gap-4 transition-opacity" style="opacity: 1;">
+                        <div class="w-8 h-8 rounded-full border-2 border-white/20 flex items-center justify-center text-xs font-bold" id="step-num-1">1</div>
+                        <span class="font-medium text-white">Palvelu</span>
+                    </div>
+                    <div id="step-nav-2" class="flex items-center gap-4 transition-opacity" style="opacity: 0.4;">
+                        <div class="w-8 h-8 rounded-full border-2 border-white/20 flex items-center justify-center text-xs font-bold" id="step-num-2">2</div>
+                        <span class="font-medium text-white">Tyyppi</span>
+                    </div>
+                    <div id="step-nav-3" class="flex items-center gap-4 transition-opacity" style="opacity: 0.4;">
+                        <div class="w-8 h-8 rounded-full border-2 border-white/20 flex items-center justify-center text-xs font-bold" id="step-num-3">3</div>
+                        <span class="font-medium text-white">Sijainti</span>
+                    </div>
+                    <div id="step-nav-4" class="flex items-center gap-4 transition-opacity" style="opacity: 0.4;">
+                        <div class="w-8 h-8 rounded-full border-2 border-white/20 flex items-center justify-center text-xs font-bold" id="step-num-4">4</div>
+                        <span class="font-medium text-white">Yhteystiedot</span>
+                    </div>
+                    <div id="step-nav-5" class="flex items-center gap-4 transition-opacity" style="opacity: 0.4;">
+                        <div class="w-8 h-8 rounded-full border-2 border-white/20 flex items-center justify-center text-xs font-bold" id="step-num-5">5</div>
+                        <span class="font-medium text-white">Toivepäivät</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="lg:col-span-8 p-6 md:p-16 bg-white">
+                <form id="bookingForm" onsubmit="return false;">
+
+                    <!-- Data inputs set by JS -->
+                    <input type="hidden" name="service_type" id="hidden_service" value="Kotisiivous">
+                    <input type="hidden" name="frequency" id="hidden_frequency" value="Kertasiivous">
+                    <input type="hidden" name="preferred_date_1" id="hidden_date1">
+                    <input type="hidden" name="preferred_time_1" id="hidden_time1">
+                    <input type="hidden" name="preferred_date_2" id="hidden_date2">
+                    <input type="hidden" name="preferred_time_2" id="hidden_time2">
+                    <input type="hidden" name="preferred_date_3" id="hidden_date3">
+                    <input type="hidden" name="preferred_time_3" id="hidden_time3">
+
+                    <!-- Step 1: Service -->
+                    <div id="step1" class="step active">
+                        <h2 class="serif text-2xl italic mb-2">Valitse palvelu</h2>
+                        <p class="text-gray-500 mb-8">Minkä tyyppistä siivousta etsit?</p>
+                        <div class="grid grid-cols-1 gap-3">
+                            <div class="option-card p-4 md:p-6 rounded-xl md:rounded-2xl flex items-center gap-4 md:gap-6 selected" onclick="selectOption('service', 'Kotisiivous', this)">
+                                <div class="w-12 h-12 md:w-16 md:h-16 bg-blue-50 rounded-xl flex items-center justify-center text-2xl md:text-3xl">🏠</div>
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-base md:text-lg text-cleava-blue">Kotisiivous</h3>
+                                    <p class="text-[12px] md:text-sm text-gray-500">Yksityiskodeille räätälöity.</p>
+                                </div>
+                                <div class="check-circle w-5 h-5 rounded-full border-2 border-gray-200"></div>
+                            </div>
+                            <div class="option-card p-4 md:p-6 rounded-xl md:rounded-2xl flex items-center gap-4 md:gap-6" onclick="selectOption('service', 'Yrityssiivous', this)">
+                                <div class="w-12 h-12 md:w-16 md:h-16 bg-blue-50 rounded-xl flex items-center justify-center text-2xl md:text-3xl">🏢</div>
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-base md:text-lg text-cleava-blue">Yrityssiivous</h3>
+                                    <p class="text-[12px] md:text-sm text-gray-500">Toimistot ja liiketilat.</p>
+                                </div>
+                                <div class="check-circle w-5 h-5 rounded-full border-2 border-gray-200"></div>
+                            </div>
+                        </div>
+                        <div class="mt-12 flex justify-end">
+                            <button type="button" onclick="goToStep(2)" class="btn-primary" id="btnNext1">Seuraava</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Frequency -->
+                    <div id="step2" class="step">
+                        <h2 class="serif text-2xl italic mb-2">Siivouksen säännöllisyys</h2>
+                        <p class="text-gray-500 mb-8">Kuinka usein puhdasta saisi olla?</p>
+                        <div class="grid grid-cols-1 gap-3">
+                            <div class="option-card p-4 md:p-6 rounded-xl md:rounded-2xl flex items-center gap-4 md:gap-6 selected" onclick="selectOption('frequency', 'Kertasiivous', this)">
+                                <div class="w-12 h-12 md:w-16 md:h-16 bg-teal-50 rounded-xl flex items-center justify-center text-2xl md:text-3xl">✨</div>
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-base md:text-lg text-cleava-blue">Kertasiivous</h3>
+                                    <p class="text-[12px] md:text-sm text-gray-500">Yksittäinen perusteellinen puhdistus.</p>
+                                </div>
+                                <div class="check-circle w-5 h-5 rounded-full border-2 border-gray-200"></div>
+                            </div>
+                            <div class="option-card p-4 md:p-6 rounded-xl md:rounded-2xl flex items-center gap-4 md:gap-6" onclick="selectOption('frequency', 'Ylläpitosiivous', this)">
+                                <div class="w-12 h-12 md:w-16 md:h-16 bg-teal-50 rounded-xl flex items-center justify-center text-2xl md:text-3xl">🗓️</div>
+                                <div class="flex-1">
+                                    <h3 class="font-bold text-base md:text-lg text-cleava-blue">Ylläpitosiivous</h3>
+                                    <p class="text-[12px] md:text-sm text-gray-500">Säännöllinen ylläpito.</p>
+                                </div>
+                                <div class="check-circle w-5 h-5 rounded-full border-2 border-gray-200"></div>
+                            </div>
+                        </div>
+                        <div class="mt-12 flex justify-between items-center">
+                            <button type="button" onclick="goToStep(1)" class="text-gray-400 font-semibold hover:text-cleava-blue">Takaisin</button>
+                            <button type="button" onclick="goToStep(3)" class="btn-primary" id="btnNext2">Seuraava</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Location -->
+                    <div id="step3" class="step">
+                        <h2 class="serif text-2xl italic mb-2">Kohteen tallennus</h2>
+                        <p class="text-gray-500 mb-8">Missä siivotaan?</p>
+                        <div class="space-y-3">
+                            <input type="text" name="address" required="" class="input-field py-3 px-4" placeholder="Katuosoite *">
+                            <div class="grid grid-cols-2 gap-3">
+                                <input type="text" name="zip" required="" class="input-field py-3 px-4" placeholder="Postinumero *">
+                                <input type="text" name="city" required="" class="input-field py-3 px-4" placeholder="Kaupunki *">
+                            </div>
+                            <input type="number" name="area" required="" class="input-field py-3 px-4" placeholder="Neliömäärä (m²) *">
+                        </div>
+                        <div class="mt-12 flex justify-between items-center">
+                            <button type="button" onclick="goToStep(2)" class="text-gray-400 font-semibold hover:text-cleava-blue">Takaisin</button>
+                            <button type="button" onclick="if(validateStep3()) goToStep(4)" class="btn-primary">Seuraava</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Contact -->
+                    <div id="step4" class="step">
+                        <h2 class="serif text-2xl italic mb-2">Yhteystiedot</h2>
+                        <p class="text-gray-500 mb-8">Kehen olemme yhteydessä?</p>
+                        <div class="space-y-3">
+                            <input type="text" name="name" required="" class="input-field py-3 px-4" placeholder="Koko nimi *">
+                            <input type="email" name="email" required="" class="input-field py-3 px-4" placeholder="Sähköposti *">
+                            <input type="tel" name="phone" required="" class="input-field py-3 px-4" placeholder="Puhelinnumero *">
+                        </div>
+                        
+                        <div class="mt-6 flex items-start gap-3 p-4 bg-blue-50/50 rounded-xl border border-blue-100">
+                            <input type="checkbox" name="kotitalousvahennys" id="tax_credit" class="mt-1 w-5 h-5 rounded border-gray-300 text-cleava-blue focus:ring-cleava-blue">
+                            <label for="tax_credit" class="text-sm text-gray-700 leading-tight cursor-pointer">
+                                <span class="font-bold text-cleava-blue block mb-1">Olen oikeutettu kotitalousvähennykseen</span>
+                                Valitse tämä, jos olet oikeutettu hakemaan verotuksessa kotitalousvähennystä.
+                            </label>
+                        </div>
+
+                        <div class="mt-3 flex items-start gap-3 p-4 bg-blue-50/50 rounded-xl border border-blue-100">
+                            <input type="checkbox" name="privacy_accepted" id="privacy_policy" required class="mt-1 w-5 h-5 rounded border-gray-300 text-cleava-blue focus:ring-cleava-blue">
+                            <label for="privacy_policy" class="text-sm text-gray-700 leading-tight cursor-pointer">
+                                <span class="font-bold text-cleava-blue block mb-1">Olen lukenut ja hyväksyn <a href="/varaa/tietosuojaseloste?from=form" target="_blank" style="color: #62cdd4;" class="underline hover:opacity-70">tietosuojaselosteen</a></span>
+                            </label>
+                        </div>
+                        <div class="mt-12 flex justify-between items-center">
+                            <button type="button" onclick="goToStep(3)" class="text-gray-400 font-semibold hover:text-cleava-blue">Takaisin</button>
+                            <button type="button" onclick="if(validateStep4()) goToStep(5)" class="btn-primary">Seuraava</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Choose Preferred Dates & Times -->
+                    <div id="step5" class="step">
+                        <h2 class="serif text-2xl italic mb-2">Valitse toivotut päivät</h2>
+                        <p class="text-gray-500 mb-4">Valitse kalenterista 1–3 sinulle sopivaa siivouspäivää ja toivottu aloitusaika kullekin.</p>
+                        
+                        <!-- Selected dates display -->
+                        <div id="selectedDatesDisplay" class="mb-6 flex flex-wrap gap-2"></div>
+
+                        <div class="bg-[#f1f5f9] p-4 md:p-6 rounded-2xl mb-6">
+                            <div class="flex justify-between items-center mb-6">
+                                <button type="button" onclick="changeMonth(-1)" class="p-2 hover:bg-white rounded-lg shadow-sm">
+                                    <svg width="20" height="20" fill="none" class="rotate-180"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+                                </button>
+                                <h3 id="calLabel" class="font-bold">Huhtikuu 2026</h3>
+                                <button type="button" onclick="changeMonth(1)" class="p-2 hover:bg-white rounded-lg shadow-sm">
+                                    <svg width="20" height="20" fill="none"><path d="M5 12h14m-7-7l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+                                </button>
+                            </div>
+                            <div class="calendar-grid mb-2">
+                                <div class="text-center text-[10px] text-gray-400 font-bold">MA</div>
+                                <div class="text-center text-[10px] text-gray-400 font-bold">TI</div>
+                                <div class="text-center text-[10px] text-gray-400 font-bold">KE</div>
+                                <div class="text-center text-[10px] text-gray-400 font-bold">TO</div>
+                                <div class="text-center text-[10px] text-gray-400 font-bold">PE</div>
+                                <div class="text-center text-[10px] text-gray-400 font-bold">LA</div>
+                                <div class="text-center text-[10px] text-gray-400 font-bold">SU</div>
+                            </div>
+                            <div id="calDays" class="calendar-grid"></div>
+                        </div>
+
+                        <!-- Dynamic time selectors per date -->
+                        <div id="timeSelectorsContainer" class="mb-6 space-y-3"></div>
+
+                        <!-- Notes field -->
+                        <div class="mb-6">
+                            <label class="block text-sm font-semibold text-gray-700 mb-2">Lisätiedot (valinnainen)</label>
+                            <textarea name="notes" rows="3" class="input-field py-3 px-4" placeholder="Kerro lisätietoja siivouksesta..."></textarea>
+                        </div>
+
+                        <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 mb-4">
+                            <p class="text-sm text-gray-600 text-center">⏱️ Otamme sinuun yhteyttä <strong>24 tunnin</strong> kuluessa varauksen vahvistamiseksi.</p>
+                        </div>
+
+                        <div class="mt-8 flex justify-between items-center border-t pt-8">
+                            <button type="button" onclick="goToStep(4)" class="text-gray-400 font-semibold hover:text-cleava-blue">Takaisin</button>
+                            <button type="button" class="btn-primary" id="btnFinal" onclick="submitBooking()" disabled="">Lähetä varaus</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Security & Branding -->
+    <div id="formFooter" class="max-w-4xl mx-auto mt-12 px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-gray-400 text-sm">
+        <div class="flex items-center gap-4">
+            <div class="flex items-center gap-1">
+                <svg width="16" height="16" fill="green" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path></svg>
+                SSL Suojattu
+            </div>
+            <span>•</span>
+            <span>Luotettava kotimainen</span>
+        </div>
+        <div>© 2026 Cleava</div>
+    </div>
+
+    <script>
+        // --- Language detection from URL ---
+        const urlParams = new URLSearchParams(window.location.search);
+        const LANG = urlParams.get('lang') === 'en' ? 'en' : 'fi';
+
+        const T = {
+            fi: {
+                pageTitle: 'Varaa Siivous | Cleava',
+                backToHome: 'Takaisin etusivulle',
+                bookYourTime: 'Varaa aikasi',
+                stepService: 'Palvelu',
+                stepType: 'Tyyppi',
+                stepLocation: 'Sijainti',
+                stepContact: 'Yhteystiedot',
+                stepDates: 'Toivepäivät',
+                chooseService: 'Valitse palvelu',
+                whatCleaning: 'Minkä tyyppistä siivousta etsit?',
+                homeCleaning: 'Kotisiivous',
+                homeCleaningDesc: 'Yksityiskodeille räätälöity.',
+                businessCleaning: 'Yrityssiivous',
+                businessCleaningDesc: 'Toimistot ja liiketilat.',
+                next: 'Seuraava',
+                back: 'Takaisin',
+                frequency: 'Siivouksen säännöllisyys',
+                frequencyDesc: 'Kuinka usein puhdasta saisi olla?',
+                oneTime: 'Kertasiivous',
+                oneTimeDesc: 'Yksittäinen perusteellinen puhdistus.',
+                recurring: 'Ylläpitosiivous',
+                recurringDesc: 'Säännöllinen ylläpito.',
+                location: 'Kohteen tallennus',
+                locationDesc: 'Missä siivotaan?',
+                address: 'Katuosoite *',
+                zip: 'Postinumero *',
+                city: 'Kaupunki *',
+                area: 'Neliömäärä (m²) *',
+                contactInfo: 'Yhteystiedot',
+                contactDesc: 'Kehen olemme yhteydessä?',
+                fullName: 'Koko nimi *',
+                email: 'Sähköposti *',
+                phone: 'Puhelinnumero *',
+                taxCredit: 'Olen oikeutettu kotitalousvähennykseen',
+                taxCreditDesc: 'Valitse tämä, jos olet oikeutettu hakemaan verotuksessa kotitalousvähennystä.',
+                privacyAccept: 'Olen lukenut ja hyväksyn',
+                privacyLink: 'tietosuojaselosteen',
+                chooseDates: 'Valitse toivotut päivät',
+                chooseDatesDesc: 'Valitse kalenterista 1–3 sinulle sopivaa siivouspäivää ja toivottu aloitusaika kullekin.',
+                noDatesSelected: 'Ei valittuja päiviä (valitse 1–3)',
+                selectMore: 'Valitse vielä',
+                preference: 'toive',
+                selectTime: 'Valitse kellonaika...',
+                clockTime: 'kellonaika',
+                notes: 'Lisätiedot (valinnainen)',
+                notesPlaceholder: 'Kerro lisätietoja siivouksesta...',
+                responseTime: 'Otamme sinuun yhteyttä <strong>24 tunnin</strong> kuluessa varauksen vahvistamiseksi.',
+                submit: 'Lähetä varaus',
+                submitting: 'Lähetetään...',
+                sslSecure: 'SSL Suojattu',
+                trustedDomestic: 'Luotettava kotimainen',
+                months: ["Tammikuu","Helmikuu","Maaliskuu","Huhtikuu","Toukokuu","Kesäkuu","Heinäkuu","Elokuu","Syyskuu","Lokakuu","Marraskuu","Joulukuu"],
+                days: ['MA','TI','KE','TO','PE','LA','SU']
+            },
+            en: {
+                pageTitle: 'Book Cleaning | Cleava',
+                backToHome: 'Back to homepage',
+                bookYourTime: 'Book your time',
+                stepService: 'Service',
+                stepType: 'Type',
+                stepLocation: 'Location',
+                stepContact: 'Contact',
+                stepDates: 'Dates',
+                chooseService: 'Choose service',
+                whatCleaning: 'What type of cleaning are you looking for?',
+                homeCleaning: 'Home Cleaning',
+                homeCleaningDesc: 'Tailored for private homes.',
+                businessCleaning: 'Business Cleaning',
+                businessCleaningDesc: 'Offices and commercial spaces.',
+                next: 'Next',
+                back: 'Back',
+                frequency: 'Cleaning frequency',
+                frequencyDesc: 'How often would you like cleaning?',
+                oneTime: 'One-time cleaning',
+                oneTimeDesc: 'A single thorough cleaning.',
+                recurring: 'Maintenance cleaning',
+                recurringDesc: 'Regular maintenance.',
+                location: 'Location details',
+                locationDesc: 'Where should we clean?',
+                address: 'Street address *',
+                zip: 'Postal code *',
+                city: 'City *',
+                area: 'Area (m²) *',
+                contactInfo: 'Contact information',
+                contactDesc: 'Who should we contact?',
+                fullName: 'Full name *',
+                email: 'Email *',
+                phone: 'Phone number *',
+                taxCredit: 'I am eligible for household tax deduction',
+                taxCreditDesc: 'Select this if you are eligible to apply for a household tax deduction.',
+                privacyAccept: 'I have read and accept the',
+                privacyLink: 'privacy policy',
+                chooseDates: 'Choose preferred dates',
+                chooseDatesDesc: 'Select 1–3 suitable cleaning dates from the calendar and a preferred starting time for each.',
+                noDatesSelected: 'No dates selected (choose 1–3)',
+                selectMore: 'Select',
+                preference: 'preference',
+                selectTime: 'Select time...',
+                clockTime: 'time',
+                notes: 'Additional information (optional)',
+                notesPlaceholder: 'Tell us more about the cleaning...',
+                responseTime: 'We will contact you within <strong>24 hours</strong> to confirm your booking.',
+                submit: 'Submit booking',
+                submitting: 'Submitting...',
+                sslSecure: 'SSL Secured',
+                trustedDomestic: 'Trusted domestic service',
+                months: ["January","February","March","April","May","June","July","August","September","October","November","December"],
+                days: ['MO','TU','WE','TH','FR','SA','SU']
+            }
+        };
+
+        const t = T[LANG];
+
+        // Apply translations to static HTML
+        function applyTranslations() {
+            document.title = t.pageTitle;
+            // Back link
+            document.querySelector('a[href="https://cleava.fi"]').lastChild.textContent = ' ' + t.backToHome;
+            // Sidebar
+            document.querySelector('.serif.text-2xl.md\\:text-3xl').textContent = t.bookYourTime;
+            const stepLabels = [t.stepService, t.stepType, t.stepLocation, t.stepContact, t.stepDates];
+            document.querySelectorAll('[id^="step-nav-"] span').forEach((el, i) => { el.textContent = stepLabels[i]; });
+            // Step 1
+            document.querySelector('#step1 h2').textContent = t.chooseService;
+            document.querySelector('#step1 p').textContent = t.whatCleaning;
+            const s1cards = document.querySelectorAll('#step1 .option-card');
+            s1cards[0].querySelector('h3').textContent = t.homeCleaning;
+            s1cards[0].querySelector('p').textContent = t.homeCleaningDesc;
+            s1cards[1].querySelector('h3').textContent = t.businessCleaning;
+            s1cards[1].querySelector('p').textContent = t.businessCleaningDesc;
+            document.getElementById('btnNext1').textContent = t.next;
+            // Step 2
+            document.querySelector('#step2 h2').textContent = t.frequency;
+            document.querySelector('#step2 > p').textContent = t.frequencyDesc;
+            const s2cards = document.querySelectorAll('#step2 .option-card');
+            s2cards[0].querySelector('h3').textContent = t.oneTime;
+            s2cards[0].querySelector('p').textContent = t.oneTimeDesc;
+            s2cards[1].querySelector('h3').textContent = t.recurring;
+            s2cards[1].querySelector('p').textContent = t.recurringDesc;
+            document.querySelector('#step2 .text-gray-400').textContent = t.back;
+            document.getElementById('btnNext2').textContent = t.next;
+            // Step 3
+            document.querySelector('#step3 h2').textContent = t.location;
+            document.querySelector('#step3 > p').textContent = t.locationDesc;
+            const s3inputs = document.querySelectorAll('#step3 input');
+            s3inputs[0].placeholder = t.address;
+            s3inputs[1].placeholder = t.zip;
+            s3inputs[2].placeholder = t.city;
+            s3inputs[3].placeholder = t.area;
+            document.querySelector('#step3 .text-gray-400').textContent = t.back;
+            document.querySelector('#step3 .btn-primary').textContent = t.next;
+            // Step 4
+            document.querySelector('#step4 h2').textContent = t.contactInfo;
+            document.querySelector('#step4 > p').textContent = t.contactDesc;
+            const s4inputs = document.querySelectorAll('#step4 input[type="text"], #step4 input[type="email"], #step4 input[type="tel"]');
+            s4inputs[0].placeholder = t.fullName;
+            s4inputs[1].placeholder = t.email;
+            s4inputs[2].placeholder = t.phone;
+            document.querySelector('label[for="tax_credit"] span').textContent = t.taxCredit;
+            document.querySelector('label[for="tax_credit"]').lastChild.textContent = '\n                                ' + t.taxCreditDesc;
+            document.querySelector('label[for="privacy_policy"] span').innerHTML = t.privacyAccept + ' <a href="/varaa/tietosuojaseloste?from=form" target="_blank" style="color: #62cdd4;" class="underline hover:opacity-70">' + t.privacyLink + '</a>';
+            document.querySelector('#step4 .text-gray-400').textContent = t.back;
+            document.querySelector('#step4 .btn-primary').textContent = t.next;
+            // Step 5
+            document.querySelector('#step5 h2').textContent = t.chooseDates;
+            document.querySelector('#step5 > p').textContent = t.chooseDatesDesc;
+            document.querySelector('#step5 label').textContent = t.notes;
+            document.querySelector('#step5 textarea').placeholder = t.notesPlaceholder;
+            document.querySelector('#step5 .bg-blue-50 p').innerHTML = '⏱️ ' + t.responseTime;
+            document.querySelector('#step5 .text-gray-400').textContent = t.back;
+            document.getElementById('btnFinal').textContent = t.submit;
+            // Day headers
+            document.querySelectorAll('.calendar-grid .text-\\[10px\\]').forEach((el, i) => { el.textContent = t.days[i]; });
+            // Footer
+            var sslText = document.querySelector('.text-gray-400.text-sm');
+            if(sslText) {
+                sslText.querySelector('.flex.items-center.gap-1').innerHTML = '<svg width="16" height="16" fill="green" viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"></path></svg> ' + t.sslSecure;
+                sslText.querySelector('.flex.items-center.gap-4 span:last-child').textContent = t.trustedDomestic;
+            }
+        }
+
+        let currentStep = 1;
+        let activeMonth = new Date();
+        let selectedDates = [];
+
+        const months = t.months;
+
+        function goToStep(step) {
+            document.querySelectorAll('[id^="step-nav-"]').forEach((el, idx) => {
+                if(idx + 1 === step) el.style.opacity = "1";
+                else if(idx + 1 < step) el.style.opacity = "1";
+                else el.style.opacity = "0.4";
+            });
+            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+            document.getElementById('step' + step).classList.add('active');
+            currentStep = step;
+            if(step === 5) renderCalendar();
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function selectOption(cat, val, el) {
+            const container = el.parentElement;
+            container.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+            el.classList.add('selected');
+            document.getElementById('hidden_' + cat).value = val;
+            if(cat === 'service') document.getElementById('btnNext1').disabled = false;
+            if(cat === 'frequency') document.getElementById('btnNext2').disabled = false;
+        }
+
+        function validateStep3() {
+            const s3 = document.getElementById('step3');
+            let ok = true;
+            s3.querySelectorAll('input').forEach(i => {
+                if(!i.value) { i.style.borderColor = "red"; ok = false; }
+                else i.style.borderColor = "#edf2f7";
+            });
+            return ok;
+        }
+
+        function validateStep4() {
+            const s4 = document.getElementById('step4');
+            let ok = true;
+            // Validate text inputs (name, email, phone)
+            s4.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"]').forEach(i => {
+                if(!i.value) { i.style.borderColor = "red"; ok = false; }
+                else i.style.borderColor = "#edf2f7";
+            });
+            // Validate privacy policy checkbox
+            const pp = document.getElementById('privacy_policy');
+            if(!pp.checked) {
+                pp.parentElement.parentElement.style.borderColor = "red";
+                ok = false;
+            } else {
+                pp.parentElement.parentElement.style.borderColor = "";
+            }
+            return ok;
+        }
+
+        // --- Multi-date calendar ---
+        function isDateSelected(d) {
+            return selectedDates.some(sd => sd.getTime() === d.getTime());
+        }
+
+        function toggleDate(dObj) {
+            const idx = selectedDates.findIndex(sd => sd.getTime() === dObj.getTime());
+            if(idx > -1) {
+                selectedDates.splice(idx, 1);
+            } else {
+                if(selectedDates.length >= 3) return; // max 3
+                selectedDates.push(dObj);
+            }
+            selectedDates.sort((a,b) => a - b);
+            updateDateHiddens();
+            updateSelectedDisplay();
+            renderCalendar();
+            renderTimeSelectors();
+        }
+
+        function updateDateHiddens() {
+            for(let i = 1; i <= 3; i++) {
+                const el = document.getElementById('hidden_date' + i);
+                el.value = selectedDates[i-1] ? selectedDates[i-1].toLocaleDateString('fi-FI') : '';
+            }
+            document.getElementById('btnFinal').disabled = selectedDates.length < 1 || !allTimesSelected();
+        }
+
+        function allTimesSelected() {
+            for(let i = 1; i <= selectedDates.length; i++) {
+                if(!document.getElementById('hidden_time' + i).value) return false;
+            }
+            return true;
+        }
+
+        const timeSlots = ['08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00'];
+
+        function renderTimeSelectors() {
+            const container = document.getElementById('timeSelectorsContainer');
+            container.innerHTML = '';
+            selectedDates.forEach((d, i) => {
+                const idx = i + 1;
+                const currentTime = document.getElementById('hidden_time' + idx).value;
+                const wrapper = document.createElement('div');
+                wrapper.className = 'bg-[#f1f5f9] rounded-xl p-4';
+                const label = document.createElement('label');
+                label.className = 'block text-sm font-semibold text-gray-700 mb-2';
+                label.textContent = `${idx}. ${t.preference}: ${d.toLocaleDateString(LANG === 'en' ? 'en-GB' : 'fi-FI')} — ${t.clockTime}`;
+                wrapper.appendChild(label);
+                const select = document.createElement('select');
+                select.className = 'input-field py-3 px-4';
+                const defaultOpt = document.createElement('option');
+                defaultOpt.value = '';
+                defaultOpt.textContent = t.selectTime;
+                defaultOpt.disabled = true;
+                defaultOpt.selected = !currentTime;
+                select.appendChild(defaultOpt);
+                timeSlots.forEach(t => {
+                    const opt = document.createElement('option');
+                    opt.value = t;
+                    opt.textContent = t;
+                    if(currentTime === t) opt.selected = true;
+                    select.appendChild(opt);
+                });
+                select.onchange = () => {
+                    document.getElementById('hidden_time' + idx).value = select.value;
+                    document.getElementById('btnFinal').disabled = selectedDates.length < 1 || !allTimesSelected();
+                };
+                wrapper.appendChild(select);
+                container.appendChild(wrapper);
+            });
+        }
+
+        function updateSelectedDisplay() {
+            const container = document.getElementById('selectedDatesDisplay');
+            container.innerHTML = '';
+            if(selectedDates.length === 0) {
+                container.innerHTML = '<span class="text-sm text-gray-400">' + t.noDatesSelected + '</span>';
+                return;
+            }
+            selectedDates.forEach((d, i) => {
+                const tag = document.createElement('div');
+                tag.className = 'flex items-center gap-2 bg-[#002350] text-white text-sm font-semibold px-4 py-2 rounded-full';
+                tag.innerHTML = `<span>${i+1}. ${t.preference}: ${d.toLocaleDateString(LANG === 'en' ? 'en-GB' : 'fi-FI')}</span><button type="button" onclick="removeDate(${i})" class="ml-1 hover:opacity-70">&times;</button>`;
+                container.appendChild(tag);
+            });
+            if(selectedDates.length < 3) {
+                const hint = document.createElement('span');
+                hint.className = 'text-sm text-gray-400 self-center';
+                hint.textContent = `${t.selectMore} ${3 - selectedDates.length}`;
+                container.appendChild(hint);
+            }
+        }
+
+        function removeDate(idx) {
+            selectedDates.splice(idx, 1);
+            // Clear all time hidden fields and re-assign
+            for(let i = 1; i <= 3; i++) {
+                document.getElementById('hidden_time' + i).value = '';
+            }
+            updateDateHiddens();
+            updateSelectedDisplay();
+            renderCalendar();
+            renderTimeSelectors();
+        }
+
+        function renderCalendar() {
+            const grid = document.getElementById('calDays');
+            const label = document.getElementById('calLabel');
+            grid.innerHTML = '';
+            const yr = activeMonth.getFullYear();
+            const mo = activeMonth.getMonth();
+            label.textContent = months[mo] + " " + yr;
+            const days = new Date(yr, mo + 1, 0).getDate();
+            let start = new Date(yr, mo, 1).getDay();
+            start = (start === 0) ? 6 : start - 1;
+            for(let i=0; i<start; i++) grid.appendChild(document.createElement('div'));
+            const now = new Date(); now.setHours(0,0,0,0);
+
+            for(let d=1; d<=days; d++) {
+                const day = document.createElement('div');
+                const dObj = new Date(yr, mo, d);
+                day.className = 'calendar-day';
+                day.textContent = d;
+                if(dObj < now) { day.classList.add('disabled'); }
+                else {
+                    if(isDateSelected(dObj)) day.classList.add('selected');
+                    day.onclick = () => toggleDate(dObj);
+                }
+                grid.appendChild(day);
+            }
+            updateSelectedDisplay();
+        }
+
+        function changeMonth(d) {
+            activeMonth.setMonth(activeMonth.getMonth() + d);
+            renderCalendar();
+        }
+
+        // --- Form Submission via Netlify Function ---
+        function submitBooking() {
+            const form = document.getElementById('bookingForm');
+            const btn = document.getElementById('btnFinal');
+            btn.innerHTML = '<span class="animate-pulse">' + t.submitting + '</span>';
+            btn.disabled = true;
+
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+
+            fetch('/.netlify/functions/submit-booking', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(res => {
+                if (!res.ok) throw new Error('Server responded with ' + res.status);
+                return res.json();
+            })
+            .then(result => {
+                if (result.success) {
+                    window.top.location.href = "/varaa/kiitos" + (LANG === 'en' ? '?lang=en' : '');
+                } else {
+                    throw new Error(result.error || 'Booking failed');
+                }
+            })
+            .catch(err => {
+                console.error('Submit error:', err);
+                btn.innerHTML = t.submit || 'Lähetä varaus';
+                btn.disabled = false;
+                alert(LANG === 'en' ? 'Something went wrong. Please try again or contact us directly.' : 'Jokin meni pieleen. Yritä uudelleen tai ota meihin suoraan yhteyttä.');
+            });
+        }
+
+        // Apply translations on load
+        applyTranslations();
+    </script>
+
+
+</body></html>

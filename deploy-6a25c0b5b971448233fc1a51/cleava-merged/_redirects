@@ -1,0 +1,50 @@
+# ============================================================================
+#  CLEAVA.FI — _redirects (Batch 1, v2)
+# ============================================================================
+
+# 1. ENGLANNINKIELISET SLUGIT → SUOMEKSI
+/home-cleaning      /kotisiivous/     301!
+/moving-cleaning    /muuttosiivous/   301!
+/window-cleaning    /ikkunanpesu/     301!
+/deep-cleaning      /suursiivous/     301!
+/special-cleaning   /erikoissiivous/  301!
+/pricing            /hinnasto         301!
+/our-story          /tarinamme        301!
+/gift-cards         /lahjakortti      301!
+/gift-card          /lahjakortti      301!
+/office-cleaning    /toimistosiivous  301!
+/stairwell-cleaning /porrassiivous    301!
+
+# 2. /index.html → /
+/index.html         /                 301!
+
+# 3. VANHAT .HTML → UUSI KANSIORAKENNE
+/kotisiivous/helsinki.html   /kotisiivous/helsinki/   301!
+/kotisiivous/espoo.html      /kotisiivous/espoo/      301!
+/kotisiivous/vantaa.html     /kotisiivous/vantaa/     301!
+/muuttosiivous/helsinki.html /muuttosiivous/helsinki/ 301!
+/muuttosiivous/espoo.html    /muuttosiivous/espoo/    301!
+/muuttosiivous/vantaa.html   /muuttosiivous/vantaa/   301!
+/ikkunanpesu/helsinki.html   /ikkunanpesu/helsinki/   301!
+/ikkunanpesu/espoo.html      /ikkunanpesu/espoo/      301!
+/ikkunanpesu/vantaa.html     /ikkunanpesu/vantaa/     301!
+
+# 4. BLOG — PRETTY URLS
+/blogi                                        /blogi/index.html                                  200
+/blogi/siivouspalvelun-hyodyt                 /blogi/siivouspalvelun-hyodyt.html                 200
+/blog                                         /blog/index.html                                   200
+/blog/professional-cleaning-services-benefits /blog/professional-cleaning-services-benefits.html 200
+
+# 5. SPA-FALLBACK (eksplisiittisesti, ei /*)
+/hinnasto         /index.html  200
+/tarinamme        /index.html  200
+/lahjakortti      /index.html  200
+/toimistosiivous  /index.html  200
+/porrassiivous    /index.html  200
+/yrityssiivous    /index.html  200
+/myymalasiivous   /index.html  200
+/ravintolasiivous /index.html  200
+/lattiahoito      /index.html  200
+/rakennussiivous  /index.html  200
+/kiitos           /index.html  200
+/varaa            /index.html  200

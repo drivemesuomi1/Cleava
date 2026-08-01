@@ -1,0 +1,1298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://cleava.fi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/kotisiivous/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/home-cleaning/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/muuttosiivous/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/moving-cleaning/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/ikkunanpesu/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/window-cleaning/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/suursiivous/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/deep-cleaning/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/erikoissiivous/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/specialist-cleaning/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/kotisiivous/helsinki/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/helsinki/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/home-cleaning/helsinki/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/helsinki/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/kotisiivous/espoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/espoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/home-cleaning/espoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/espoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/kotisiivous/vantaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/vantaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/home-cleaning/vantaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/vantaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/kotisiivous/kauniainen/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/kauniainen/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/home-cleaning/kauniainen/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/kauniainen/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/kotisiivous/kerava/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/kerava/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/home-cleaning/kerava/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/kerava/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/kotisiivous/jarvenpaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/jarvenpaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/home-cleaning/jarvenpaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/jarvenpaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/kotisiivous/tuusula/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/tuusula/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/home-cleaning/tuusula/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/tuusula/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/kotisiivous/sipoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/sipoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/home-cleaning/sipoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/sipoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/kotisiivous/kirkkonummi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/kirkkonummi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/home-cleaning/kirkkonummi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/kirkkonummi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/kotisiivous/nurmijarvi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/nurmijarvi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/home-cleaning/nurmijarvi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/nurmijarvi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/toimistosiivous/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/office-cleaning/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/toimistosiivous/helsinki/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/helsinki/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/office-cleaning/helsinki/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/helsinki/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/toimistosiivous/espoo/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/espoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/office-cleaning/espoo/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/espoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/toimistosiivous/vantaa/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/vantaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/office-cleaning/vantaa/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/vantaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/toimistosiivous/kauniainen/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/kauniainen/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/office-cleaning/kauniainen/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/kauniainen/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/toimistosiivous/kerava/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/kerava/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/office-cleaning/kerava/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/kerava/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/toimistosiivous/jarvenpaa/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/jarvenpaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/office-cleaning/jarvenpaa/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/jarvenpaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/toimistosiivous/tuusula/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/tuusula/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/office-cleaning/tuusula/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/tuusula/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/toimistosiivous/sipoo/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/sipoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/office-cleaning/sipoo/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/sipoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/toimistosiivous/kirkkonummi/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/kirkkonummi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/office-cleaning/kirkkonummi/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/kirkkonummi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/toimistosiivous/nurmijarvi/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/nurmijarvi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/office-cleaning/nurmijarvi/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/toimistosiivous/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/office-cleaning/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/toimistosiivous/nurmijarvi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/muuttosiivous/helsinki/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/helsinki/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/moving-cleaning/helsinki/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/helsinki/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/muuttosiivous/espoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/espoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/moving-cleaning/espoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/espoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/muuttosiivous/vantaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/vantaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/moving-cleaning/vantaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/vantaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/muuttosiivous/kauniainen/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/kauniainen/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/moving-cleaning/kauniainen/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/kauniainen/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/muuttosiivous/kerava/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/kerava/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/moving-cleaning/kerava/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/kerava/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/muuttosiivous/jarvenpaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/jarvenpaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/moving-cleaning/jarvenpaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/jarvenpaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/muuttosiivous/tuusula/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/tuusula/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/moving-cleaning/tuusula/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/tuusula/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/muuttosiivous/sipoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/sipoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/moving-cleaning/sipoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/sipoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/muuttosiivous/kirkkonummi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/kirkkonummi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/moving-cleaning/kirkkonummi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/kirkkonummi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/muuttosiivous/nurmijarvi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/nurmijarvi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/moving-cleaning/nurmijarvi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/nurmijarvi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/ikkunanpesu/helsinki/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/helsinki/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/window-cleaning/helsinki/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/helsinki/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/ikkunanpesu/espoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/espoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/window-cleaning/espoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/espoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/ikkunanpesu/vantaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/vantaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/window-cleaning/vantaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/vantaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/ikkunanpesu/kauniainen/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/kauniainen/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/window-cleaning/kauniainen/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/kauniainen/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/ikkunanpesu/kerava/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/kerava/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/window-cleaning/kerava/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/kerava/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/ikkunanpesu/jarvenpaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/jarvenpaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/window-cleaning/jarvenpaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/jarvenpaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/ikkunanpesu/tuusula/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/tuusula/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/window-cleaning/tuusula/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/tuusula/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/ikkunanpesu/sipoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/sipoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/window-cleaning/sipoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/sipoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/ikkunanpesu/kirkkonummi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/kirkkonummi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/window-cleaning/kirkkonummi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/kirkkonummi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/ikkunanpesu/nurmijarvi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/nurmijarvi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/window-cleaning/nurmijarvi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/ikkunanpesu/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/window-cleaning/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/ikkunanpesu/nurmijarvi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/suursiivous/helsinki/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/helsinki/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/deep-cleaning/helsinki/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/helsinki/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/suursiivous/espoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/espoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/deep-cleaning/espoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/espoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/suursiivous/vantaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/vantaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/deep-cleaning/vantaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/vantaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/suursiivous/kauniainen/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/kauniainen/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/deep-cleaning/kauniainen/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/kauniainen/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/suursiivous/kerava/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/kerava/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/deep-cleaning/kerava/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/kerava/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/suursiivous/jarvenpaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/jarvenpaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/deep-cleaning/jarvenpaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/jarvenpaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/suursiivous/tuusula/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/tuusula/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/deep-cleaning/tuusula/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/tuusula/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/suursiivous/sipoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/sipoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/deep-cleaning/sipoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/sipoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/suursiivous/kirkkonummi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/kirkkonummi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/deep-cleaning/kirkkonummi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/kirkkonummi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/suursiivous/nurmijarvi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/nurmijarvi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/deep-cleaning/nurmijarvi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/suursiivous/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/deep-cleaning/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/suursiivous/nurmijarvi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/erikoissiivous/helsinki/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/helsinki/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/specialist-cleaning/helsinki/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/helsinki/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/helsinki/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/erikoissiivous/espoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/espoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/specialist-cleaning/espoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/espoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/erikoissiivous/vantaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/vantaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/specialist-cleaning/vantaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/vantaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/vantaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/erikoissiivous/kauniainen/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/kauniainen/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/specialist-cleaning/kauniainen/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/kauniainen/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/kauniainen/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/erikoissiivous/kerava/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/kerava/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/specialist-cleaning/kerava/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/kerava/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/kerava/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/erikoissiivous/jarvenpaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/jarvenpaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/specialist-cleaning/jarvenpaa/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/jarvenpaa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/jarvenpaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/erikoissiivous/tuusula/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/tuusula/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/specialist-cleaning/tuusula/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/tuusula/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/tuusula/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/erikoissiivous/sipoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/sipoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/specialist-cleaning/sipoo/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/sipoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/sipoo/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/erikoissiivous/kirkkonummi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/kirkkonummi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/specialist-cleaning/kirkkonummi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/kirkkonummi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/kirkkonummi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/erikoissiivous/nurmijarvi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/nurmijarvi/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/specialist-cleaning/nurmijarvi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/erikoissiivous/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/specialist-cleaning/nurmijarvi/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/erikoissiivous/nurmijarvi/"/>
+  </url>
+<url>
+    <loc>https://cleava.fi/blog/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+<url>
+    <loc>https://cleava.fi/blog/professional-cleaning-services-benefits/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+<url>
+    <loc>https://cleava.fi/blogi/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+<url>
+    <loc>https://cleava.fi/blogi/siivouspalvelun-hyodyt/</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://cleava.fi/blogi/muuttosiivous-tarkistuslista.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/blogi/muuttosiivous-tarkistuslista.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/blog/move-out-cleaning-checklist-finland.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/blogi/muuttosiivous-tarkistuslista.html"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/blog/move-out-cleaning-checklist-finland.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/blogi/muuttosiivous-tarkistuslista.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/blog/move-out-cleaning-checklist-finland.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/blogi/muuttosiivous-tarkistuslista.html"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/blogi/kotitalousvahennys-siivouspalvelu-2026.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/blogi/kotitalousvahennys-siivouspalvelu-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/blog/household-tax-deduction-cleaning-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/blogi/kotitalousvahennys-siivouspalvelu-2026.html"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/blog/household-tax-deduction-cleaning-2026.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/blogi/kotitalousvahennys-siivouspalvelu-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/blog/household-tax-deduction-cleaning-2026.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/blogi/kotitalousvahennys-siivouspalvelu-2026.html"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/blogi/kuinka-usein-kotia-kannattaa-siivota.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/blogi/kuinka-usein-kotia-kannattaa-siivota.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/blog/how-often-should-you-clean-your-home.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/blogi/kuinka-usein-kotia-kannattaa-siivota.html"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/blog/how-often-should-you-clean-your-home.html</loc>
+    <lastmod>2026-05-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/blogi/kuinka-usein-kotia-kannattaa-siivota.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/blog/how-often-should-you-clean-your-home.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/blogi/kuinka-usein-kotia-kannattaa-siivota.html"/>
+  </url>
+<url><loc>https://cleava.fi/blogi/helsinkiopas-helsingin-palvelut/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://cleava.fi/blog/helsinkiopas-helsinki-business-directory/</loc><lastmod>2026-06-03</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url>
+    <loc>https://cleava.fi/siivouspalvelu/espoo/</loc>
+    <lastmod>2026-06-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/siivouspalvelu/espoo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/siivouspalvelu/espoo/"/>
+  </url>
+</urlset>

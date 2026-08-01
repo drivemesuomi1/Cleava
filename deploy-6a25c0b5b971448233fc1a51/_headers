@@ -1,0 +1,65 @@
+# ============================================================================
+#  CLEAVA.FI — _headers (Netlify CDN cache control)
+# ============================================================================
+#  Strategy:
+#    HTML: short cache, must revalidate (so deploys show fast)
+#    Assets with cache-buster (?v=...): cache forever
+#    Static assets (images, videos, fonts): 1 year cache
+# ============================================================================
+
+# === HTML pages: serve fresh, but allow CDN to cache for 5 min ===
+/*
+  Cache-Control: public, max-age=0, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# === JS/CSS files (cache-busted via ?v=...): 1 year ===
+/assets/*.js
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+# === Images: 1 year ===
+/assets/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/assets/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+# === Videos: 1 year, support range requests ===
+/assets/*.mp4
+  Cache-Control: public, max-age=31536000, immutable
+  Accept-Ranges: bytes
+
+# === Fonts: 1 year, CORS ===
+/assets/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/assets/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+# === Favicons: 1 day ===
+/favicon.ico
+  Cache-Control: public, max-age=86400
+
+/apple-touch-icon.png
+  Cache-Control: public, max-age=86400
+
+/android-chrome-*.png
+  Cache-Control: public, max-age=86400

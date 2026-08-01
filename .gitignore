@@ -1,0 +1,5 @@
+deploy-6a25c0b5b971448233fc1a51/node_modules/
+.netlify/
+.env
+.env.*
+npm-debug.log*
