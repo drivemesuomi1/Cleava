@@ -5,7 +5,7 @@ const ZAPIER_LEAD     = process.env.ZAPIER_LEAD_WEBHOOK     || 'https://hooks.za
 const ZAPIER_BOOKING  = process.env.ZAPIER_BOOKING_WEBHOOK  || 'https://hooks.zapier.com/hooks/catch/27371819/uvsuor7/';
 const ZAPIER_GIFTCARD = process.env.ZAPIER_GIFTCARD_WEBHOOK || 'https://hooks.zapier.com/hooks/catch/27371819/uvs4oy7/';
 const EMAIL_TO = process.env.LEADS_EMAIL_TO || process.env.EMAIL_TO_CLEAVA || 'info@cleava.fi';
-const DIRECT_EMAIL_TO = process.env.LEADS_DIRECT_EMAIL_TO || process.env.SMTP_USER;
+const DIRECT_EMAIL_TO = process.env.LEADS_DIRECT_EMAIL_TO || leadCopyAddress(process.env.SMTP_USER);
 const EMAIL_FROM = process.env.LEADS_EMAIL_FROM || process.env.EMAIL_FROM_CLEAVA || process.env.SMTP_USER;
 
 const SVC = {
@@ -25,6 +25,17 @@ function post(url, data) {
   });
 }
 
+function leadCopyAddress(address) {
+  if (!address) return '';
+  const [local, domain] = address.split('@');
+  if (!local || !domain) return address;
+  const lowerDomain = domain.toLowerCase();
+  if (lowerDomain === 'gmail.com' || lowerDomain === 'googlemail.com') {
+    return `${local}+leads@${domain}`;
+  }
+  return address;
+}
+
 function smtpReady() {
   return Boolean(process.env.SMTP_USER && process.env.SMTP_PASS && EMAIL_FROM);
 }
@@ -35,6 +46,7 @@ function success(type, results) {
     type,
     emailConfigured: smtpReady(),
     directEmailConfigured: Boolean(DIRECT_EMAIL_TO),
+    directEmailTo: DIRECT_EMAIL_TO,
     results,
   });
 }
@@ -76,13 +88,14 @@ async function sendNotification(type, data, html) {
   const recipients = Array.from(new Set([EMAIL_TO, DIRECT_EMAIL_TO].filter(Boolean)));
 
   const service = SVC[data.service] || data.service || 'Quote';
+  const marker = [data.zip, data.phone].filter(Boolean).join(' / ');
   const subject = type === 'booking'
-    ? `Cleava: New booking - ${service}`
+    ? `Cleava: New booking - ${service}${marker ? ` (${marker})` : ''}`
     : type === 'lahjakortti'
-      ? 'Cleava: New gift card order'
-      : `Cleava: New quote request - ${service}`;
+      ? `Cleava: New gift card order${marker ? ` (${marker})` : ''}`
+      : `Cleava: New quote request - ${service}${marker ? ` (${marker})` : ''}`;
 
-  return transport.sendMail({
+  const info = await transport.sendMail({
     from: `"Cleava Website" <${EMAIL_FROM}>`,
     to: recipients,
     replyTo: data.email || data.buyer_email || undefined,
@@ -90,12 +103,19 @@ async function sendNotification(type, data, html) {
     text: textSummary(type, data),
     html,
   });
+  return {
+    accepted: info.accepted,
+    rejected: info.rejected,
+    messageId: info.messageId,
+    recipients,
+    subject,
+  };
 }
 
 async function settle(label, promise) {
   try {
     const result = await promise;
-    return {[label]: !(result && result.skipped)};
+    return {[label]: !(result && result.skipped), [`${label}Details`]: result || null};
   } catch (err) {
     console.error(`${label} failed`, err);
     return {[label]: false};
