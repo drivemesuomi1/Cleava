@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 
 const EMAIL_TO = process.env.LEADS_EMAIL_TO || process.env.EMAIL_TO_CLEAVA || leadCopyAddress(process.env.SMTP_USER);
 const DIRECT_EMAIL_TO = process.env.LEADS_DIRECT_EMAIL_TO || leadCopyAddress(process.env.SMTP_USER);
-const EMAIL_FROM = process.env.LEADS_EMAIL_FROM || process.env.EMAIL_FROM_CLEAVA || 'info@cleava.fi';
+const EMAIL_FROM = process.env.EMAIL_FROM_CLEAVA || 'info@cleava.fi';
 
 const SVC = {
   kotisiivous:'Kotisiivous',muuttosiivous:'Muuttosiivous',toimistosiivous:'Toimistosiivous',
