@@ -1,8 +1,11 @@
 const https = require('https');
+const nodemailer = require('nodemailer');
 
 const ZAPIER_LEAD     = process.env.ZAPIER_LEAD_WEBHOOK     || 'https://hooks.zapier.com/hooks/catch/27371819/uvs268b/';
 const ZAPIER_BOOKING  = process.env.ZAPIER_BOOKING_WEBHOOK  || 'https://hooks.zapier.com/hooks/catch/27371819/uvsuor7/';
 const ZAPIER_GIFTCARD = process.env.ZAPIER_GIFTCARD_WEBHOOK || 'https://hooks.zapier.com/hooks/catch/27371819/uvs4oy7/';
+const EMAIL_TO = process.env.LEADS_EMAIL_TO || process.env.EMAIL_TO_CLEAVA || 'info@cleava.fi';
+const EMAIL_FROM = process.env.LEADS_EMAIL_FROM || process.env.EMAIL_FROM_CLEAVA || process.env.SMTP_USER;
 
 const SVC = {
   kotisiivous:'Kotisiivous',muuttosiivous:'Muuttosiivous',toimistosiivous:'Toimistosiivous',
@@ -19,6 +22,72 @@ function post(url, data) {
     }, r => { let d=''; r.on('data',c=>d+=c); r.on('end',()=>res({status:r.statusCode})); });
     req.on('error',rej); req.write(body); req.end();
   });
+}
+
+function smtpReady() {
+  return Boolean(process.env.SMTP_USER && process.env.SMTP_PASS && EMAIL_FROM);
+}
+
+function mailer() {
+  if (!smtpReady()) return null;
+  return nodemailer.createTransport({
+    host: process.env.SMTP_HOST || 'smtp.gmail.com',
+    port: Number(process.env.SMTP_PORT || 587),
+    secure: process.env.SMTP_PORT === '465',
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
+  });
+}
+
+function textSummary(type, d) {
+  return [
+    `Type: ${type}`,
+    `Service: ${SVC[d.service] || d.service || '-'}`,
+    `Name: ${d.name || d.buyer_name || '-'}`,
+    `Email: ${d.email || d.buyer_email || '-'}`,
+    `Phone: ${d.phone || d.buyer_phone || '-'}`,
+    `Zip: ${d.zip || '-'}`,
+    `Address: ${d.address || '-'}`,
+    `City: ${d.city || '-'}`,
+    `Date: ${d.date || '-'}`,
+    `Time: ${d.time || '-'}`,
+    `Source: ${d.source || '-'}`,
+    `Message: ${d.message || d.notes || '-'}`,
+    `Submitted: ${ts()}`,
+  ].join('\n');
+}
+
+async function sendNotification(type, data, html) {
+  const transport = mailer();
+  if (!transport) return {skipped:true};
+
+  const service = SVC[data.service] || data.service || 'Quote';
+  const subject = type === 'booking'
+    ? `Cleava: New booking - ${service}`
+    : type === 'lahjakortti'
+      ? 'Cleava: New gift card order'
+      : `Cleava: New quote request - ${service}`;
+
+  return transport.sendMail({
+    from: `"Cleava Website" <${EMAIL_FROM}>`,
+    to: EMAIL_TO,
+    replyTo: data.email || data.buyer_email || undefined,
+    subject,
+    text: textSummary(type, data),
+    html,
+  });
+}
+
+async function settle(label, promise) {
+  try {
+    await promise;
+    return {[label]: true};
+  } catch (err) {
+    console.error(`${label} failed`, err);
+    return {[label]: false};
+  }
 }
 
 function ts() {
@@ -248,32 +317,44 @@ exports.handler = async (event) => {
     data.send_to_email = (data.delivery==='recipient' && data.recipient_email)
       ? data.recipient_email : data.buyer_email;
 
-    await post(ZAPIER_GIFTCARD, {
+    const payload = {
       ...data,
       amount,
       html_internal: giftcardInternalHtml(data),
       html_invoice:  giftcardInvoiceHtml(data),
       html_voucher:  giftcardVoucherHtml(data),
-    });
-    return {statusCode:200,body:JSON.stringify({ok:true,type:'lahjakortti'})};
+    };
+    const results = await Promise.all([
+      settle('zapier', post(ZAPIER_GIFTCARD, payload)),
+      settle('email', sendNotification('lahjakortti', data, payload.html_internal)),
+    ]);
+    return {statusCode:200,body:JSON.stringify({ok:true,type:'lahjakortti',emailConfigured:smtpReady(),results})};
   }
 
   // BOOKING
   if (data.name && data.address) {
-    await post(ZAPIER_BOOKING, {
+    const payload = {
       ...data,
       html_internal: bookingInternalHtml(data),
       html_customer: bookingCustomerHtml(data),
       service_label: SVC[data.service]||data.service||'',
-    });
-    return {statusCode:200,body:JSON.stringify({ok:true,type:'booking'})};
+    };
+    const results = await Promise.all([
+      settle('zapier', post(ZAPIER_BOOKING, payload)),
+      settle('email', sendNotification('booking', data, payload.html_internal)),
+    ]);
+    return {statusCode:200,body:JSON.stringify({ok:true,type:'booking',emailConfigured:smtpReady(),results})};
   }
 
   // LEAD
-  await post(ZAPIER_LEAD, {
+  const payload = {
     ...data,
     html_email: leadHtml(data),
     service_label: SVC[data.service]||data.service||'',
-  });
-  return {statusCode:200,body:JSON.stringify({ok:true,type:'lead'})};
+  };
+  const results = await Promise.all([
+    settle('zapier', post(ZAPIER_LEAD, payload)),
+    settle('email', sendNotification('lead', data, payload.html_email)),
+  ]);
+  return {statusCode:200,body:JSON.stringify({ok:true,type:'lead',emailConfigured:smtpReady(),results})};
 };
