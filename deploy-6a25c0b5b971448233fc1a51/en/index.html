@@ -4613,7 +4613,7 @@ function tSubmit(){
     params.append('phone',phone);
     params.append('size',sz);
     params.append('source','tilaa-popup');
-    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:params.toString()}).catch(function(){});
+    fetch('/.netlify/functions/submit-offer-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(params))}).catch(function(){});
   } catch(err) {}
   return false;
 }

@@ -367,7 +367,7 @@ function submitBookingForm(e) {
   var formData = new FormData(form);
   var params = new URLSearchParams();
   formData.forEach(function(v, k){ params.append(k, v); });
-  fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: params.toString() }).catch(function(){});
+  fetch('/.netlify/functions/submit-offer-lead', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(Object.fromEntries(params)) }).catch(function(){});
   var btn = document.getElementById('booking-submit-btn');
   if(btn){ btn.textContent = '✓ Lähetetty!'; btn.disabled = true; btn.style.background = '#22c55e'; }
   closeBookingModal();
@@ -407,7 +407,7 @@ function submitCtaForm(e, source) {
   params.append('phone', phone);
   if(service) params.append('service', service);
   params.append('source', source);
-  fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: params.toString() }).catch(function(){});
+  fetch('/.netlify/functions/submit-offer-lead', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(Object.fromEntries(params)) }).catch(function(){});
   var btn = form.querySelector('button[type="submit"]');
   if(btn){ btn.textContent = '✓ Lähetetty!'; btn.disabled = true; btn.style.background = '#22c55e'; }
   if(typeof showTyPopup==='function') showTyPopup();
