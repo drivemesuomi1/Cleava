@@ -436,9 +436,16 @@ body{padding-top:68px}
   }
 
   // ─── Inject mobile menu ───────────────────────────────────────────────────
-  var mobMount = document.getElementById('cleava-mobmenu');
-  if (mobMount) {
-    mobMount.outerHTML = isEn ? EN_MOB : FI_MOB;
+  function injectMobileMenu() {
+    if (document.getElementById('mobMenu')) return;
+    var mobMount = document.getElementById('cleava-mobmenu');
+    if (mobMount) {
+      mobMount.outerHTML = isEn ? EN_MOB : FI_MOB;
+    }
+  }
+  injectMobileMenu();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', injectMobileMenu, { once: true });
   }
 
   // ─── Mark active page in nav (highlight current section) ─────────────────
@@ -493,11 +500,16 @@ body{padding-top:68px}
   // These override any per-page definitions. Use class 'active' (matches CSS).
   window.toggleMob = function() {
     var m = document.getElementById('mobMenu');
-    if (m) m.classList.toggle('open');
+    injectMobileMenu();
+    m = document.getElementById('mobMenu');
+    if (!m) return;
+    m.classList.toggle('open');
+    document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
   };
   window.closeMob = function() {
     var m = document.getElementById('mobMenu');
     if (m) m.classList.remove('open');
+    document.body.style.overflow = '';
   };
   window.toggleMobAcc = function(accId, btnId) {
     var acc = document.getElementById(accId);
