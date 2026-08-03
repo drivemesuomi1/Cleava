@@ -82,8 +82,8 @@ async function sendNotification(type, data, html) {
 
 async function settle(label, promise) {
   try {
-    await promise;
-    return {[label]: true};
+    const result = await promise;
+    return {[label]: !(result && result.skipped)};
   } catch (err) {
     console.error(`${label} failed`, err);
     return {[label]: false};
