@@ -254,7 +254,7 @@ function giftcardInvoiceHtml(d) {
       <div class="ps">${pkg}</div>
       <div class="vbox"><div class="vl">Käytä tätä maksuviitteenä</div><div class="vc">${d.voucher_code||'—'}</div></div>
     </div>` +
-    row('Saaja', 'Bloomhive Oy') +
+    row('Saaja', 'Mansio Group Oy') +
     row('Eräpäivä', `<span class="rv-red">${dueStr}</span>`) +
     row('Viite', `<span style="font-family:monospace;font-size:15px;color:#1d4ed8;">${d.voucher_code||'—'}</span>`) +
     `<div class="ab">Lähetä maksu viitteellä <strong>${d.voucher_code||'—'}</strong>.<br>
