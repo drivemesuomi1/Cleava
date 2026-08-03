@@ -1,29 +1,13 @@
-const https = require('https');
 const nodemailer = require('nodemailer');
 
-const ZAPIER_LEAD     = process.env.ZAPIER_LEAD_WEBHOOK     || 'https://hooks.zapier.com/hooks/catch/27371819/uvs268b/';
-const ZAPIER_BOOKING  = process.env.ZAPIER_BOOKING_WEBHOOK  || 'https://hooks.zapier.com/hooks/catch/27371819/uvsuor7/';
-const ZAPIER_GIFTCARD = process.env.ZAPIER_GIFTCARD_WEBHOOK || 'https://hooks.zapier.com/hooks/catch/27371819/uvs4oy7/';
-const EMAIL_TO = process.env.LEADS_EMAIL_TO || process.env.EMAIL_TO_CLEAVA || 'info@cleava.fi';
+const EMAIL_TO = process.env.LEADS_EMAIL_TO || process.env.EMAIL_TO_CLEAVA || leadCopyAddress(process.env.SMTP_USER);
 const DIRECT_EMAIL_TO = process.env.LEADS_DIRECT_EMAIL_TO || leadCopyAddress(process.env.SMTP_USER);
-const EMAIL_FROM = process.env.LEADS_EMAIL_FROM || process.env.EMAIL_FROM_CLEAVA || process.env.SMTP_USER;
+const EMAIL_FROM = process.env.LEADS_EMAIL_FROM || process.env.EMAIL_FROM_CLEAVA || 'info@cleava.fi';
 
 const SVC = {
   kotisiivous:'Kotisiivous',muuttosiivous:'Muuttosiivous',toimistosiivous:'Toimistosiivous',
   ikkunanpesu:'Ikkunanpesu',suursiivous:'Suursiivous',erikoissiivous:'Erikoissiivous',porrassiivous:'Porrassiivous'
 };
-
-function post(url, data) {
-  return new Promise((res,rej) => {
-    if (!url) return res({});
-    const body = JSON.stringify(data);
-    const u = new URL(url);
-    const req = https.request({hostname:u.hostname,path:u.pathname+u.search,method:'POST',
-      headers:{'Content-Type':'application/json','Content-Length':Buffer.byteLength(body)}
-    }, r => { let d=''; r.on('data',c=>d+=c); r.on('end',()=>res({status:r.statusCode})); });
-    req.on('error',rej); req.write(body); req.end();
-  });
-}
 
 function leadCopyAddress(address) {
   if (!address) return '';
@@ -45,8 +29,9 @@ function success(type, results) {
     ok: true,
     type,
     emailConfigured: smtpReady(),
-    directEmailConfigured: Boolean(DIRECT_EMAIL_TO),
+    emailTo: EMAIL_TO,
     directEmailTo: DIRECT_EMAIL_TO,
+    emailFrom: EMAIL_FROM,
     results,
   });
 }
@@ -85,7 +70,10 @@ function textSummary(type, d) {
 async function sendNotification(type, data, html) {
   const transport = mailer();
   if (!transport) return {skipped:true};
-  const recipients = Array.from(new Set([EMAIL_TO, DIRECT_EMAIL_TO].filter(Boolean)));
+  const recipients = Array.from(new Set([
+    ...String(EMAIL_TO).split(',').map(v => v.trim()),
+    DIRECT_EMAIL_TO,
+  ].filter(Boolean)));
 
   const service = SVC[data.service] || data.service || 'Quote';
   const marker = [data.zip, data.phone].filter(Boolean).join(' / ');
@@ -273,7 +261,7 @@ function giftcardInvoiceHtml(d) {
   );
 }
 
-// ── PDF VOUCHER (base64 encoded HTML → Zapier can email as attachment or inline) ──
+// ── PDF VOUCHER HTML ──
 function giftcardVoucherHtml(d) {
   const amt = String(d.amount||'?');
   const pkg = d.package||'—';
@@ -356,10 +344,7 @@ exports.handler = async (event) => {
       html_invoice:  giftcardInvoiceHtml(data),
       html_voucher:  giftcardVoucherHtml(data),
     };
-    const results = await Promise.all([
-      settle('zapier', post(ZAPIER_GIFTCARD, payload)),
-      settle('email', sendNotification('lahjakortti', data, payload.html_internal)),
-    ]);
+    const results = [await settle('email', sendNotification('lahjakortti', data, payload.html_internal))];
     return {statusCode:200,body:success('lahjakortti', results)};
   }
 
@@ -371,10 +356,7 @@ exports.handler = async (event) => {
       html_customer: bookingCustomerHtml(data),
       service_label: SVC[data.service]||data.service||'',
     };
-    const results = await Promise.all([
-      settle('zapier', post(ZAPIER_BOOKING, payload)),
-      settle('email', sendNotification('booking', data, payload.html_internal)),
-    ]);
+    const results = [await settle('email', sendNotification('booking', data, payload.html_internal))];
     return {statusCode:200,body:success('booking', results)};
   }
 
@@ -384,9 +366,6 @@ exports.handler = async (event) => {
     html_email: leadHtml(data),
     service_label: SVC[data.service]||data.service||'',
   };
-  const results = await Promise.all([
-    settle('zapier', post(ZAPIER_LEAD, payload)),
-    settle('email', sendNotification('lead', data, payload.html_email)),
-  ]);
+  const results = [await settle('email', sendNotification('lead', data, payload.html_email))];
   return {statusCode:200,body:success('lead', results)};
 };
