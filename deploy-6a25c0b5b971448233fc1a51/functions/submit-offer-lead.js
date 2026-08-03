@@ -29,6 +29,16 @@ function smtpReady() {
   return Boolean(process.env.SMTP_USER && process.env.SMTP_PASS && EMAIL_FROM);
 }
 
+function success(type, results) {
+  return JSON.stringify({
+    ok: true,
+    type,
+    emailConfigured: smtpReady(),
+    directEmailConfigured: Boolean(DIRECT_EMAIL_TO),
+    results,
+  });
+}
+
 function mailer() {
   if (!smtpReady()) return null;
   return nodemailer.createTransport({
@@ -330,7 +340,7 @@ exports.handler = async (event) => {
       settle('zapier', post(ZAPIER_GIFTCARD, payload)),
       settle('email', sendNotification('lahjakortti', data, payload.html_internal)),
     ]);
-    return {statusCode:200,body:JSON.stringify({ok:true,type:'lahjakortti',emailConfigured:smtpReady(),results})};
+    return {statusCode:200,body:success('lahjakortti', results)};
   }
 
   // BOOKING
@@ -345,7 +355,7 @@ exports.handler = async (event) => {
       settle('zapier', post(ZAPIER_BOOKING, payload)),
       settle('email', sendNotification('booking', data, payload.html_internal)),
     ]);
-    return {statusCode:200,body:JSON.stringify({ok:true,type:'booking',emailConfigured:smtpReady(),results})};
+    return {statusCode:200,body:success('booking', results)};
   }
 
   // LEAD
@@ -358,5 +368,5 @@ exports.handler = async (event) => {
     settle('zapier', post(ZAPIER_LEAD, payload)),
     settle('email', sendNotification('lead', data, payload.html_email)),
   ]);
-  return {statusCode:200,body:JSON.stringify({ok:true,type:'lead',emailConfigured:smtpReady(),results})};
+  return {statusCode:200,body:success('lead', results)};
 };
