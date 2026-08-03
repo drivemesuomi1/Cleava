@@ -605,6 +605,8 @@ var form = e.target;
 var formData = new FormData(form);
 var params = new URLSearchParams();
 formData.forEach(function(v, k){ params.append(k, v); });
+if(!params.get('source')) params.append('source', 'booking-modal');
+if(!params.get('type')) params.append('type', 'booking');
 if(btn){ btn.textContent = 'Lähetetään...'; btn.disabled = true; }
 await sendLeadParams(params);
 if(btn){ btn.textContent = '✓ Lähetetty!'; btn.disabled = true; btn.style.background = '#22c55e'; }

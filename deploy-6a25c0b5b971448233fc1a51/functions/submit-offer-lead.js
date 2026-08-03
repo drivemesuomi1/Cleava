@@ -6,7 +6,8 @@ const EMAIL_FROM = process.env.EMAIL_FROM_CLEAVA || 'info@cleava.fi';
 
 const SVC = {
   kotisiivous:'Kotisiivous',muuttosiivous:'Muuttosiivous',toimistosiivous:'Toimistosiivous',
-  ikkunanpesu:'Ikkunanpesu',suursiivous:'Suursiivous',erikoissiivous:'Erikoissiivous',porrassiivous:'Porrassiivous'
+  ikkunanpesu:'Ikkunanpesu',suursiivous:'Suursiivous',erikoissiivous:'Erikoissiivous',porrassiivous:'Porrassiivous',
+  booking_form:'Book cleaning form'
 };
 
 function leadCopyAddress(address) {
@@ -196,7 +197,8 @@ function bookingInternalHtml(d) {
     row('Koko', d.size?`${d.size} m²`:'—') +
     row('Toivottu aika', (d.date&&d.time)?`${d.date} klo ${d.time}`:'—','rv-blue') +
     row('Lisäpalvelut', extras) +
-    (d.notes?row('Lisätiedot', d.notes):'')
+    row('Source', d.source||'-') +
+    ((d.notes||d.message)?row('Message', d.notes||d.message):'')
   );
 }
 
@@ -349,7 +351,10 @@ exports.handler = async (event) => {
   }
 
   // BOOKING
-  if (data.name && data.address) {
+  if (data.type === 'booking' || data['form-name'] === 'booking' || (data.name && data.address)) {
+    data.service = data.service || 'booking_form';
+    data.source = data.source || 'booking-modal';
+    data.notes = data.notes || data.message || '';
     const payload = {
       ...data,
       html_internal: bookingInternalHtml(data),
