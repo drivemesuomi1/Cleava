@@ -5,6 +5,7 @@ const ZAPIER_LEAD     = process.env.ZAPIER_LEAD_WEBHOOK     || 'https://hooks.za
 const ZAPIER_BOOKING  = process.env.ZAPIER_BOOKING_WEBHOOK  || 'https://hooks.zapier.com/hooks/catch/27371819/uvsuor7/';
 const ZAPIER_GIFTCARD = process.env.ZAPIER_GIFTCARD_WEBHOOK || 'https://hooks.zapier.com/hooks/catch/27371819/uvs4oy7/';
 const EMAIL_TO = process.env.LEADS_EMAIL_TO || process.env.EMAIL_TO_CLEAVA || 'info@cleava.fi';
+const DIRECT_EMAIL_TO = process.env.LEADS_DIRECT_EMAIL_TO || process.env.SMTP_USER;
 const EMAIL_FROM = process.env.LEADS_EMAIL_FROM || process.env.EMAIL_FROM_CLEAVA || process.env.SMTP_USER;
 
 const SVC = {
@@ -62,6 +63,7 @@ function textSummary(type, d) {
 async function sendNotification(type, data, html) {
   const transport = mailer();
   if (!transport) return {skipped:true};
+  const recipients = Array.from(new Set([EMAIL_TO, DIRECT_EMAIL_TO].filter(Boolean)));
 
   const service = SVC[data.service] || data.service || 'Quote';
   const subject = type === 'booking'
@@ -72,7 +74,7 @@ async function sendNotification(type, data, html) {
 
   return transport.sendMail({
     from: `"Cleava Website" <${EMAIL_FROM}>`,
-    to: EMAIL_TO,
+    to: recipients,
     replyTo: data.email || data.buyer_email || undefined,
     subject,
     text: textSummary(type, data),
