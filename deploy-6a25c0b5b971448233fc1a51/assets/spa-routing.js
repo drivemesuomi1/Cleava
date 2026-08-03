@@ -53,8 +53,23 @@ function handleModalBg(e) {
 if(e.target === document.getElementById('contactModal')) closeModal();
 }
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
-function submitForm(e, source) {
+function sendLeadParams(params) {
+return fetch('/.netlify/functions/submit-offer-lead', {
+method:'POST',
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify(Object.fromEntries(params))
+}).then(function(res){
+if(!res.ok) throw new Error('Lead submit failed: '+res.status);
+return res.json().catch(function(){ return {}; });
+});
+}
+function resetLeadButton(btn, label) {
+if(btn){ btn.textContent = label; btn.disabled = false; btn.style.background = ''; }
+}
+async function submitForm(e, source) {
 e.preventDefault();
+var btn;
+var defaultLabel = 'Pyydä tarjous';
 try {
 var form = e.target;
 var zip = (form.zip && form.zip.value || '').trim();
@@ -68,15 +83,22 @@ params.append('phone', phone);
 params.append('source', source);
 if(form.service) params.append('service', form.service.value);
 if(form.size) params.append('size', form.size.value);
-fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: params.toString() }).catch(function(){});
-var btn = form.querySelector('button[type="submit"]');
+btn = form.querySelector('button[type="submit"]');
+if(btn){ defaultLabel = btn.textContent; btn.textContent = 'Lähetetään...'; btn.disabled = true; }
+await sendLeadParams(params);
 if(btn){ btn.textContent = '✓ Lähetetty!'; btn.disabled = true; btn.style.background = '#22c55e'; }
 if(typeof showTyPopup==='function') showTyPopup();
-} catch(err) {}
+} catch(err) {
+console.error('Lead submit failed', err);
+resetLeadButton(btn, defaultLabel);
+alert('Lähetys epäonnistui. Yritä uudelleen tai soita 045 187 8083.');
+}
 return false;
 }
-function submitCtaForm(e, source) {
+async function submitCtaForm(e, source) {
 e.preventDefault();
+var btn;
+var defaultLabel = 'Pyydä tarjous';
 try {
 var form = e.target;
 var zip = (form.zip && form.zip.value || '').trim();
@@ -89,11 +111,16 @@ params.append('zip', zip);
 params.append('phone', phone);
 if(service) params.append('service', service);
 params.append('source', source);
-fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: params.toString() }).catch(function(){});
-var btn = form.querySelector('button[type="submit"]');
+btn = form.querySelector('button[type="submit"]');
+if(btn){ defaultLabel = btn.textContent; btn.textContent = 'Lähetetään...'; btn.disabled = true; }
+await sendLeadParams(params);
 if(btn){ btn.textContent = '✓ Lähetetty!'; btn.disabled = true; btn.style.background = '#22c55e'; }
 if(typeof showTyPopup==='function') showTyPopup();
-} catch(err) {}
+} catch(err) {
+console.error('Lead submit failed', err);
+resetLeadButton(btn, defaultLabel);
+alert('Lähetys epäonnistui. Yritä uudelleen tai soita 045 187 8083.');
+}
 return false;
 }
 function toggleFaq(btn) {
@@ -569,19 +596,25 @@ document.querySelectorAll('.bf-toggle__btn').forEach(function(b) { b.classList.r
 btn.classList.add('active');
 document.getElementById('bf_service_type').value = type;
 }
-function submitBookingForm(e) {
+async function submitBookingForm(e) {
 e.preventDefault();
+var btn = document.getElementById('booking-submit-btn');
+var defaultLabel = btn ? btn.textContent : 'Lähetä varauslomake';
 try {
 var form = e.target;
 var formData = new FormData(form);
 var params = new URLSearchParams();
 formData.forEach(function(v, k){ params.append(k, v); });
-fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: params.toString() }).catch(function(){});
-var btn = document.getElementById('booking-submit-btn');
+if(btn){ btn.textContent = 'Lähetetään...'; btn.disabled = true; }
+await sendLeadParams(params);
 if(btn){ btn.textContent = '✓ Lähetetty!'; btn.disabled = true; btn.style.background = '#22c55e'; }
 closeBookingModal();
 if(typeof showTyPopup==='function'){ showTyPopup(); }
-} catch(err) {}
+} catch(err) {
+console.error('Booking submit failed', err);
+resetLeadButton(btn, defaultLabel);
+alert('Lähetys epäonnistui. Yritä uudelleen tai soita 045 187 8083.');
+}
 return false;
 }
 var STRIPE_PK = 'pk_live_51SxaFaRo1z1DVPwvigYKIVZis2fR5NOLbgUQpyVqJSAxz0YHOKypHyjSJKcusu5Eet752JQ8J6ZnitZuqFiIAD8N00BonRJ4Be';
