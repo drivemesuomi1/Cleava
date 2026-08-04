@@ -270,11 +270,13 @@ function customerHtml(type, data) {
       <div style="background:linear-gradient(135deg,#0284c7,#0e7490);padding:30px 32px;color:#ffffff;">
         <div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.82;">Cleava Siivouspalvelut</div>
         <h1 style="margin:18px 0 8px;font-size:26px;line-height:1.2;">${esc(title)}</h1>
-        <p style="margin:0;color:rgba(255,255,255,.86);font-size:15px;line-height:1.6;">${esc(t.intro)}</p>
       </div>
       <div style="padding:26px 32px;">
+        <p style="margin:0 0 22px;color:#334155!important;font-size:16px;line-height:1.7;">${esc(t.intro)}</p>
         <table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;border:1px solid #dbeafe;border-radius:12px;overflow:hidden;">${rows}</table>
-        <div style="margin:28px 0 0;color:#334155!important;font-size:14px;line-height:1.75;">${customerSignatureHtml(lang)}</div>
+        <table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;margin:28px 0 0;">
+          <tr><td style="color:#334155!important;font-size:14px;line-height:1.75;">${customerSignatureHtml(lang)}</td></tr>
+        </table>
       </div>
     </div>
   </div>
@@ -371,13 +373,16 @@ function row(l, v, cls) {
 
 // ── LEAD ─────────────────────────────────────────────────────────────────────
 function leadHtml(d) {
-  const svc = SVC[d.service]||d.service||'—';
+  const svc = SVC[d.service] || d.service || '—';
+  const email = plain(d.email);
+  const phone = plain(d.phone);
   return wrap('#155e75','LEAD','rgba(125,211,252,.5)','🔔',
     'Uusi tarjouspyyntö',`${svc} &middot; ${d.zip||''}`,
-    row('Palvelu', svc) +
-    row('Postinumero', d.zip) +
-    row('Puhelin', d.phone?`<a href="tel:${d.phone}">${d.phone}</a>`:'—','rv-blue') +
-    row('Lähde', d.source||'—') +
+    row('Palvelu', esc(svc)) +
+    row('Postinumero', d.zip ? esc(d.zip) : '—') +
+    row('Sähköposti', email ? `<a href="mailto:${esc(email)}">${esc(email)}</a>` : '—','rv-blue') +
+    row('Puhelin', phone ? `<a href="tel:${esc(phone)}">${esc(phone)}</a>` : '—','rv-blue') +
+    row('Lähde', d.source ? esc(d.source) : '—') +
     `<div class="ay"><strong>⚡ Soita saman päivän aikana!</strong><br>Nopea vastaus = enemmän tilauksia.</div>`
   );
 }
