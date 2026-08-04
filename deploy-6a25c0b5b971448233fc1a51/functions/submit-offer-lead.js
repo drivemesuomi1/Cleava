@@ -289,7 +289,7 @@ async function sendCustomerConfirmation(type, data) {
   const lang = langOf(data);
   const subject = customerSubject(type, data, lang);
   const info = await transport.sendMail({
-    from: `"Laura K | Cleava Siivouspalvelut" <${EMAIL_FROM}>`,
+    from: `"Cleava Siivouspalvelut" <${EMAIL_FROM}>`,
     to,
     subject,
     text: customerText(type, data, lang),
