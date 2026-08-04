@@ -252,16 +252,16 @@ function customerSubject(type, data, lang) {
 
 function customerSignatureHtml(lang) {
   if (lang === 'en') {
-    return `<p style="margin:28px 0 0;color:#111827!important;font-size:15px;line-height:1.7;">Best regards,<br><br>- Cleava team</p>`;
+    return `<p style="margin:28px 0 0;color:#111827!important;font-size:15px;line-height:1.7;">Best regards,<br><br><strong>-Cleava team</strong><br>Cleava Siivouspalvelut<br><a href="mailto:info@cleava.fi" style="color:#0284c7;">info@cleava.fi</a> | +358 45 187 8083 | <a href="https://cleava.fi/" style="color:#0284c7;">cleava.fi</a><br>Y-tunnus 3631044-9</p>`;
   }
-  return `<p style="margin:28px 0 0;color:#111827!important;font-size:15px;line-height:1.7;">Yst&auml;v&auml;llisin terveisin,<br><br>&ndash; Cleava-tiimi</p>`;
+  return `<p style="margin:28px 0 0;color:#111827!important;font-size:15px;line-height:1.7;">Yst&auml;v&auml;llisin terveisin,<br><br><strong>-Cleava tiimi</strong><br>Cleava Siivouspalvelut<br><a href="mailto:info@cleava.fi" style="color:#0284c7;">info@cleava.fi</a> | +358 45 187 8083 | <a href="https://cleava.fi/" style="color:#0284c7;">cleava.fi</a><br>Y-tunnus 3631044-9</p>`;
 }
 
 function customerSignatureText(lang) {
   if (lang === 'en') {
-    return `Best regards,\n\n- Cleava team`;
+    return `Best regards,\n\n-Cleava team\nCleava Siivouspalvelut\ninfo@cleava.fi | +358 45 187 8083 | cleava.fi\nY-tunnus 3631044-9`;
   }
-  return `Yst\u00e4v\u00e4llisin terveisin,\n\n- Cleava-tiimi`;
+  return `Yst\u00e4v\u00e4llisin terveisin,\n\n-Cleava tiimi\nCleava Siivouspalvelut\ninfo@cleava.fi | +358 45 187 8083 | cleava.fi\nY-tunnus 3631044-9`;
 }
 
 function customerText(type, data, lang) {
