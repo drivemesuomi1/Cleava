@@ -42,12 +42,12 @@ body{background:#eef2f7;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',
 .row{display:flex;align-items:baseline;padding:11px 0;border-bottom:1px solid #f0f4f8;}
 .rl{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.07em;width:130px;flex-shrink:0;}
 .rv{font-size:14px;font-weight:600;color:#1e293b;padding-left:14px;flex:1;line-height:1.4;}
-.rv a{color:#1d4ed8;text-decoration:none;}
-.rv-blue{color:#1d4ed8;}
+.rv a{color:#0284c7;text-decoration:none;}
+.rv-blue{color:#0284c7;}
 .rv-red{color:#dc2626;font-weight:700;}
-.pbox{background:#0a1628;border-radius:12px;padding:24px 20px;text-align:center;margin-bottom:18px;}
+.pbox{background:#155e75;border-radius:12px;padding:24px 20px;text-align:center;margin-bottom:18px;}
 .pl{font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;}
-.pa{font-size:46px;font-weight:800;color:#60a5fa;line-height:1;}
+.pa{font-size:46px;font-weight:800;color:#7dd3fc;line-height:1;}
 .ps{font-size:13px;color:rgba(255,255,255,.55);margin-top:7px;}
 .vbox{background:rgba(255,255,255,.09);border-radius:8px;padding:13px;margin-top:14px;}
 .vl{font-size:9px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.09em;margin-bottom:5px;}
@@ -79,7 +79,7 @@ function row(l, v, cls) {
 // ── LEAD ─────────────────────────────────────────────────────────────────────
 function leadHtml(d) {
   const svc = SVC[d.service]||d.service||'—';
-  return wrap('#0a1628','LEAD','rgba(96,165,250,.5)','🔔',
+  return wrap('#155e75','LEAD','rgba(125,211,252,.5)','🔔',
     'Uusi tarjouspyyntö',`${svc} &middot; ${d.zip||''}`,
     row('Palvelu', svc) +
     row('Postinumero', d.zip) +
@@ -96,7 +96,7 @@ function bookingInternalHtml(d) {
     .filter(k=>d[k]==='yes')
     .map(k=>({extra_oven:'Uuni',extra_fridge:'Jääkaappi',extra_balcony:'Parveke',extra_cabinets:'Kaapit'}[k]))
     .join(' · ')||'—';
-  return wrap('#0a1628','TILAUS','rgba(52,211,153,.45)','📋',
+  return wrap('#155e75','TILAUS','rgba(52,211,153,.45)','📋',
     `Uusi tilaus — ${svc}`,`${d.name||''} &middot; ${d.city||''}`,
     row('Nimi', d.name) +
     row('Sähköposti', d.email?`<a href="mailto:${d.email}">${d.email}</a>`:'—') +
@@ -114,12 +114,12 @@ function bookingInternalHtml(d) {
 // ── BOOKING CUSTOMER ──────────────────────────────────────────────────────────
 function bookingCustomerHtml(d) {
   const svc = SVC[d.service]||d.service||'—';
-  return wrap('#1d4ed8','VAHVISTUS','rgba(255,255,255,.25)','✅',
+  return wrap('#0284c7','VAHVISTUS','rgba(255,255,255,.25)','✅',
     'Tilauksesi on vastaanotettu!',`Hei ${d.name||''}! Otamme yhteyttä pian.`,
     row('Palvelu', svc) +
     row('Osoite', `${d.address||'—'}, ${d.city||'—'}`) +
     row('Toivottu aika', (d.date&&d.time)?`${d.date} klo ${d.time}`:'—','rv-blue') +
-    `<div class="ab">Kysymyksiä? <strong><a href="tel:+358451878083" style="color:#1d4ed8;">045 187 8083</a></strong> tai <strong><a href="mailto:info@cleava.fi" style="color:#1d4ed8;">info@cleava.fi</a></strong><br><span style="font-size:11.5px;color:#3b82f6;">Asiakaspalvelu: Ma–Pe 8–18, La–Su 12–16</span></div>`
+    `<div class="ab">Kysymyksiä? <strong><a href="tel:+358451878083" style="color:#0284c7;">045 187 8083</a></strong> tai <strong><a href="mailto:info@cleava.fi" style="color:#0284c7;">info@cleava.fi</a></strong><br><span style="font-size:11.5px;color:#38bdf8;">Asiakaspalvelu: Ma–Pe 8–18, La–Su 12–16</span></div>`
   );
 }
 
@@ -127,7 +127,7 @@ function bookingCustomerHtml(d) {
 function giftcardInternalHtml(d) {
   const amt = String(d.amount||'?');
   const pkg = d.package||'—';
-  return wrap('#0a1628','LAHJAKORTTI','rgba(251,191,36,.5)','🎁',
+  return wrap('#155e75','LAHJAKORTTI','rgba(251,191,36,.5)','🎁',
     'Uusi lahjakorttitilaus',`${d.buyer_name||''} &middot; ${pkg} &middot; ${amt}€`,
     `<div class="pbox">
       <div class="pl">Tilauksen arvo</div>
@@ -155,7 +155,7 @@ function giftcardInvoiceHtml(d) {
   const pkg = d.package||'—';
   const due = new Date(); due.setDate(due.getDate()+7);
   const dueStr = due.toLocaleDateString('fi-FI');
-  return wrap('#0a1628','LASKU','rgba(251,191,36,.5)','🧾',
+  return wrap('#155e75','LASKU','rgba(251,191,36,.5)','🧾',
     `Lahjakorttitilaus — ${amt}€`,`Hei ${d.buyer_name||''}! Alla ovat maksutiedot.`,
     `<div class="pbox">
       <div class="pl">Maksettava summa</div>
@@ -165,10 +165,10 @@ function giftcardInvoiceHtml(d) {
     </div>` +
     row('Saaja', 'Mansio Group Oy') +
     row('Eräpäivä', `<span class="rv-red">${dueStr}</span>`) +
-    row('Viite', `<span style="font-family:monospace;font-size:15px;color:#1d4ed8;">${d.voucher_code||'—'}</span>`) +
+    row('Viite', `<span style="font-family:monospace;font-size:15px;color:#0284c7;">${d.voucher_code||'—'}</span>`) +
     `<div class="ab">Lähetä maksu viitteellä <strong>${d.voucher_code||'—'}</strong>.<br>
-     IBAN-tiedot: <a href="mailto:info@cleava.fi" style="color:#1d4ed8;">info@cleava.fi</a> &nbsp;·&nbsp; <a href="tel:+358451878083" style="color:#1d4ed8;">045 187 8083</a><br>
-     <span style="font-size:11.5px;color:#3b82f6;">Lahjakortti lähetetään heti maksun vahvistuttua.</span></div>`
+     IBAN-tiedot: <a href="mailto:info@cleava.fi" style="color:#0284c7;">info@cleava.fi</a> &nbsp;·&nbsp; <a href="tel:+358451878083" style="color:#0284c7;">045 187 8083</a><br>
+     <span style="font-size:11.5px;color:#38bdf8;">Lahjakortti lähetetään heti maksun vahvistuttua.</span></div>`
   );
 }
 
@@ -180,25 +180,25 @@ function giftcardVoucherHtml(d) {
 <head><meta charset="UTF-8"><style>
 body{margin:0;padding:0;font-family:Georgia,serif;background:#fff;}
 .page{width:600px;margin:0 auto;padding:48px 40px;}
-.hdr{background:#0a1628;border-radius:12px;padding:36px;text-align:center;margin-bottom:32px;}
+.hdr{background:#155e75;border-radius:12px;padding:36px;text-align:center;margin-bottom:32px;}
 .hdr-logo{font-size:11px;font-weight:700;color:rgba(255,255,255,.55);letter-spacing:.2em;margin-bottom:16px;}
 .hdr-title{font-size:28px;font-weight:400;color:#fff;letter-spacing:.05em;margin-bottom:4px;}
 .hdr-sub{font-size:13px;color:rgba(255,255,255,.5);}
-.amount{font-size:64px;font-weight:700;color:#60a5fa;line-height:1;text-align:center;margin:24px 0 8px;}
+.amount{font-size:64px;font-weight:700;color:#7dd3fc;line-height:1;text-align:center;margin:24px 0 8px;}
 .pkg{font-size:16px;color:rgba(255,255,255,.65);text-align:center;margin-bottom:24px;}
 .code-box{background:rgba(255,255,255,.1);border-radius:10px;padding:20px;text-align:center;}
 .code-label{font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px;}
 .code{font-size:26px;font-weight:700;color:#fff;font-family:'Courier New',monospace;letter-spacing:.15em;}
 .expiry{font-size:11px;color:rgba(255,255,255,.35);margin-top:10px;}
-.msg-box{background:#f8fafc;border-radius:10px;padding:20px 24px;margin-bottom:24px;font-style:italic;color:#475569;border-left:3px solid #1d4ed8;font-size:14px;line-height:1.7;}
+.msg-box{background:#f8fafc;border-radius:10px;padding:20px 24px;margin-bottom:24px;font-style:italic;color:#475569;border-left:3px solid #0284c7;font-size:14px;line-height:1.7;}
 .services{margin-bottom:24px;}
 .services h3{font-size:13px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
 .services ul{list-style:none;padding:0;}
 .services li{font-size:14px;color:#334155;padding:5px 0;border-bottom:1px solid #f1f5f9;}
-.services li::before{content:"✓  ";color:#1d4ed8;font-weight:700;}
+.services li::before{content:"✓  ";color:#0284c7;font-weight:700;}
 .footer{text-align:center;padding-top:20px;border-top:1px solid #e2e8f0;}
 .footer p{font-size:12px;color:#94a3b8;line-height:1.8;}
-.footer a{color:#1d4ed8;text-decoration:none;}
+.footer a{color:#0284c7;text-decoration:none;}
 </style></head>
 <body><div class="page">
   <div class="hdr">

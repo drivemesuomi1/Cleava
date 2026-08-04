@@ -35,16 +35,16 @@
  DESIGN SYSTEM — Dark Navy / White
  ============================== */
 :root{
- --c-navy:#0a1628;
- --c-navy-light:#142035;
- --c-navy-mid:#1e3a5f;
- --c-blue:#1d4ed8;
- --c-blue-light:#3b82f6;
- --c-accent:#60a5fa;
+ --c-navy:#155e75;
+ --c-navy-light:#0e7490;
+ --c-navy-mid:#0891b2;
+ --c-blue:#0284c7;
+ --c-blue-light:#38bdf8;
+ --c-accent:#7dd3fc;
  --c-white:#ffffff;
- --c-off:#f8fafc;
- --c-grey:#e2e8f0;
- --c-border:#e2e8f0;
+ --c-off:#f0f9ff;
+ --c-grey:#e0f2fe;
+ --c-border:#bae6fd;
  --c-text:#0f172a;
  --c-muted:#475569;
  --c-muted-light:#94a3b8;
@@ -141,7 +141,7 @@ nav{
  ============================== */
 .mob-menu{
  display:none;position:fixed;inset:0;z-index:9998;
- background:linear-gradient(160deg, #0f2444 0%, #0a1628 100%);
+ background:linear-gradient(160deg, #0e7490 0%, #155e75 100%);
  flex-direction:column;
  padding:80px 24px 36px;overflow-y:auto;
 }
@@ -227,7 +227,7 @@ nav{
  transition:all .2s;box-shadow:none;
  cursor:pointer;white-space:nowrap;
 }
-.btn-primary:hover{background:#1e40af;transform:translateY(-2px);box-shadow:0 8px 28px rgba(29,78,216,.4);}
+.btn-primary:hover{background:#1e40af;transform:translateY(-2px);box-shadow:0 8px 28px rgba(2,132,199,.4);}
 .btn-outline{
  display:inline-flex;align-items:center;gap:8px;
  background:transparent;color:var(--c-navy);
@@ -266,7 +266,7 @@ nav{
  transition:border-color .18s,box-shadow .18s;
 }
 .form-input:focus,.form-select:focus{
- border-color:var(--c-blue);box-shadow:0 0 0 3px rgba(29,78,216,.1);
+ border-color:var(--c-blue);box-shadow:0 0 0 3px rgba(2,132,199,.1);
 }
 .form-input::placeholder{color:var(--c-muted-light);}
 .form-select-wrap{position:relative;}
@@ -294,7 +294,7 @@ nav{
 }
 .hero__overlay{
  position:absolute;inset:0;
- background:linear-gradient(110deg,rgba(10,22,40,.88) 0%,rgba(10,22,40,.65) 55%,rgba(10,22,40,.4) 100%);
+ background:linear-gradient(110deg,rgba(8,47,73,.88) 0%,rgba(8,47,73,.65) 55%,rgba(8,47,73,.4) 100%);
 }
 .hero__inner{
  position:relative;z-index:2;
@@ -304,7 +304,7 @@ nav{
 }
 .hero__eyebrow{
  display:inline-flex;align-items:center;gap:8px;
- background:rgba(96,165,250,.15);border:1px solid rgba(96,165,250,.3);
+ background:rgba(125,211,252,.15);border:1px solid rgba(125,211,252,.3);
  color:var(--c-accent);font-size:11px;font-weight:700;letter-spacing:.12em;
  text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:22px;
 }
@@ -343,7 +343,7 @@ nav{
  width:100%;padding:16px;background:var(--c-navy);color:#fff;
  border:none;border-radius:10px;font-size:15px;font-weight:700;
  cursor:pointer;transition:all .2s;margin-top:4px;
- box-shadow:0 4px 16px rgba(10,22,40,.25);
+ box-shadow:0 4px 16px rgba(8,47,73,.25);
 }
 .form-submit:hover{background:var(--c-navy-mid);transform:translateY(-1px);}
 .form-submit.success{background:#16a34a!important;}
@@ -384,7 +384,7 @@ nav{
  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
  padding:0;border-radius:0;margin-bottom:12px;
 }
-.section--navy .section-eyebrow{background:rgba(96,165,250,.15);color:var(--c-accent);border:1px solid rgba(96,165,250,.25);}
+.section--navy .section-eyebrow{background:rgba(125,211,252,.15);color:var(--c-accent);border:1px solid rgba(125,211,252,.25);}
 .section-title{
  font-family:var(--ff-display);font-size:clamp(1.9rem,3.5vw,2.9rem);
  font-weight:400;color:var(--c-navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:14px;
@@ -401,9 +401,9 @@ nav{
  background:#fff;cursor:pointer;transition:transform .22s,box-shadow .22s,border-color .22s;
  display:block;
 }
-.service-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);border-color:rgba(29,78,216,.2);}
+.service-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);border-color:rgba(2,132,199,.2);}
 .service-card__img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 15%;display:block;}
-.service-card__vid{width:100%;aspect-ratio:4/3;overflow:hidden;background:#0a1628;position:relative;}
+.service-card__vid{width:100%;aspect-ratio:4/3;overflow:hidden;background:#155e75;position:relative;}
 .service-card__vid video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;}
 .service-card__body{padding:22px;}
 .service-card__title{
@@ -424,7 +424,7 @@ nav{
 .how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;margin-top:56px;}
 .how-step__num{
  width:48px;height:48px;
- background:rgba(96,165,250,.15);border:1.5px solid rgba(96,165,250,.3);
+ background:rgba(125,211,252,.15);border:1.5px solid rgba(125,211,252,.3);
  border-radius:50%;display:flex;align-items:center;justify-content:center;
  font-family:var(--ff-display);font-size:1.3rem;color:var(--c-accent);margin-bottom:18px;
 }
@@ -502,7 +502,7 @@ nav{
 }
 .reviews-arrow:hover{background:var(--c-navy);color:#fff;border-color:var(--c-navy);}
 .reviews-dots{display:flex;gap:6px;}
-.reviews-dot{width:7px;height:7px;border-radius:50%;background:rgba(10,22,40,.15);border:none;padding:0;cursor:pointer;transition:all .2s;}
+.reviews-dot{width:7px;height:7px;border-radius:50%;background:rgba(8,47,73,.15);border:none;padding:0;cursor:pointer;transition:all .2s;}
 .reviews-dot.active{background:var(--c-blue);width:22px;border-radius:3px;}
 
 /* ==============================
@@ -514,7 +514,7 @@ nav{
  padding:8px 18px;font-size:14px;font-weight:500;color:var(--c-navy);
  transition:all .18s;
 }
-.area-pill:hover{background:#eff6ff;border-color:rgba(29,78,216,.25);color:var(--c-blue);}
+.area-pill:hover{background:#eff6ff;border-color:rgba(2,132,199,.25);color:var(--c-blue);}
 
 /* ==============================
  FRESKA-STYLE CTA SECTION
@@ -524,7 +524,7 @@ nav{
 }
 .cta-section::before{
  content:'';position:absolute;inset:0;
- background:radial-gradient(ellipse 800px 600px at 60% 50%,rgba(29,78,216,.25) 0%,transparent 70%);
+ background:radial-gradient(ellipse 800px 600px at 60% 50%,rgba(2,132,199,.25) 0%,transparent 70%);
 }
 .cta-inner{position:relative;z-index:1;max-width:var(--max);margin:0 auto;}
 .cta-split{display:grid;grid-template-columns:1fr 480px;gap:72px;align-items:center;}
@@ -575,7 +575,7 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
  ============================== */
 .modal-overlay{
  position:fixed;inset:0;z-index:9999;
- background:rgba(10,22,40,.65);backdrop-filter:blur(8px);
+ background:rgba(8,47,73,.65);backdrop-filter:blur(8px);
  display:none;align-items:center;justify-content:center;padding:24px;
 }
 .modal-overlay.open{display:flex;}
@@ -603,12 +603,12 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
  background:var(--c-blue);color:#fff;border:none;
  border-radius:999px;padding:13px 24px;
  font-size:14px;font-weight:700;
- box-shadow:0 8px 28px rgba(29,78,216,.4);
+ box-shadow:0 8px 28px rgba(2,132,199,.4);
  display:flex;align-items:center;gap:8px;
  transition:all .2s;
 
 }
-.fab:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 14px 36px rgba(29,78,216,.5);}
+.fab:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 14px 36px rgba(2,132,199,.5);}
 
 
 /* ==============================
@@ -628,7 +628,7 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
 }
 .sp-hero__bg::after{
  content:'';position:absolute;inset:0;
- background:linear-gradient(105deg,rgba(10,22,40,.96) 0%,rgba(10,22,40,.88) 44%,rgba(10,22,40,.55) 72%,rgba(10,22,40,.2) 100%);
+ background:linear-gradient(105deg,rgba(8,47,73,.96) 0%,rgba(8,47,73,.88) 44%,rgba(8,47,73,.55) 72%,rgba(8,47,73,.2) 100%);
 }
 .sp-hero__content{
  position:relative;z-index:2;
@@ -640,7 +640,7 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
 }
 .sp-hero__eyebrow{
  display:inline-flex;align-items:center;gap:7px;
- background:rgba(96,165,250,.15);border:1px solid rgba(96,165,250,.3);
+ background:rgba(125,211,252,.15);border:1px solid rgba(125,211,252,.3);
  color:var(--c-accent);font-size:11px;font-weight:700;letter-spacing:.12em;
  text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:18px;
 }
@@ -759,7 +759,7 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
 }
 .freska-cta::before{
  content:'';position:absolute;inset:0;
- background:radial-gradient(circle 600px at center,rgba(29,78,216,.2) 0%,transparent 70%);
+ background:radial-gradient(circle 600px at center,rgba(2,132,199,.2) 0%,transparent 70%);
 }
 .freska-cta__inner{position:relative;z-index:1;max-width:680px;margin:0 auto;}
 .freska-cta__title{
@@ -788,7 +788,7 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
 .pc--name{font-weight:600;color:var(--c-navy);}
 .pc--price{font-family:var(--ff-display);font-size:1.3rem;color:var(--c-blue);}
 .pc--note{color:var(--c-muted);font-size:13px;}
-.pricing-info{background:#eff6ff;border:1px solid rgba(29,78,216,.12);border-radius:var(--r);padding:20px 24px;margin-bottom:48px;}
+.pricing-info{background:#eff6ff;border:1px solid rgba(2,132,199,.12);border-radius:var(--r);padding:20px 24px;margin-bottom:48px;}
 .pricing-info h3{font-size:14px;font-weight:700;color:var(--c-navy);margin-bottom:8px;}
 .pricing-info p{font-size:13.5px;color:var(--c-muted);line-height:1.7;margin:0;}
 
@@ -1420,8 +1420,8 @@ video{will-change:auto;}
  position:relative;
  text-align:center;
 }
-.lk-card:hover { border-color:var(--c-blue); transform:translateY(-3px); box-shadow:0 8px 28px rgba(29,78,216,.12); }
-.lk-card.selected { border-color:var(--c-blue); background:#eff6ff; box-shadow:0 8px 28px rgba(29,78,216,.15); }
+.lk-card:hover { border-color:var(--c-blue); transform:translateY(-3px); box-shadow:0 8px 28px rgba(2,132,199,.12); }
+.lk-card.selected { border-color:var(--c-blue); background:#eff6ff; box-shadow:0 8px 28px rgba(2,132,199,.15); }
 .lk-badge {
  position:absolute; top:-12px; left:50%; transform:translateX(-50%);
  background:linear-gradient(135deg,var(--c-blue),#1e40af);
@@ -2533,7 +2533,7 @@ nav {
  <section style="background:var(--c-navy);padding:96px 24px 80px;position:relative;overflow:hidden;">
  <div style="position:absolute;inset:0;opacity:.06;background:radial-gradient(ellipse 800px 600px at 70% 50%,var(--c-blue) 0%,transparent 70%);"></div>
  <div style="max-width:760px;margin:0 auto;position:relative;z-index:1;">
- <div class="section-eyebrow" style="background:rgba(96,165,250,.15);color:var(--c-accent);border:1px solid rgba(96,165,250,.25);display:inline-flex;padding:5px 14px;border-radius:999px;margin-bottom:20px;" data-i18n-fi="Tarinamme" data-i18n-en="Our Story">Tarinamme</div>
+ <div class="section-eyebrow" style="background:rgba(125,211,252,.15);color:var(--c-accent);border:1px solid rgba(125,211,252,.25);display:inline-flex;padding:5px 14px;border-radius:999px;margin-bottom:20px;" data-i18n-fi="Tarinamme" data-i18n-en="Our Story">Tarinamme</div>
  <h1 style="font-family:var(--ff-display);font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:400;color:#fff;line-height:1.08;letter-spacing:-.03em;margin-bottom:20px;" data-i18n-fi="Tervetuloa Cleavaan – paikkaan, jossa puhtaus kohtaa luottamuksen" data-i18n-en="Welcome to Cleava, where cleanliness meets trust">Tervetuloa Cleavaan – paikkaan, jossa <em style="color:var(--c-accent);font-style:italic;">puhtaus kohtaa luottamuksen</em></h1>
  <p style="font-size:1.1rem;color:rgba(255,255,255,.72);line-height:1.75;max-width:600px;" data-i18n="288">Cleava syntyi aidosta tarpeesta. Tässä on tarina siitä, miksi ja miten.</p>
  </div>
@@ -2790,10 +2790,10 @@ nav {
 
  <!-- HERO -->
  <section style="background:var(--c-navy);padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden;">
- <div style="position:absolute;inset:0;background:radial-gradient(ellipse 700px 500px at 50% 0%,rgba(96,165,250,.12) 0%,transparent 70%);pointer-events:none;"></div>
+ <div style="position:absolute;inset:0;background:radial-gradient(ellipse 700px 500px at 50% 0%,rgba(125,211,252,.12) 0%,transparent 70%);pointer-events:none;"></div>
  <div style="position:relative;z-index:1;max-width:680px;margin:0 auto;">
  <div style="font-size:48px;margin-bottom:20px;">🎁</div>
- <div class="section-eyebrow" style="background:rgba(96,165,250,.15);color:var(--c-accent);border:1px solid rgba(96,165,250,.25);display:inline-flex;padding:5px 14px;border-radius:999px;margin-bottom:20px;" data-i18n="72">Lahjakortti</div>
+ <div class="section-eyebrow" style="background:rgba(125,211,252,.15);color:var(--c-accent);border:1px solid rgba(125,211,252,.25);display:inline-flex;padding:5px 14px;border-radius:999px;margin-bottom:20px;" data-i18n="72">Lahjakortti</div>
  <h1 style="font-family:var(--ff-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:400;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;" data-i18n-fi="Cleava Lahjakortti – anna puhdas koti lahjaksi" data-i18n-en="Cleava Gift Card – give a clean home as a gift"><span data-i18n-fi="Cleava Lahjakortti – " data-i18n-en="Cleava Gift Card – ">Cleava Lahjakortti – </span><em style="color:var(--c-accent);font-style:italic;" data-i18n-fi="anna puhdas koti lahjaksi" data-i18n-en="give a clean home as a gift">anna puhdas koti lahjaksi</em></h1>
  <p style="font-size:1.05rem;color:rgba(255,255,255,.7);line-height:1.7;max-width:560px;margin:0 auto;" data-i18n-fi="Cleava-lahjakortti on täydellinen lahja ystävälle, perheelle tai itsellesi. Lahjakorttia voi käyttää kaikkiin Cleava Siivouspalvelut -palveluihin kuten kotisiivoukseen, ikkunanpesuun, muuttosiivoukseen tai suursiivoukseen." data-i18n-en="The Cleava gift card is the perfect gift for a friend, family or yourself. It can be used for all Cleava services including home cleaning, window cleaning, moving cleaning or deep cleaning.">Cleava-lahjakortti on täydellinen lahja ystävälle, perheelle tai itsellesi. Lahjakorttia voi käyttää kaikkiin Cleava Siivouspalvelut -palveluihin kuten kotisiivoukseen, ikkunanpesuun, muuttosiivoukseen tai suursiivoukseen.</p>
  </div>
@@ -2878,7 +2878,7 @@ nav {
  <form id="lahjakorttiForm" onsubmit="submitLahjakortti(event)" style="background:#fff;border:1px solid var(--c-border);border-radius:var(--r-lg);padding:36px 32px;">
 
  <!-- Selected package summary -->
- <div id="selectedSummary" style="background:#eff6ff;border:1.5px solid rgba(29,78,216,.15);border-radius:var(--r);padding:16px 20px;margin-bottom:28px;display:flex;justify-content:space-between;align-items:center;">
+ <div id="selectedSummary" style="background:#eff6ff;border:1.5px solid rgba(2,132,199,.15);border-radius:var(--r);padding:16px 20px;margin-bottom:28px;display:flex;justify-content:space-between;align-items:center;">
  <div>
  <p style="font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--c-blue);margin-bottom:3px;" data-i18n-fi="Valittu lahjakortti" data-i18n-en="Selected gift card">Valittu lahjakortti</p>
  <p id="selectedLabel" style="font-size:16px;font-weight:700;color:var(--c-navy);" data-i18n="304">Valitse paketti yllä</p>
@@ -2928,7 +2928,7 @@ nav {
 
  <!-- Payment info -->
  <div id="lkFormError" style="display:none;color:#dc2626;font-size:13px;margin-top:8px;"></div>
- <button type="submit" class="form-submit" id="lkSubmitBtn" style="font-size:16px;padding:18px;background:#0a1628;" data-i18n="306">Maksa</button>
+ <button type="submit" class="form-submit" id="lkSubmitBtn" style="font-size:16px;padding:18px;background:#155e75;" data-i18n="306">Maksa</button>
  
 
  <!-- Success message -->
@@ -3374,10 +3374,10 @@ id="page-porrassiivous">
 
  <!-- HERO -->
  <section style="background:var(--c-navy);padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden;">
- <div style="position:absolute;inset:0;background:radial-gradient(ellipse 700px 500px at 50% 0%,rgba(96,165,250,.12) 0%,transparent 70%);pointer-events:none;"></div>
+ <div style="position:absolute;inset:0;background:radial-gradient(ellipse 700px 500px at 50% 0%,rgba(125,211,252,.12) 0%,transparent 70%);pointer-events:none;"></div>
  <div style="position:relative;z-index:1;max-width:680px;margin:0 auto;">
  <div style="font-size:48px;margin-bottom:20px;">🎁</div>
- <div class="section-eyebrow" style="background:rgba(96,165,250,.15);color:var(--c-accent);border:1px solid rgba(96,165,250,.25);display:inline-flex;padding:5px 14px;border-radius:999px;margin-bottom:20px;" data-i18n-fi="Lahjakortti" data-i18n-en="Gift Card">Lahjakortti</div>
+ <div class="section-eyebrow" style="background:rgba(125,211,252,.15);color:var(--c-accent);border:1px solid rgba(125,211,252,.25);display:inline-flex;padding:5px 14px;border-radius:999px;margin-bottom:20px;" data-i18n-fi="Lahjakortti" data-i18n-en="Gift Card">Lahjakortti</div>
  <h1 style="font-family:var(--ff-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:400;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;">Cleava Lahjakortti – <em style="color:var(--c-accent);font-style:italic;">anna puhdas koti lahjaksi</em></h1>
  <p style="font-size:1.05rem;color:rgba(255,255,255,.7);line-height:1.7;max-width:560px;margin:0 auto;">Cleava-lahjakortti on täydellinen lahja ystävälle, perheelle tai itsellesi. Lahjakorttia voi käyttää kaikkiin Cleava Siivouspalvelut -palveluihin kuten kotisiivoukseen, ikkunanpesuun, muuttosiivoukseen tai suursiivoukseen.</p>
  </div>
@@ -3462,7 +3462,7 @@ id="page-porrassiivous">
  <form id="lahjakorttiForm" onsubmit="submitLahjakortti(event)" style="background:#fff;border:1px solid var(--c-border);border-radius:var(--r-lg);padding:36px 32px;">
 
  <!-- Selected package summary -->
- <div id="selectedSummary" style="background:#eff6ff;border:1.5px solid rgba(29,78,216,.15);border-radius:var(--r);padding:16px 20px;margin-bottom:28px;display:flex;justify-content:space-between;align-items:center;">
+ <div id="selectedSummary" style="background:#eff6ff;border:1.5px solid rgba(2,132,199,.15);border-radius:var(--r);padding:16px 20px;margin-bottom:28px;display:flex;justify-content:space-between;align-items:center;">
  <div>
  <p style="font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--c-blue);margin-bottom:3px;">Valittu lahjakortti</p>
  <p id="selectedLabel" style="font-size:16px;font-weight:700;color:var(--c-navy);">Valitse paketti yllä</p>
@@ -3512,7 +3512,7 @@ id="page-porrassiivous">
 
  <!-- Payment info -->
  <div id="lkFormError" style="display:none;color:#dc2626;font-size:13px;margin-top:8px;"></div>
- <button type="submit" class="form-submit" id="lkSubmitBtn" style="font-size:16px;padding:18px;background:#0a1628;">Maksa</button>
+ <button type="submit" class="form-submit" id="lkSubmitBtn" style="font-size:16px;padding:18px;background:#155e75;">Maksa</button>
  
 
  <!-- Success message -->
@@ -5098,25 +5098,25 @@ document.addEventListener('DOMContentLoaded', function(){
 
 // ============ REVIEWS ============
 var REVIEWS_DATA = [
- {name:'Kirsi Molander',ini:'K',col:'#1d4ed8',stars:5,text:'Ikkunat tuli kiiltäviksi. Hyvää jälkeä! Ammattitaitoinen ja nopea palvelu.',date:'3 päivää sitten'},
+ {name:'Kirsi Molander',ini:'K',col:'#0284c7',stars:5,text:'Ikkunat tuli kiiltäviksi. Hyvää jälkeä! Ammattitaitoinen ja nopea palvelu.',date:'3 päivää sitten'},
  {name:'Siru K',ini:'S',col:'#7c3aed',stars:5,text:'Olen todella tyytyväinen asunnon siivoukseen! Ystävällinen viestintä, täsmällinen toiminta ja lupaukset pitivät kuten sovittu.',date:'6 päivää sitten'},
  {name:'Ritva Sinkkonen',ini:'R',col:'#0d9488',stars:5,text:'Ikkunat ovat kirkkaat, kevät saa tulla! Loistava palvelu — tuli nopeasti valmista laadukkaalla lopputuloksella.',date:'Viikko sitten'},
  {name:'Minna Virtanen',ini:'M',col:'#059669',stars:5,text:'Laadukasta siivousta ja loistava lopputulos. Sama siivooja joka kerta — juuri niin kuin toivoin.',date:'Viikko sitten'},
  {name:'Tero Leinonen',ini:'T',col:'#d97706',stars:5,text:'Muuttosiivous hoitui tosi hyvin ja asunto jäi oikeasti puhtaaksi. Suosittelen!',date:'2 viikkoa sitten'},
  {name:'Aino Korhonen',ini:'A',col:'#be185d',stars:5,text:'Erittäin ammattitaitoinen palvelu! Koti oli täydellinen jälkeenpäin. Erittäin suositeltava.',date:'3 viikkoa sitten'},
- {name:'Lauri Salo',ini:'L',col:'#1d4ed8',stars:5,text:'Cleava on paras valinta ikkunanpesuun! Nopea, täsmällinen ja siisti. Kirkkaat ikkunat takuulla.',date:'1 kuukausi sitten'},
+ {name:'Lauri Salo',ini:'L',col:'#0284c7',stars:5,text:'Cleava on paras valinta ikkunanpesuun! Nopea, täsmällinen ja siisti. Kirkkaat ikkunat takuulla.',date:'1 kuukausi sitten'},
  {name:'Paula Heikkinen',ini:'P',col:'#7c3aed',stars:5,text:'Cleavan palvelu oli ensiluokkaista — siivooja oli täydellisen huolellinen ja ystävällinen.',date:'1 kuukausi sitten'},
  {name:'Risto Nieminen',ini:'R',col:'#0891b2',stars:4,text:'Tilausprosessi oli helppo ja nopea. Tiimi teki upeaa työtä, pientä viivästystä aikataulussa.',date:'2 kuukautta sitten'},
  {name:'Kaisa Järvinen',ini:'K',col:'#059669',stars:5,text:'Todella ammattimaista palvelua! Cleava piti lupauksensa ja hoiti kaiken sovitusti.',date:'2 kuukautta sitten'},
  {name:'Mikko Ojala',ini:'M',col:'#d97706',stars:5,text:'Siivouksen laatu oli poikkeuksellista. Kommunikointi oli sujuvaa koko prosessin ajan.',date:'2 kuukautta sitten'},
  {name:'Tiina Mattila',ini:'T',col:'#be185d',stars:5,text:'Toimistosiivous on ollut erinomaista. Aina luotettavasti ajallaan ja laadukkaasti tehty.',date:'3 kuukautta sitten'},
- {name:'Eero Mäkinen',ini:'E',col:'#1d4ed8',stars:5,text:'Muuttosiivous ylitti odotukset! Asunto oli täydellisen siisti — vuokranantaja ihastunut.',date:'3 kuukautta sitten'},
+ {name:'Eero Mäkinen',ini:'E',col:'#0284c7',stars:5,text:'Muuttosiivous ylitti odotukset! Asunto oli täydellisen siisti — vuokranantaja ihastunut.',date:'3 kuukautta sitten'},
  {name:'Leena Turunen',ini:'L',col:'#7c3aed',stars:5,text:'Olen käyttänyt Cleavaa jo vuoden ja en voisi olla tyytyväisempi. Paras siivouspalvelu!',date:'4 kuukautta sitten'},
  {name:'Seppo Virtanen',ini:'S',col:'#0891b2',stars:4,text:'Ikkunanpesu sujui erinomaisesti. Siivooja oli täsmällinen, joskin pieni alue jäi.',date:'4 kuukautta sitten'},
  {name:'Hannele Laine',ini:'H',col:'#059669',stars:5,text:'Suursiivous ennen joulua oli huippuluokkaa. Kotiin oli ilo tulla takaisin!',date:'5 kuukautta sitten'},
  {name:'Jyrki Korhonen',ini:'J',col:'#d97706',stars:5,text:'Olen kokeillut monia siivousfirmoja mutta Cleava on ehdottomasti paras. Ei vertailua.',date:'5 kuukautta sitten'},
  {name:'Sirpa Hämäläinen',ini:'S',col:'#be185d',stars:5,text:'Hyvä palvelu! Siivooja oli ystävällinen ja teki tarkan työn. Tulos oli erinomainen.',date:'6 kuukautta sitten'},
- {name:'Tapani Leinonen',ini:'T',col:'#1d4ed8',stars:5,text:'Suosittelen Cleavaa kaikille. Palvelu on ammattimaista, luotettavaa ja hintataso kohdillaan.',date:'6 kuukautta sitten'},
+ {name:'Tapani Leinonen',ini:'T',col:'#0284c7',stars:5,text:'Suosittelen Cleavaa kaikille. Palvelu on ammattimaista, luotettavaa ja hintataso kohdillaan.',date:'6 kuukautta sitten'},
  {name:'Maija Koivisto',ini:'M',col:'#7c3aed',stars:5,text:'Kolme kertaa tilannut ja joka kerta erinomainen lopputulos. Ei tarvita muita!',date:'7 kuukautta sitten'},
 ];
 
@@ -5167,7 +5167,7 @@ function fetchLiveReviews() {
  .then(function(data) {
  if (!data.reviews || !data.reviews.length) return;
 
- var colors = ['#1d4ed8','#7c3aed','#0891b2','#059669','#d97706','#be185d'];
+ var colors = ['#0284c7','#7c3aed','#0891b2','#059669','#d97706','#be185d'];
 
  // Convert live Google reviews to our format
  var liveReviews = data.reviews.map(function(r, i) {
@@ -5433,7 +5433,7 @@ function populateServiceReviews() {
  var svc=new google.maps.places.PlacesService(document.createElement('div'));
  svc.getDetails({placeId:PLACE_ID,fields:['reviews','rating','user_ratings_total','name']},function(place,status){
  if(status===google.maps.places.PlacesServiceStatus.OK&&place.reviews&&place.reviews.length){
- var colors=['#1d4ed8','#7c3aed','#0d9488','#0891b2','#dc2626','#b45309','#059669'];
+ var colors=['#0284c7','#7c3aed','#0d9488','#0891b2','#dc2626','#b45309','#059669'];
  var googleRevs=place.reviews.slice(0,20).map(function(r,i){
  return {name:r.author_name,ini:r.author_name?r.author_name[0].toUpperCase():'A',col:colors[i%colors.length],text:r.text,date:r.relative_time_description};
  });
@@ -5737,20 +5737,20 @@ function generateVoucherHTML(code, amount, pkg, expiry, recipientName, message) 
  '*{margin:0;padding:0;box-sizing:border-box;}' +
  'body{background:#f0f4f8;font-family:Inter,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:40px;}' +
  '.voucher{background:#fff;border-radius:20px;overflow:hidden;max-width:600px;width:100%;box-shadow:0 8px 40px rgba(0,0,0,.15);}' +
- '.v-header{background:#0a1628;padding:40px;text-align:center;}' +
+ '.v-header{background:#155e75;padding:40px;text-align:center;}' +
  '.v-logo{font-size:13px;font-weight:800;color:rgba(255,255,255,.6);letter-spacing:.18em;margin-bottom:24px;}' +
  '.v-title{font-family:Fraunces,serif;font-size:14px;font-weight:400;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;}' +
- '.v-amount{font-size:72px;font-weight:800;color:#60a5fa;line-height:1;margin:8px 0;}' +
+ '.v-amount{font-size:72px;font-weight:800;color:#7dd3fc;line-height:1;margin:8px 0;}' +
  '.v-pkg{font-size:16px;color:rgba(255,255,255,.6);margin-bottom:24px;}' +
  '.v-codebox{background:rgba(255,255,255,.08);border-radius:10px;padding:16px 24px;display:inline-block;}' +
  '.v-codelabel{font-size:10px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;}' +
  '.v-code{font-size:28px;font-weight:800;color:#fff;font-family:monospace;letter-spacing:.14em;}' +
  '.v-body{padding:36px 40px;}' +
- '.v-recipient{font-size:18px;font-weight:700;color:#0a1628;margin-bottom:8px;}' +
- '.v-message{font-style:italic;color:#64748b;font-size:15px;line-height:1.65;margin-bottom:24px;border-left:3px solid #1d4ed8;padding-left:14px;}' +
+ '.v-recipient{font-size:18px;font-weight:700;color:#155e75;margin-bottom:8px;}' +
+ '.v-message{font-style:italic;color:#64748b;font-size:15px;line-height:1.65;margin-bottom:24px;border-left:3px solid #0284c7;padding-left:14px;}' +
  '.v-info{background:#f8fafc;border-radius:10px;padding:16px 20px;margin-bottom:24px;}' +
  '.v-info p{font-size:13px;color:#475569;line-height:1.75;}' +
- '.v-info strong{color:#0a1628;}' +
+ '.v-info strong{color:#155e75;}' +
  '.v-footer{border-top:1px solid #e2e8f0;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;}' +
  '.v-footer-text{font-size:12px;color:#94a3b8;}' +
  '.v-expiry{font-size:12px;color:#dc2626;font-weight:600;}' +
@@ -5776,7 +5776,7 @@ function generateVoucherHTML(code, amount, pkg, expiry, recipientName, message) 
  '<div class="v-footer-text">Mansio Group Oy · Y-tunnus 3631044-9 · cleava.fi</div>' +
  '<div class="v-expiry">Voimassa: ' + expiry + '</div>' +
  '</div></div>' +
- '<div style="text-align:center;margin-top:20px;"><button onclick="window.print()" style="background:#0a1628;color:#fff;border:none;padding:12px 32px;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;font-family:Inter,sans-serif;">🖨️ Tulosta / Tallenna PDF</button></div>' +
+ '<div style="text-align:center;margin-top:20px;"><button onclick="window.print()" style="background:#155e75;color:#fff;border:none;padding:12px 32px;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;font-family:Inter,sans-serif;">🖨️ Tulosta / Tallenna PDF</button></div>' +
  '</body></html>';
 }
 
@@ -5790,18 +5790,18 @@ function openVoucher(code, amount, pkg, expiry, recipientName, message) {
 
 
 <!-- TILAA POPUP -->
-<div id="tilaaOverlay" style="display:none;position:fixed;inset:0;background:rgba(10,22,40,.72);z-index:9999;backdrop-filter:blur(6px);align-items:flex-start;justify-content:center;padding:24px;overflow-y:auto;" onclick="if(event.target===this)closeTilaaPopup()">
+<div id="tilaaOverlay" style="display:none;position:fixed;inset:0;background:rgba(8,47,73,.72);z-index:9999;backdrop-filter:blur(6px);align-items:flex-start;justify-content:center;padding:24px;overflow-y:auto;" onclick="if(event.target===this)closeTilaaPopup()">
 
   <!-- Step 1 -->
   <div id="tS1" style="background:#fff;border-radius:24px;padding:48px 44px;max-width:520px;width:100%;position:relative;box-shadow:0 32px 80px rgba(0,0,0,.25);margin:auto;">
     <button onclick="closeTilaaPopup()" style="position:absolute;top:16px;right:16px;background:#f1f5f9;border:none;border-radius:50%;width:36px;height:36px;font-size:20px;cursor:pointer;color:#475569;line-height:1;">&#215;</button>
-    <div id="tLabelEl" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#3b82f6;margin-bottom:12px;">PYYDÄ TARJOUS</div>
-    <h2 id="tH1El" style="font-size:1.75rem;font-weight:600;color:#0f2444;margin-bottom:8px;line-height:1.2;">Kuinka suuri on kotisi?</h2>
+    <div id="tLabelEl" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#38bdf8;margin-bottom:12px;">PYYDÄ TARJOUS</div>
+    <h2 id="tH1El" style="font-size:1.75rem;font-weight:600;color:#0e7490;margin-bottom:8px;line-height:1.2;">Kuinka suuri on kotisi?</h2>
     <p id="tDescEl" style="font-size:15px;color:#64748b;margin-bottom:32px;line-height:1.6;">Kerro kodin koko ja postinumero. Otamme yhteyttä saman päivän aikana.</p>
     <div style="margin-bottom:22px;">
-      <label id="tSizeLabelEl" style="display:block;font-size:13px;font-weight:600;color:#0f2444;margin-bottom:9px;">Asunnon koko</label>
+      <label id="tSizeLabelEl" style="display:block;font-size:13px;font-weight:600;color:#0e7490;margin-bottom:9px;">Asunnon koko</label>
       <div style="position:relative;">
-        <select id="tSize" style="width:100%;padding:15px 44px 15px 16px;border:2px solid #e2e8f0;border-radius:12px;font-size:15px;font-family:inherit;color:#0f2444;background:#fff;appearance:none;-webkit-appearance:none;outline:none;box-sizing:border-box;cursor:pointer;">
+        <select id="tSize" style="width:100%;padding:15px 44px 15px 16px;border:2px solid #e2e8f0;border-radius:12px;font-size:15px;font-family:inherit;color:#0e7490;background:#fff;appearance:none;-webkit-appearance:none;outline:none;box-sizing:border-box;cursor:pointer;">
           <option value="">Valitse koko</option>
           <option>alle 35 m²</option>
           <option>35–49 m²</option>
@@ -5817,25 +5817,25 @@ function openVoucher(code, amount, pkg, expiry, recipientName, message) {
       </div>
     </div>
     <div style="margin-bottom:30px;">
-      <label id="tZipLabelEl" style="display:block;font-size:13px;font-weight:600;color:#0f2444;margin-bottom:9px;">Postinumero</label>
-      <input id="tZip" type="text" inputmode="numeric" placeholder="00100" maxlength="5" style="width:100%;padding:15px 16px;border:2px solid #e2e8f0;border-radius:12px;font-size:15px;font-family:inherit;color:#0f2444;outline:none;box-sizing:border-box;">
+      <label id="tZipLabelEl" style="display:block;font-size:13px;font-weight:600;color:#0e7490;margin-bottom:9px;">Postinumero</label>
+      <input id="tZip" type="text" inputmode="numeric" placeholder="00100" maxlength="5" style="width:100%;padding:15px 16px;border:2px solid #e2e8f0;border-radius:12px;font-size:15px;font-family:inherit;color:#0e7490;outline:none;box-sizing:border-box;">
     </div>
-    <button id="tNextBtn" onclick="tNext()" style="width:100%;padding:18px;background:#0f2444;color:#fff;border:none;border-radius:13px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Jatka →</button>
+    <button id="tNextBtn" onclick="tNext()" style="width:100%;padding:18px;background:#0e7490;color:#fff;border:none;border-radius:13px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Jatka →</button>
     <p id="tPrivacy1" style="font-size:12px;color:#94a3b8;text-align:center;margin-top:14px;">Tietojasi ei jaeta kolmansille osapuolille</p>
   </div>
 
   <!-- Step 2 -->
   <div id="tS2" style="display:none;background:#fff;border-radius:24px;padding:48px 44px;max-width:520px;width:100%;position:relative;box-shadow:0 32px 80px rgba(0,0,0,.25);margin:auto;">
     <button onclick="closeTilaaPopup()" style="position:absolute;top:16px;right:16px;background:#f1f5f9;border:none;border-radius:50%;width:36px;height:36px;font-size:20px;cursor:pointer;color:#475569;line-height:1;">&#215;</button>
-    <button id="tBackBtn" onclick="tBack()" style="background:#f1f5f9;border:none;border-radius:10px;padding:10px 16px;font-size:14px;font-weight:600;color:#0f2444;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;margin-bottom:24px;">← Takaisin</button>
-    <h2 id="tH2El" style="font-size:1.75rem;font-weight:600;color:#0f2444;margin-bottom:8px;line-height:1.2;">Anna puhelinnumerosi</h2>
+    <button id="tBackBtn" onclick="tBack()" style="background:#f1f5f9;border:none;border-radius:10px;padding:10px 16px;font-size:14px;font-weight:600;color:#0e7490;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;margin-bottom:24px;">← Takaisin</button>
+    <h2 id="tH2El" style="font-size:1.75rem;font-weight:600;color:#0e7490;margin-bottom:8px;line-height:1.2;">Anna puhelinnumerosi</h2>
     <p id="tDesc2El" style="font-size:15px;color:#64748b;margin-bottom:22px;line-height:1.6;">Soitamme sinulle saman päivän aikana.</p>
-    <div id="tSum" style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:11px;padding:13px 16px;margin-bottom:26px;font-size:14px;color:#0f2444;font-weight:600;"></div>
+    <div id="tSum" style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:11px;padding:13px 16px;margin-bottom:26px;font-size:14px;color:#0e7490;font-weight:600;"></div>
     <div style="margin-bottom:30px;">
-      <label id="tPhoneLabelEl" style="display:block;font-size:13px;font-weight:600;color:#0f2444;margin-bottom:9px;">Puhelinnumero</label>
-      <input id="tPhone" type="tel" placeholder="040 123 4567" style="width:100%;padding:15px 16px;border:2px solid #e2e8f0;border-radius:12px;font-size:15px;font-family:inherit;color:#0f2444;outline:none;box-sizing:border-box;">
+      <label id="tPhoneLabelEl" style="display:block;font-size:13px;font-weight:600;color:#0e7490;margin-bottom:9px;">Puhelinnumero</label>
+      <input id="tPhone" type="tel" placeholder="040 123 4567" style="width:100%;padding:15px 16px;border:2px solid #e2e8f0;border-radius:12px;font-size:15px;font-family:inherit;color:#0e7490;outline:none;box-sizing:border-box;">
     </div>
-    <button id="tBtn" onclick="tSubmit()" style="width:100%;padding:18px;background:#0f2444;color:#fff;border:none;border-radius:13px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Jätä soittopyyntö</button>
+    <button id="tBtn" onclick="tSubmit()" style="width:100%;padding:18px;background:#0e7490;color:#fff;border:none;border-radius:13px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Jätä soittopyyntö</button>
     <p id="tPrivacy2" style="font-size:12px;color:#94a3b8;text-align:center;margin-top:14px;">Tietojasi ei jaeta kolmansille osapuolille</p>
   </div>
 
@@ -5847,9 +5847,9 @@ function openVoucher(code, amount, pkg, expiry, recipientName, message) {
         <polyline id="tCheck" points="15,27 23,35 37,19" stroke="#22c55e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:42;stroke-dashoffset:42;transition:stroke-dashoffset .5s ease .15s;"/>
       </svg>
     </div>
-    <h2 style="font-size:2rem;font-weight:600;color:#0f2444;margin-bottom:14px;">Kiitos!</h2>
+    <h2 style="font-size:2rem;font-weight:600;color:#0e7490;margin-bottom:14px;">Kiitos!</h2>
     <p style="font-size:16px;color:#64748b;line-height:1.75;margin-bottom:36px;">Olemme yhteydessä saman päivän aikana ja sovimme ajankohdan.</p>
-    <button onclick="closeTilaaPopup()" style="padding:16px 44px;background:#0f2444;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Sulje</button>
+    <button onclick="closeTilaaPopup()" style="padding:16px 44px;background:#0e7490;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Sulje</button>
   </div>
 
 </div>
@@ -5976,7 +5976,7 @@ function _updatePopupLang(l) {
 </script>
 
 <!-- GLOBAL THANK YOU POPUP -->
-<div id="tyOverlay" style="display:none;position:fixed;inset:0;background:rgba(10,22,40,.72);z-index:99999;align-items:center;justify-content:center;padding:24px;" onclick="if(event.target===this)closeTyPopup()">
+<div id="tyOverlay" style="display:none;position:fixed;inset:0;background:rgba(8,47,73,.72);z-index:99999;align-items:center;justify-content:center;padding:24px;" onclick="if(event.target===this)closeTyPopup()">
   <div style="background:#fff;border-radius:24px;padding:56px 44px;max-width:480px;width:100%;text-align:center;box-shadow:0 32px 80px rgba(0,0,0,.25);">
     <div style="width:80px;height:80px;background:#f0fdf4;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;">
       <svg width="40" height="40" viewBox="0 0 52 52" fill="none">
@@ -5984,9 +5984,9 @@ function _updatePopupLang(l) {
         <polyline id="tyCheck" points="15,27 23,35 37,19" stroke="#22c55e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:42;stroke-dashoffset:42;transition:stroke-dashoffset .5s ease .1s;"/>
       </svg>
     </div>
-    <h2 style="font-size:1.9rem;font-weight:600;color:#0f2444;margin-bottom:12px;">Kiitos!</h2>
+    <h2 style="font-size:1.9rem;font-weight:600;color:#0e7490;margin-bottom:12px;">Kiitos!</h2>
     <p style="font-size:16px;color:#64748b;line-height:1.7;margin-bottom:32px;">Olemme yhteydessä saman päivän aikana ja sovimme ajankohdan.</p>
-    <button onclick="closeTyPopup()" style="padding:16px 44px;background:#0f2444;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Sulje</button>
+    <button onclick="closeTyPopup()" style="padding:16px 44px;background:#0e7490;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Sulje</button>
   </div>
 </div>
 
@@ -6015,7 +6015,7 @@ function closeTyPopup(){
 </script>
 
 <!-- THANK YOU POPUP -->
-<div id="tyPopup" style="display:none;position:fixed;inset:0;background:rgba(10,22,40,.75);z-index:99999;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px);">
+<div id="tyPopup" style="display:none;position:fixed;inset:0;background:rgba(8,47,73,.75);z-index:99999;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px);">
   <div style="background:#fff;border-radius:24px;padding:56px 44px;max-width:480px;width:100%;text-align:center;box-shadow:0 32px 80px rgba(0,0,0,.3);">
     <div style="width:88px;height:88px;background:#f0fdf4;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;">
       <svg width="44" height="44" viewBox="0 0 52 52" fill="none">
@@ -6023,9 +6023,9 @@ function closeTyPopup(){
         <polyline id="tyChk" points="15,27 23,35 37,19" stroke="#22c55e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:42;stroke-dashoffset:42;transition:stroke-dashoffset .5s ease .1s;"/>
       </svg>
     </div>
-    <h2 style="font-size:1.9rem;font-weight:600;color:#0f2444;margin-bottom:12px;">Kiitos!</h2>
+    <h2 style="font-size:1.9rem;font-weight:600;color:#0e7490;margin-bottom:12px;">Kiitos!</h2>
     <p style="font-size:16px;color:#64748b;line-height:1.7;margin-bottom:32px;">Olemme yhteydess&#228; saman p&#228;iv&#228;n aikana ja sovimme ajankohdan.</p>
-    <button onclick="closeTyPopup()" style="padding:16px 44px;background:#0f2444;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Sulje</button>
+    <button onclick="closeTyPopup()" style="padding:16px 44px;background:#0e7490;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Sulje</button>
   </div>
 </div>
 <script>

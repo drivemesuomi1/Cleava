@@ -106,9 +106,9 @@
 </head>
 <body>
 <nav id="cleava-nav"></nav>
-<script src="/assets/navbar.js?v=v125"></script>
+<script src="/assets/navbar.js?v=v126"></script>
 <div id="cleava-mobmenu"></div>
-<section class="sp-hero" style="background-image:linear-gradient(105deg,rgba(10,22,40,.78) 0%,rgba(10,22,40,.55) 50%,rgba(10,22,40,.25) 100%),url('https://lh3.googleusercontent.com/d/16co6WF-KDB3cMjEFBxd3J9pIf6tkS7yO');background-size:cover;background-position:center center;background-repeat:no-repeat;">
+<section class="sp-hero" style="background-image:linear-gradient(105deg,rgba(8,47,73,.78) 0%,rgba(8,47,73,.55) 50%,rgba(8,47,73,.25) 100%),url('https://lh3.googleusercontent.com/d/16co6WF-KDB3cMjEFBxd3J9pIf6tkS7yO');background-size:cover;background-position:center center;background-repeat:no-repeat;">
   <div class="sp-hero__content">
     <div class="sp-hero__eyebrow">SUURSIIVOUS · PÄÄKAUPUNKISEUTU</div>
     <h1 class="sp-hero__title">Suursiivous — <em>koko koti puhtaaksi kerralla</em></h1>
@@ -131,7 +131,7 @@
       </div>
       <div class="sp-incl-mid" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
         <div style="width:1.5px;flex:1;background:var(--c-navy);"></div>
-        <svg style="margin:16px 0;flex-shrink:0;" width="28" height="28" viewBox="0 0 24 24" fill="#0f2444"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <svg style="margin:16px 0;flex-shrink:0;" width="28" height="28" viewBox="0 0 24 24" fill="#0e7490"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
         <div style="width:1.5px;flex:1;background:var(--c-navy);"></div>
       </div>
       <div class="sp-incl-right" style="padding-left:60px;display:flex;flex-direction:column;justify-content:center;">
@@ -232,6 +232,9 @@
  </select>
  <input type="text" name="zip" placeholder="Postinumero" data-placeholder-fi="Postinumero" data-placeholder-en="Postal code" inputmode="numeric" required>
  <input type="tel" name="phone" placeholder="Puhelinnumero" data-placeholder-fi="Puhelinnumero" data-placeholder-en="Phone number" required>
+
+ <input type="email" name="email" placeholder="Sahkoposti" data-placeholder-fi="Sahkoposti" data-placeholder-en="Email" required>
+
  <button type="submit" class="fcta-pill-btn" data-i18n-fi="Pyydä tarjous" data-i18n-en="Request quote">Pyydä tarjous</button>
  </form>
  <p class="fcta-footer__note" data-i18n="65">Otamme yhteyttä 24h sisällä.</p>
@@ -372,7 +375,7 @@ function submitCtaForm(e, source) {
   var zip = (form.zip && form.zip.value || '').trim();
   var phone = (form.phone && form.phone.value || '').trim();
   var service = (form.service && form.service.value || '').trim();
-  if(!zip || !phone) return false;
+  if(!zip || !phone || (form.email && !email)) return false;
   var params = new URLSearchParams();
   params.append('form-name', 'footer-cta');
   params.append('zip', zip);
@@ -410,25 +413,25 @@ function toggleFaq(btn) {
 <script>
 (function(){
 var REVIEWS_DATA = [
- {name:'Kirsi Molander',ini:'K',col:'#1d4ed8',stars:5,text:'Ikkunat tuli kiiltäviksi. Hyvää jälkeä! Ammattitaitoinen ja nopea palvelu.',date:'3 päivää sitten'},
+ {name:'Kirsi Molander',ini:'K',col:'#0284c7',stars:5,text:'Ikkunat tuli kiiltäviksi. Hyvää jälkeä! Ammattitaitoinen ja nopea palvelu.',date:'3 päivää sitten'},
  {name:'Siru K',ini:'S',col:'#7c3aed',stars:5,text:'Olen todella tyytyväinen asunnon siivoukseen! Ystävällinen viestintä, täsmällinen toiminta ja lupaukset pitivät kuten sovittu.',date:'6 päivää sitten'},
  {name:'Ritva Sinkkonen',ini:'R',col:'#0d9488',stars:5,text:'Ikkunat ovat kirkkaat, kevät saa tulla! Loistava palvelu — tuli nopeasti valmista laadukkaalla lopputuloksella.',date:'Viikko sitten'},
  {name:'Minna Virtanen',ini:'M',col:'#059669',stars:5,text:'Laadukasta siivousta ja loistava lopputulos. Sama siivooja joka kerta — juuri niin kuin toivoin.',date:'Viikko sitten'},
  {name:'Tero Leinonen',ini:'T',col:'#d97706',stars:5,text:'Muuttosiivous hoitui tosi hyvin ja asunto jäi oikeasti puhtaaksi. Suosittelen!',date:'2 viikkoa sitten'},
  {name:'Aino Korhonen',ini:'A',col:'#be185d',stars:5,text:'Erittäin ammattitaitoinen palvelu! Koti oli täydellinen jälkeenpäin. Erittäin suositeltava.',date:'3 viikkoa sitten'},
- {name:'Lauri Salo',ini:'L',col:'#1d4ed8',stars:5,text:'Cleava on paras valinta ikkunanpesuun! Nopea, täsmällinen ja siisti. Kirkkaat ikkunat takuulla.',date:'1 kuukausi sitten'},
+ {name:'Lauri Salo',ini:'L',col:'#0284c7',stars:5,text:'Cleava on paras valinta ikkunanpesuun! Nopea, täsmällinen ja siisti. Kirkkaat ikkunat takuulla.',date:'1 kuukausi sitten'},
  {name:'Paula Heikkinen',ini:'P',col:'#7c3aed',stars:5,text:'Cleavan palvelu oli ensiluokkaista — siivooja oli täydellisen huolellinen ja ystävällinen.',date:'1 kuukausi sitten'},
  {name:'Risto Nieminen',ini:'R',col:'#0891b2',stars:4,text:'Tilausprosessi oli helppo ja nopea. Tiimi teki upeaa työtä, pientä viivästystä aikataulussa.',date:'2 kuukautta sitten'},
  {name:'Kaisa Järvinen',ini:'K',col:'#059669',stars:5,text:'Todella ammattimaista palvelua! Cleava piti lupauksensa ja hoiti kaiken sovitusti.',date:'2 kuukautta sitten'},
  {name:'Mikko Ojala',ini:'M',col:'#d97706',stars:5,text:'Siivouksen laatu oli poikkeuksellista. Kommunikointi oli sujuvaa koko prosessin ajan.',date:'2 kuukautta sitten'},
  {name:'Tiina Mattila',ini:'T',col:'#be185d',stars:5,text:'Toimistosiivous on ollut erinomaista. Aina luotettavasti ajallaan ja laadukkaasti tehty.',date:'3 kuukautta sitten'},
- {name:'Eero Mäkinen',ini:'E',col:'#1d4ed8',stars:5,text:'Muuttosiivous ylitti odotukset! Asunto oli täydellisen siisti — vuokranantaja ihastunut.',date:'3 kuukautta sitten'},
+ {name:'Eero Mäkinen',ini:'E',col:'#0284c7',stars:5,text:'Muuttosiivous ylitti odotukset! Asunto oli täydellisen siisti — vuokranantaja ihastunut.',date:'3 kuukautta sitten'},
  {name:'Leena Turunen',ini:'L',col:'#7c3aed',stars:5,text:'Olen käyttänyt Cleavaa jo vuoden ja en voisi olla tyytyväisempi. Paras siivouspalvelu!',date:'4 kuukautta sitten'},
  {name:'Seppo Virtanen',ini:'S',col:'#0891b2',stars:4,text:'Ikkunanpesu sujui erinomaisesti. Siivooja oli täsmällinen, joskin pieni alue jäi.',date:'4 kuukautta sitten'},
  {name:'Hannele Laine',ini:'H',col:'#059669',stars:5,text:'Suursiivous ennen joulua oli huippuluokkaa. Kotiin oli ilo tulla takaisin!',date:'5 kuukautta sitten'},
  {name:'Jyrki Korhonen',ini:'J',col:'#d97706',stars:5,text:'Olen kokeillut monia siivousfirmoja mutta Cleava on ehdottomasti paras. Ei vertailua.',date:'5 kuukautta sitten'},
  {name:'Sirpa Hämäläinen',ini:'S',col:'#be185d',stars:5,text:'Hyvä palvelu! Siivooja oli ystävällinen ja teki tarkan työn. Tulos oli erinomainen.',date:'6 kuukautta sitten'},
- {name:'Tapani Leinonen',ini:'T',col:'#1d4ed8',stars:5,text:'Suosittelen Cleavaa kaikille. Palvelu on ammattimaista, luotettavaa ja hintataso kohdillaan.',date:'6 kuukautta sitten'},
+ {name:'Tapani Leinonen',ini:'T',col:'#0284c7',stars:5,text:'Suosittelen Cleavaa kaikille. Palvelu on ammattimaista, luotettavaa ja hintataso kohdillaan.',date:'6 kuukautta sitten'},
  {name:'Maija Koivisto',ini:'M',col:'#7c3aed',stars:5,text:'Kolme kertaa tilannut ja joka kerta erinomainen lopputulos. Ei tarvita muita!',date:'7 kuukautta sitten'},
 ];
 
@@ -479,7 +482,7 @@ function fetchLiveReviews() {
  .then(function(data) {
  if (!data.reviews || !data.reviews.length) return;
 
- var colors = ['#1d4ed8','#7c3aed','#0891b2','#059669','#d97706','#be185d'];
+ var colors = ['#0284c7','#7c3aed','#0891b2','#059669','#d97706','#be185d'];
 
  // Convert live Google reviews to our format
  var liveReviews = data.reviews.map(function(r, i) {
@@ -569,7 +572,7 @@ function closeTyPopup(){
 }
 </script>
 
-<div id="tyPopup" style="display:none;position:fixed;inset:0;background:rgba(10,22,40,.75);z-index:99999;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px);">
+<div id="tyPopup" style="display:none;position:fixed;inset:0;background:rgba(8,47,73,.75);z-index:99999;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px);">
   <div style="background:#fff;border-radius:24px;padding:56px 44px;max-width:480px;width:100%;text-align:center;box-shadow:0 32px 80px rgba(0,0,0,.3);">
     <div style="width:88px;height:88px;background:#f0fdf4;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;">
       <svg width="44" height="44" viewBox="0 0 52 52" fill="none">
@@ -577,9 +580,9 @@ function closeTyPopup(){
         <polyline id="tyChk" points="15,27 23,35 37,19" stroke="#22c55e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:42;stroke-dashoffset:42;transition:stroke-dashoffset .5s ease .1s;"/>
       </svg>
     </div>
-    <h2 style="font-size:1.9rem;font-weight:600;color:#0f2444;margin-bottom:12px;">Kiitos!</h2>
+    <h2 style="font-size:1.9rem;font-weight:600;color:#0e7490;margin-bottom:12px;">Kiitos!</h2>
     <p style="font-size:16px;color:#64748b;line-height:1.7;margin-bottom:32px;">Kiitos viestist&#228;si &mdash; vastaamme 24h sis&#228;ll&#228;.</p>
-    <button onclick="closeTyPopup()" style="padding:16px 44px;background:#0f2444;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Sulje</button>
+    <button onclick="closeTyPopup()" style="padding:16px 44px;background:#0e7490;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Sulje</button>
   </div>
 </div>
 <script>

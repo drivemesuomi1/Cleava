@@ -10,6 +10,66 @@ const SVC = {
   booking_form:'Book cleaning form'
 };
 
+const SERVICE_LABELS = {
+  fi: {
+    kotisiivous:'Kotisiivous', muuttosiivous:'Muuttosiivous', toimistosiivous:'Toimistosiivous',
+    ikkunanpesu:'Ikkunanpesu', suursiivous:'Suursiivous', erikoissiivous:'Erikoissiivous',
+    porrassiivous:'Porrassiivous', booking_form:'Varauslomake'
+  },
+  en: {
+    kotisiivous:'Home cleaning', muuttosiivous:'Moving cleaning', toimistosiivous:'Office cleaning',
+    ikkunanpesu:'Window cleaning', suursiivous:'Deep cleaning', erikoissiivous:'Specialist cleaning',
+    porrassiivous:'Stairwell cleaning', booking_form:'Booking form'
+  }
+};
+
+const CUSTOMER_TEXT = {
+  fi: {
+    subjectLead:'Kiitos yhteydenotostasi - Cleava',
+    subjectBooking:'Varauspyynt\u00f6si on vastaanotettu - Cleava',
+    titleLead:'Kiitos yhteydenotostasi',
+    titleBooking:'Varauspyynt\u00f6si on vastaanotettu',
+    intro:'Olemme vastaanottaneet tietosi ja otamme sinuun yhteytt\u00e4 pian. T\u00e4ss\u00e4 ovat l\u00e4hett\u00e4m\u00e4si tiedot:',
+    name:'Nimi',
+    email:'S\u00e4hk\u00f6posti',
+    phone:'Puhelin',
+    service:'Palvelu',
+    postal:'Postinumero',
+    address:'Osoite',
+    size:'Kodin koko',
+    cleaningType:'Siivouksen tyyppi',
+    time:'Toivottu aika',
+    extras:'Lis\u00e4palvelut',
+    message:'Lis\u00e4tiedot',
+    source:'L\u00e4hde',
+    oneTime:'Kertaluonteinen',
+    recurring:'S\u00e4\u00e4nn\u00f6llinen',
+    signature:'Yst\u00e4v\u00e4llisin terveisin'
+  },
+  en: {
+    subjectLead:'We received your request - Cleava',
+    subjectBooking:'We received your booking request - Cleava',
+    titleLead:'Thank you for contacting Cleava',
+    titleBooking:'Your booking request has been received',
+    intro:'We have received your information and will get back to you shortly. Here is what you submitted:',
+    name:'Name',
+    email:'Email',
+    phone:'Phone',
+    service:'Service',
+    postal:'Postal code',
+    address:'Address',
+    size:'Home size',
+    cleaningType:'Cleaning type',
+    time:'Preferred time',
+    extras:'Extra services',
+    message:'Message',
+    source:'Source',
+    oneTime:'One-time',
+    recurring:'Recurring',
+    signature:'Best regards'
+  }
+};
+
 function leadCopyAddress(address) {
   if (!address) return '';
   const [local, domain] = address.split('@');
@@ -101,6 +161,151 @@ async function sendNotification(type, data, html) {
   };
 }
 
+function plain(value) {
+  return String(value || '').trim();
+}
+
+function esc(value) {
+  return plain(value).replace(/[&<>"']/g, (ch) => ({
+    '&':'&amp;',
+    '<':'&lt;',
+    '>':'&gt;',
+    '"':'&quot;',
+    "'":'&#39;',
+  }[ch]));
+}
+
+function langOf(data) {
+  const raw = plain(data.lang || data.language).toLowerCase();
+  if (raw.startsWith('en')) return 'en';
+  const page = plain(data.page || data.path || data.referrer || data.source).toLowerCase();
+  if (page.includes('/en/') || page.endsWith('/en') || page.includes('/blog/')) return 'en';
+  return 'fi';
+}
+
+function labelForService(service, lang) {
+  return SERVICE_LABELS[lang]?.[service] || SERVICE_LABELS.fi[service] || SVC[service] || service || '';
+}
+
+function customerAddress(data) {
+  return plain(data.email || data.buyer_email);
+}
+
+function extrasText(data, lang) {
+  const labels = lang === 'en'
+    ? {extra_oven:'Oven', extra_fridge:'Fridge', extra_balcony:'Balcony', extra_cabinets:'Cabinets'}
+    : {extra_oven:'Uuni', extra_fridge:'Jaakaappi', extra_balcony:'Parveke', extra_cabinets:'Kaapit'};
+  return ['extra_oven','extra_fridge','extra_balcony','extra_cabinets']
+    .filter((key) => data[key] === 'yes')
+    .map((key) => labels[key])
+    .join(', ');
+}
+
+function customerRows(type, data, lang) {
+  const t = CUSTOMER_TEXT[lang];
+  const rows = type === 'booking'
+    ? [
+        [t.name, data.name],
+        [t.email, data.email],
+        [t.phone, data.phone],
+        [t.service, labelForService(data.service, lang)],
+        [t.cleaningType, data.cleaning_type === 'recurring' ? t.recurring : data.cleaning_type ? t.oneTime : ''],
+        [t.address, [data.address, data.city].filter(Boolean).join(', ')],
+        [t.size, data.size ? `${data.size} m2` : ''],
+        [t.time, [data.date, data.time].filter(Boolean).join(' ')],
+        [t.extras, extrasText(data, lang)],
+        [t.message, data.notes || data.message],
+      ]
+    : [
+        [t.service, labelForService(data.service, lang)],
+        [t.postal, data.zip],
+        [t.email, data.email],
+        [t.phone, data.phone],
+        [t.source, data.source],
+      ];
+  return rows.filter(([, value]) => plain(value));
+}
+
+function customerSubject(type, data, lang) {
+  const t = CUSTOMER_TEXT[lang];
+  return type === 'booking' ? t.subjectBooking : t.subjectLead;
+}
+
+function customerSignatureHtml(lang) {
+  if (lang === 'en') {
+    return `Best regards,<br><br>--<br><strong>Laura K</strong> | Service Manager<br>Cleava Cleaning Services<br><a href="mailto:info@cleava.fi">info@cleava.fi</a> | <a href="tel:+358451878083">+358 45 187 8083</a> | <a href="https://cleava.fi">cleava.fi</a><br>Business ID 3631044-9`;
+  }
+  return `Yst&auml;v&auml;llisin terveisin,<br><br>--<br><strong>Laura K</strong> | Palveluvastaava<br>Cleava Siivouspalvelut<br><a href="mailto:info@cleava.fi">info@cleava.fi</a> | <a href="tel:+358451878083">+358 45 187 8083</a> | <a href="https://cleava.fi">cleava.fi</a><br>Y-tunnus 3631044-9`;
+}
+
+function customerSignatureText(lang) {
+  if (lang === 'en') {
+    return `Best regards,\n\n--\nLaura K | Service Manager\nCleava Cleaning Services\ninfo@cleava.fi | +358 45 187 8083 | cleava.fi\nBusiness ID 3631044-9`;
+  }
+  return `Yst\u00e4v\u00e4llisin terveisin,\n\n--\nLaura K | Palveluvastaava\nCleava Siivouspalvelut\ninfo@cleava.fi | +358 45 187 8083 | cleava.fi\nY-tunnus 3631044-9`;
+}
+
+function customerText(type, data, lang) {
+  const t = CUSTOMER_TEXT[lang];
+  const title = type === 'booking' ? t.titleBooking : t.titleLead;
+  const rows = customerRows(type, data, lang)
+    .map(([label, value]) => `${label}: ${plain(value)}`)
+    .join('\n');
+  return `${title}\n\n${t.intro}\n\n${rows}\n\n${customerSignatureText(lang)}`;
+}
+
+function customerHtml(type, data) {
+  const lang = langOf(data);
+  const t = CUSTOMER_TEXT[lang];
+  const title = type === 'booking' ? t.titleBooking : t.titleLead;
+  const rows = customerRows(type, data, lang).map(([label, value]) => `
+    <tr>
+      <th style="background:#e0f2fe;color:#0f3f5c;text-align:left;padding:12px 14px;border-bottom:1px solid #dbeafe;font-size:13px;">${esc(label)}</th>
+      <td style="padding:12px 14px;border-bottom:1px solid #e5edf7;color:#1e293b;font-size:14px;">${esc(value)}</td>
+    </tr>`).join('');
+
+  return `<!DOCTYPE html><html lang="${lang}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
+<body style="margin:0;background:#f0f9ff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:#142033;">
+  <div style="padding:28px 14px;">
+    <div style="max-width:620px;margin:0 auto;background:#ffffff;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(14,116,144,.16);">
+      <div style="background:linear-gradient(135deg,#0284c7,#0e7490);padding:30px 32px;color:#ffffff;">
+        <div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.82;">Cleava Siivouspalvelut</div>
+        <h1 style="margin:18px 0 8px;font-size:26px;line-height:1.2;">${esc(title)}</h1>
+        <p style="margin:0;color:rgba(255,255,255,.86);font-size:15px;line-height:1.6;">${esc(t.intro)}</p>
+      </div>
+      <div style="padding:26px 32px;">
+        <table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;border:1px solid #dbeafe;border-radius:12px;overflow:hidden;">${rows}</table>
+        <p style="margin:28px 0 0;color:#334155;font-size:14px;line-height:1.75;">${customerSignatureHtml(lang)}</p>
+      </div>
+    </div>
+  </div>
+</body></html>`;
+}
+
+async function sendCustomerConfirmation(type, data) {
+  const to = customerAddress(data);
+  if (!to) return {skipped:true, reason:'no-customer-email'};
+  const transport = mailer();
+  if (!transport) return {skipped:true, reason:'smtp-not-configured'};
+  const lang = langOf(data);
+  const subject = customerSubject(type, data, lang);
+  const info = await transport.sendMail({
+    from: `"Cleava Siivouspalvelut" <${EMAIL_FROM}>`,
+    to,
+    replyTo: EMAIL_FROM,
+    subject,
+    text: customerText(type, data, lang),
+    html: customerHtml(type, data),
+  });
+  return {
+    accepted: info.accepted,
+    rejected: info.rejected,
+    messageId: info.messageId,
+    to,
+    subject,
+  };
+}
+
 async function settle(label, promise) {
   try {
     const result = await promise;
@@ -132,12 +337,12 @@ body{background:#eef2f7;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',
 .row{display:flex;align-items:baseline;padding:11px 0;border-bottom:1px solid #f0f4f8;}
 .rl{font-size:10.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.07em;width:130px;flex-shrink:0;}
 .rv{font-size:14px;font-weight:600;color:#1e293b;padding-left:14px;flex:1;line-height:1.4;}
-.rv a{color:#1d4ed8;text-decoration:none;}
-.rv-blue{color:#1d4ed8;}
+.rv a{color:#0284c7;text-decoration:none;}
+.rv-blue{color:#0284c7;}
 .rv-red{color:#dc2626;font-weight:700;}
-.pbox{background:#0a1628;border-radius:12px;padding:24px 20px;text-align:center;margin-bottom:18px;}
+.pbox{background:#155e75;border-radius:12px;padding:24px 20px;text-align:center;margin-bottom:18px;}
 .pl{font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;}
-.pa{font-size:46px;font-weight:800;color:#60a5fa;line-height:1;}
+.pa{font-size:46px;font-weight:800;color:#7dd3fc;line-height:1;}
 .ps{font-size:13px;color:rgba(255,255,255,.55);margin-top:7px;}
 .vbox{background:rgba(255,255,255,.09);border-radius:8px;padding:13px;margin-top:14px;}
 .vl{font-size:9px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.09em;margin-bottom:5px;}
@@ -169,7 +374,7 @@ function row(l, v, cls) {
 // ── LEAD ─────────────────────────────────────────────────────────────────────
 function leadHtml(d) {
   const svc = SVC[d.service]||d.service||'—';
-  return wrap('#0a1628','LEAD','rgba(96,165,250,.5)','🔔',
+  return wrap('#155e75','LEAD','rgba(125,211,252,.5)','🔔',
     'Uusi tarjouspyyntö',`${svc} &middot; ${d.zip||''}`,
     row('Palvelu', svc) +
     row('Postinumero', d.zip) +
@@ -186,7 +391,7 @@ function bookingInternalHtml(d) {
     .filter(k=>d[k]==='yes')
     .map(k=>({extra_oven:'Uuni',extra_fridge:'Jääkaappi',extra_balcony:'Parveke',extra_cabinets:'Kaapit'}[k]))
     .join(' · ')||'—';
-  return wrap('#0a1628','TILAUS','rgba(52,211,153,.45)','📋',
+  return wrap('#155e75','TILAUS','rgba(52,211,153,.45)','📋',
     `Uusi tilaus — ${svc}`,`${d.name||''} &middot; ${d.city||''}`,
     row('Nimi', d.name) +
     row('Sähköposti', d.email?`<a href="mailto:${d.email}">${d.email}</a>`:'—') +
@@ -205,12 +410,12 @@ function bookingInternalHtml(d) {
 // ── BOOKING CUSTOMER ──────────────────────────────────────────────────────────
 function bookingCustomerHtml(d) {
   const svc = SVC[d.service]||d.service||'—';
-  return wrap('#1d4ed8','VAHVISTUS','rgba(255,255,255,.25)','✅',
+  return wrap('#0284c7','VAHVISTUS','rgba(255,255,255,.25)','✅',
     'Tilauksesi on vastaanotettu!',`Hei ${d.name||''}! Otamme yhteyttä pian.`,
     row('Palvelu', svc) +
     row('Osoite', `${d.address||'—'}, ${d.city||'—'}`) +
     row('Toivottu aika', (d.date&&d.time)?`${d.date} klo ${d.time}`:'—','rv-blue') +
-    `<div class="ab">Kysymyksiä? <strong><a href="tel:+358451878083" style="color:#1d4ed8;">045 187 8083</a></strong> tai <strong><a href="mailto:info@cleava.fi" style="color:#1d4ed8;">info@cleava.fi</a></strong><br><span style="font-size:11.5px;color:#3b82f6;">Asiakaspalvelu: Ma–Pe 8–18, La–Su 12–16</span></div>`
+    `<div class="ab">Kysymyksiä? <strong><a href="tel:+358451878083" style="color:#0284c7;">045 187 8083</a></strong> tai <strong><a href="mailto:info@cleava.fi" style="color:#0284c7;">info@cleava.fi</a></strong><br><span style="font-size:11.5px;color:#38bdf8;">Asiakaspalvelu: Ma–Pe 8–18, La–Su 12–16</span></div>`
   );
 }
 
@@ -218,7 +423,7 @@ function bookingCustomerHtml(d) {
 function giftcardInternalHtml(d) {
   const amt = String(d.amount||'?');
   const pkg = d.package||'—';
-  return wrap('#0a1628','LAHJAKORTTI','rgba(251,191,36,.5)','🎁',
+  return wrap('#155e75','LAHJAKORTTI','rgba(251,191,36,.5)','🎁',
     'Uusi lahjakorttitilaus',`${d.buyer_name||''} &middot; ${pkg} &middot; ${amt}€`,
     `<div class="pbox">
       <div class="pl">Tilauksen arvo</div>
@@ -246,7 +451,7 @@ function giftcardInvoiceHtml(d) {
   const pkg = d.package||'—';
   const due = new Date(); due.setDate(due.getDate()+7);
   const dueStr = due.toLocaleDateString('fi-FI');
-  return wrap('#0a1628','LASKU','rgba(251,191,36,.5)','🧾',
+  return wrap('#155e75','LASKU','rgba(251,191,36,.5)','🧾',
     `Lahjakorttitilaus — ${amt}€`,`Hei ${d.buyer_name||''}! Alla ovat maksutiedot.`,
     `<div class="pbox">
       <div class="pl">Maksettava summa</div>
@@ -256,10 +461,10 @@ function giftcardInvoiceHtml(d) {
     </div>` +
     row('Saaja', 'Mansio Group Oy') +
     row('Eräpäivä', `<span class="rv-red">${dueStr}</span>`) +
-    row('Viite', `<span style="font-family:monospace;font-size:15px;color:#1d4ed8;">${d.voucher_code||'—'}</span>`) +
+    row('Viite', `<span style="font-family:monospace;font-size:15px;color:#0284c7;">${d.voucher_code||'—'}</span>`) +
     `<div class="ab">Lähetä maksu viitteellä <strong>${d.voucher_code||'—'}</strong>.<br>
-     IBAN-tiedot: <a href="mailto:info@cleava.fi" style="color:#1d4ed8;">info@cleava.fi</a> &nbsp;·&nbsp; <a href="tel:+358451878083" style="color:#1d4ed8;">045 187 8083</a><br>
-     <span style="font-size:11.5px;color:#3b82f6;">Lahjakortti lähetetään heti maksun vahvistuttua.</span></div>`
+     IBAN-tiedot: <a href="mailto:info@cleava.fi" style="color:#0284c7;">info@cleava.fi</a> &nbsp;·&nbsp; <a href="tel:+358451878083" style="color:#0284c7;">045 187 8083</a><br>
+     <span style="font-size:11.5px;color:#38bdf8;">Lahjakortti lähetetään heti maksun vahvistuttua.</span></div>`
   );
 }
 
@@ -271,25 +476,25 @@ function giftcardVoucherHtml(d) {
 <head><meta charset="UTF-8"><style>
 body{margin:0;padding:0;font-family:Georgia,serif;background:#fff;}
 .page{width:600px;margin:0 auto;padding:48px 40px;}
-.hdr{background:#0a1628;border-radius:12px;padding:36px;text-align:center;margin-bottom:32px;}
+.hdr{background:#155e75;border-radius:12px;padding:36px;text-align:center;margin-bottom:32px;}
 .hdr-logo{font-size:11px;font-weight:700;color:rgba(255,255,255,.55);letter-spacing:.2em;margin-bottom:16px;}
 .hdr-title{font-size:28px;font-weight:400;color:#fff;letter-spacing:.05em;margin-bottom:4px;}
 .hdr-sub{font-size:13px;color:rgba(255,255,255,.5);}
-.amount{font-size:64px;font-weight:700;color:#60a5fa;line-height:1;text-align:center;margin:24px 0 8px;}
+.amount{font-size:64px;font-weight:700;color:#7dd3fc;line-height:1;text-align:center;margin:24px 0 8px;}
 .pkg{font-size:16px;color:rgba(255,255,255,.65);text-align:center;margin-bottom:24px;}
 .code-box{background:rgba(255,255,255,.1);border-radius:10px;padding:20px;text-align:center;}
 .code-label{font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px;}
 .code{font-size:26px;font-weight:700;color:#fff;font-family:'Courier New',monospace;letter-spacing:.15em;}
 .expiry{font-size:11px;color:rgba(255,255,255,.35);margin-top:10px;}
-.msg-box{background:#f8fafc;border-radius:10px;padding:20px 24px;margin-bottom:24px;font-style:italic;color:#475569;border-left:3px solid #1d4ed8;font-size:14px;line-height:1.7;}
+.msg-box{background:#f8fafc;border-radius:10px;padding:20px 24px;margin-bottom:24px;font-style:italic;color:#475569;border-left:3px solid #0284c7;font-size:14px;line-height:1.7;}
 .services{margin-bottom:24px;}
 .services h3{font-size:13px;font-weight:600;color:#64748b;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px;}
 .services ul{list-style:none;padding:0;}
 .services li{font-size:14px;color:#334155;padding:5px 0;border-bottom:1px solid #f1f5f9;}
-.services li::before{content:"✓  ";color:#1d4ed8;font-weight:700;}
+.services li::before{content:"✓  ";color:#0284c7;font-weight:700;}
 .footer{text-align:center;padding-top:20px;border-top:1px solid #e2e8f0;}
 .footer p{font-size:12px;color:#94a3b8;line-height:1.8;}
-.footer a{color:#1d4ed8;text-decoration:none;}
+.footer a{color:#0284c7;text-decoration:none;}
 </style></head>
 <body><div class="page">
   <div class="hdr">
@@ -358,10 +563,13 @@ exports.handler = async (event) => {
     const payload = {
       ...data,
       html_internal: bookingInternalHtml(data),
-      html_customer: bookingCustomerHtml(data),
+      html_customer: customerHtml('booking', data),
       service_label: SVC[data.service]||data.service||'',
     };
-    const results = [await settle('email', sendNotification('booking', data, payload.html_internal))];
+    const results = [
+      await settle('email', sendNotification('booking', data, payload.html_internal)),
+      await settle('customerEmail', sendCustomerConfirmation('booking', data)),
+    ];
     return {statusCode:200,body:success('booking', results)};
   }
 
@@ -371,6 +579,9 @@ exports.handler = async (event) => {
     html_email: leadHtml(data),
     service_label: SVC[data.service]||data.service||'',
   };
-  const results = [await settle('email', sendNotification('lead', data, payload.html_email))];
+  const results = [
+    await settle('email', sendNotification('lead', data, payload.html_email)),
+    await settle('customerEmail', sendCustomerConfirmation('lead', data)),
+  ];
   return {statusCode:200,body:success('lead', results)};
 };

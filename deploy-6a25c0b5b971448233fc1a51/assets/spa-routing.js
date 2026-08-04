@@ -53,7 +53,16 @@ function handleModalBg(e) {
 if(e.target === document.getElementById('contactModal')) closeModal();
 }
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+function appendLeadContext(params) {
+if(!params.get('lang')) {
+var htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+var isEnglish = htmlLang.indexOf('en') === 0 || location.pathname.indexOf('/en/') === 0 || location.pathname === '/en' || location.pathname.indexOf('/blog/') === 0;
+params.append('lang', isEnglish ? 'en' : 'fi');
+}
+if(!params.get('page')) params.append('page', location.pathname || '/');
+}
 function sendLeadParams(params) {
+appendLeadContext(params);
 return fetch('/.netlify/functions/submit-offer-lead', {
 method:'POST',
 headers:{'Content-Type':'application/json'},
@@ -74,12 +83,14 @@ try {
 var form = e.target;
 var zip = (form.zip && form.zip.value || '').trim();
 var phone = (form.phone && form.phone.value || '').trim();
-if(!zip || !phone) return false;
+var email = (form.email && form.email.value || '').trim();
+if(!zip || !phone || (form.email && !email)) return false;
 var formName = source === 'hero' ? 'hero-lead' : 'contact-quick';
 var params = new URLSearchParams();
 params.append('form-name', formName);
 params.append('zip', zip);
 params.append('phone', phone);
+if(email) params.append('email', email);
 params.append('source', source);
 if(form.service) params.append('service', form.service.value);
 if(form.size) params.append('size', form.size.value);
@@ -103,12 +114,14 @@ try {
 var form = e.target;
 var zip = (form.zip && form.zip.value || '').trim();
 var phone = (form.phone && form.phone.value || '').trim();
+var email = (form.email && form.email.value || '').trim();
 var service = (form.service && form.service.value || '').trim();
-if(!zip || !phone) return false;
+if(!zip || !phone || (form.email && !email)) return false;
 var params = new URLSearchParams();
 params.append('form-name', 'footer-cta');
 params.append('zip', zip);
 params.append('phone', phone);
+if(email) params.append('email', email);
 if(service) params.append('service', service);
 params.append('source', source);
 btn = form.querySelector('button[type="submit"]');
@@ -265,25 +278,25 @@ document.removeEventListener('touchstart', onTouch);
 tryPlay();
 });
 var REVIEWS_DATA = [
-{name:'Kirsi Molander',ini:'K',col:'#1d4ed8',stars:5,text:'Ikkunat tuli kiiltäviksi. Hyvää jälkeä! Ammattitaitoinen ja nopea palvelu.',date:'3 päivää sitten'},
+{name:'Kirsi Molander',ini:'K',col:'#0284c7',stars:5,text:'Ikkunat tuli kiiltäviksi. Hyvää jälkeä! Ammattitaitoinen ja nopea palvelu.',date:'3 päivää sitten'},
 {name:'Siru K',ini:'S',col:'#7c3aed',stars:5,text:'Olen todella tyytyväinen asunnon siivoukseen! Ystävällinen viestintä, täsmällinen toiminta ja lupaukset pitivät kuten sovittu.',date:'6 päivää sitten'},
 {name:'Ritva Sinkkonen',ini:'R',col:'#0d9488',stars:5,text:'Ikkunat ovat kirkkaat, kevät saa tulla! Loistava palvelu — tuli nopeasti valmista laadukkaalla lopputuloksella.',date:'Viikko sitten'},
 {name:'Minna Virtanen',ini:'M',col:'#059669',stars:5,text:'Laadukasta siivousta ja loistava lopputulos. Sama siivooja joka kerta — juuri niin kuin toivoin.',date:'Viikko sitten'},
 {name:'Tero Leinonen',ini:'T',col:'#d97706',stars:5,text:'Muuttosiivous hoitui tosi hyvin ja asunto jäi oikeasti puhtaaksi. Suosittelen!',date:'2 viikkoa sitten'},
 {name:'Aino Korhonen',ini:'A',col:'#be185d',stars:5,text:'Erittäin ammattitaitoinen palvelu! Koti oli täydellinen jälkeenpäin. Erittäin suositeltava.',date:'3 viikkoa sitten'},
-{name:'Lauri Salo',ini:'L',col:'#1d4ed8',stars:5,text:'Cleava on paras valinta ikkunanpesuun! Nopea, täsmällinen ja siisti. Kirkkaat ikkunat takuulla.',date:'1 kuukausi sitten'},
+{name:'Lauri Salo',ini:'L',col:'#0284c7',stars:5,text:'Cleava on paras valinta ikkunanpesuun! Nopea, täsmällinen ja siisti. Kirkkaat ikkunat takuulla.',date:'1 kuukausi sitten'},
 {name:'Paula Heikkinen',ini:'P',col:'#7c3aed',stars:5,text:'Cleavan palvelu oli ensiluokkaista — siivooja oli täydellisen huolellinen ja ystävällinen.',date:'1 kuukausi sitten'},
 {name:'Risto Nieminen',ini:'R',col:'#0891b2',stars:4,text:'Tilausprosessi oli helppo ja nopea. Tiimi teki upeaa työtä, pientä viivästystä aikataulussa.',date:'2 kuukautta sitten'},
 {name:'Kaisa Järvinen',ini:'K',col:'#059669',stars:5,text:'Todella ammattimaista palvelua! Cleava piti lupauksensa ja hoiti kaiken sovitusti.',date:'2 kuukautta sitten'},
 {name:'Mikko Ojala',ini:'M',col:'#d97706',stars:5,text:'Siivouksen laatu oli poikkeuksellista. Kommunikointi oli sujuvaa koko prosessin ajan.',date:'2 kuukautta sitten'},
 {name:'Tiina Mattila',ini:'T',col:'#be185d',stars:5,text:'Toimistosiivous on ollut erinomaista. Aina luotettavasti ajallaan ja laadukkaasti tehty.',date:'3 kuukautta sitten'},
-{name:'Eero Mäkinen',ini:'E',col:'#1d4ed8',stars:5,text:'Muuttosiivous ylitti odotukset! Asunto oli täydellisen siisti — vuokranantaja ihastunut.',date:'3 kuukautta sitten'},
+{name:'Eero Mäkinen',ini:'E',col:'#0284c7',stars:5,text:'Muuttosiivous ylitti odotukset! Asunto oli täydellisen siisti — vuokranantaja ihastunut.',date:'3 kuukautta sitten'},
 {name:'Leena Turunen',ini:'L',col:'#7c3aed',stars:5,text:'Olen käyttänyt Cleavaa jo vuoden ja en voisi olla tyytyväisempi. Paras siivouspalvelu!',date:'4 kuukautta sitten'},
 {name:'Seppo Virtanen',ini:'S',col:'#0891b2',stars:4,text:'Ikkunanpesu sujui erinomaisesti. Siivooja oli täsmällinen, joskin pieni alue jäi.',date:'4 kuukautta sitten'},
 {name:'Hannele Laine',ini:'H',col:'#059669',stars:5,text:'Suursiivous ennen joulua oli huippuluokkaa. Kotiin oli ilo tulla takaisin!',date:'5 kuukautta sitten'},
 {name:'Jyrki Korhonen',ini:'J',col:'#d97706',stars:5,text:'Olen kokeillut monia siivousfirmoja mutta Cleava on ehdottomasti paras. Ei vertailua.',date:'5 kuukautta sitten'},
 {name:'Sirpa Hämäläinen',ini:'S',col:'#be185d',stars:5,text:'Hyvä palvelu! Siivooja oli ystävällinen ja teki tarkan työn. Tulos oli erinomainen.',date:'6 kuukautta sitten'},
-{name:'Tapani Leinonen',ini:'T',col:'#1d4ed8',stars:5,text:'Suosittelen Cleavaa kaikille. Palvelu on ammattimaista, luotettavaa ja hintataso kohdillaan.',date:'6 kuukautta sitten'},
+{name:'Tapani Leinonen',ini:'T',col:'#0284c7',stars:5,text:'Suosittelen Cleavaa kaikille. Palvelu on ammattimaista, luotettavaa ja hintataso kohdillaan.',date:'6 kuukautta sitten'},
 {name:'Maija Koivisto',ini:'M',col:'#7c3aed',stars:5,text:'Kolme kertaa tilannut ja joka kerta erinomainen lopputulos. Ei tarvita muita!',date:'7 kuukautta sitten'},
 ];
 function starSVG(){return '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>';}
@@ -322,7 +335,7 @@ fetch('/.netlify/functions/get-reviews')
 .then(function(r){ return r.json(); })
 .then(function(data) {
 if (!data.reviews || !data.reviews.length) return;
-var colors = ['#1d4ed8','#7c3aed','#0891b2','#059669','#d97706','#be185d'];
+var colors = ['#0284c7','#7c3aed','#0891b2','#059669','#d97706','#be185d'];
 var liveReviews = data.reviews.map(function(r, i) {
 return {
 name: r.name,
@@ -557,7 +570,7 @@ window.onGoogleMapsLoaded=function(){
 var svc=new google.maps.places.PlacesService(document.createElement('div'));
 svc.getDetails({placeId:PLACE_ID,fields:['reviews','rating','user_ratings_total','name']},function(place,status){
 if(status===google.maps.places.PlacesServiceStatus.OK&&place.reviews&&place.reviews.length){
-var colors=['#1d4ed8','#7c3aed','#0d9488','#0891b2','#dc2626','#b45309','#059669'];
+var colors=['#0284c7','#7c3aed','#0d9488','#0891b2','#dc2626','#b45309','#059669'];
 var googleRevs=place.reviews.slice(0,20).map(function(r,i){
 return {name:r.author_name,ini:r.author_name?r.author_name[0].toUpperCase():'A',col:colors[i%colors.length],text:r.text,date:r.relative_time_description};
 });
@@ -819,20 +832,20 @@ return '<!DOCTYPE html><html lang="fi"><head><meta charset="UTF-8">' +
 '*{margin:0;padding:0;box-sizing:border-box;}' +
 'body{background:#f0f4f8;font-family:Inter,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;padding:40px;}' +
 '.voucher{background:#fff;border-radius:20px;overflow:hidden;max-width:600px;width:100%;box-shadow:0 8px 40px rgba(0,0,0,.15);}' +
-'.v-header{background:#0a1628;padding:40px;text-align:center;}' +
+'.v-header{background:#155e75;padding:40px;text-align:center;}' +
 '.v-logo{font-size:13px;font-weight:800;color:rgba(255,255,255,.6);letter-spacing:.18em;margin-bottom:24px;}' +
 '.v-title{font-family:Fraunces,serif;font-size:14px;font-weight:400;color:rgba(255,255,255,.5);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;}' +
-'.v-amount{font-size:72px;font-weight:800;color:#60a5fa;line-height:1;margin:8px 0;}' +
+'.v-amount{font-size:72px;font-weight:800;color:#7dd3fc;line-height:1;margin:8px 0;}' +
 '.v-pkg{font-size:16px;color:rgba(255,255,255,.6);margin-bottom:24px;}' +
 '.v-codebox{background:rgba(255,255,255,.08);border-radius:10px;padding:16px 24px;display:inline-block;}' +
 '.v-codelabel{font-size:10px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px;}' +
 '.v-code{font-size:28px;font-weight:800;color:#fff;font-family:monospace;letter-spacing:.14em;}' +
 '.v-body{padding:36px 40px;}' +
-'.v-recipient{font-size:18px;font-weight:700;color:#0a1628;margin-bottom:8px;}' +
-'.v-message{font-style:italic;color:#64748b;font-size:15px;line-height:1.65;margin-bottom:24px;border-left:3px solid #1d4ed8;padding-left:14px;}' +
+'.v-recipient{font-size:18px;font-weight:700;color:#155e75;margin-bottom:8px;}' +
+'.v-message{font-style:italic;color:#64748b;font-size:15px;line-height:1.65;margin-bottom:24px;border-left:3px solid #0284c7;padding-left:14px;}' +
 '.v-info{background:#f8fafc;border-radius:10px;padding:16px 20px;margin-bottom:24px;}' +
 '.v-info p{font-size:13px;color:#475569;line-height:1.75;}' +
-'.v-info strong{color:#0a1628;}' +
+'.v-info strong{color:#155e75;}' +
 '.v-footer{border-top:1px solid #e2e8f0;padding:20px 40px;display:flex;justify-content:space-between;align-items:center;}' +
 '.v-footer-text{font-size:12px;color:#94a3b8;}' +
 '.v-expiry{font-size:12px;color:#dc2626;font-weight:600;}' +
@@ -858,7 +871,7 @@ return '<!DOCTYPE html><html lang="fi"><head><meta charset="UTF-8">' +
 '<div class="v-footer-text">Mansio Group Oy · Y-tunnus 3631044-9 · cleava.fi</div>' +
 '<div class="v-expiry">Voimassa: ' + expiry + '</div>' +
 '</div></div>' +
-'<div style="text-align:center;margin-top:20px;"><button onclick="window.print()" style="background:#0a1628;color:#fff;border:none;padding:12px 32px;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;font-family:Inter,sans-serif;">🖨️ Tulosta / Tallenna PDF</button></div>' +
+'<div style="text-align:center;margin-top:20px;"><button onclick="window.print()" style="background:#155e75;color:#fff;border:none;padding:12px 32px;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;font-family:Inter,sans-serif;">🖨️ Tulosta / Tallenna PDF</button></div>' +
 '</body></html>';
 }
 function openVoucher(code, amount, pkg, expiry, recipientName, message) {

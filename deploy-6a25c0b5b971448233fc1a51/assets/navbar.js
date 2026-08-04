@@ -323,10 +323,10 @@ nav{background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1p
 @keyframes rimSpin{to{--rim-angle:360deg}}
 
 /* Tilaa Siivous — navy button with a moving spark traveling along the rim */
-.btn-book-wrap{position:relative;padding:2.5px;border-radius:999px;background:var(--c-navy,#0a1628);display:inline-flex;isolation:isolate;overflow:hidden;line-height:0}
-.btn-book-wrap::before{content:'';position:absolute;inset:0;border-radius:999px;background:conic-gradient(from var(--rim-angle),transparent 0% 76%,#3b82f6 82%,#93c5fd 88%,#dbeafe 91%,#93c5fd 94%,#3b82f6 98%,transparent 100%);animation:rimSpin 3s linear infinite;z-index:-1}
-.btn-book{background:var(--c-navy,#0a1628);color:#fff!important;border:none;padding:11px 22px;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--ff-body);transition:background .18s;white-space:nowrap;position:relative;z-index:1;line-height:1.2;margin:0}
-.btn-book:hover{background:#1e3a5f;color:#fff!important}
+.btn-book-wrap{position:relative;padding:2.5px;border-radius:999px;background:var(--c-navy,#155e75);display:inline-flex;isolation:isolate;overflow:hidden;line-height:0}
+.btn-book-wrap::before{content:'';position:absolute;inset:0;border-radius:999px;background:conic-gradient(from var(--rim-angle),transparent 0% 76%,#38bdf8 82%,#93c5fd 88%,#dbeafe 91%,#93c5fd 94%,#38bdf8 98%,transparent 100%);animation:rimSpin 3s linear infinite;z-index:-1}
+.btn-book{background:var(--c-navy,#155e75);color:#fff!important;border:none;padding:11px 22px;border-radius:999px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--ff-body);transition:background .18s;white-space:nowrap;position:relative;z-index:1;line-height:1.2;margin:0}
+.btn-book:hover{background:#0891b2;color:#fff!important}
 @media(prefers-reduced-motion:reduce){.btn-book-wrap::before{animation:none}}
 
 /* Language dropdown */
@@ -355,8 +355,8 @@ nav{background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1p
   nav .nav-inner{padding:0 20px!important;gap:12px!important;height:88px!important;display:flex!important;align-items:center!important;justify-content:space-between!important}
   nav .nav-logo img{height:52px!important;max-width:200px!important;margin-top:12.5px!important}
   nav .nav-right .btn-book-wrap{display:inline-flex!important;padding:2.5px!important;border-radius:999px!important;visibility:visible!important;line-height:0}
-  nav .nav-right .btn-book{display:inline-flex!important;align-items:center;justify-content:center;padding:13px 22px!important;font-size:14.5px!important;border-radius:999px;background:var(--c-navy,#0a1628)!important;color:#fff!important;font-weight:700;white-space:nowrap;border:none;cursor:pointer;font-family:var(--ff-body,'Inter',sans-serif);box-shadow:0 2px 8px rgba(10,22,40,.25);visibility:visible!important;position:relative;z-index:1}
-  nav .nav-hamburger{display:flex!important;visibility:visible!important;align-items:center;justify-content:center;padding:0!important;width:52px!important;height:52px!important;border-radius:14px!important;background:var(--c-off,#f8fafc)!important;border:1.5px solid var(--c-border,#e2e8f0)!important;color:var(--c-navy,#0a1628)!important;flex-shrink:0;cursor:pointer}
+  nav .nav-right .btn-book{display:inline-flex!important;align-items:center;justify-content:center;padding:13px 22px!important;font-size:14.5px!important;border-radius:999px;background:var(--c-navy,#155e75)!important;color:#fff!important;font-weight:700;white-space:nowrap;border:none;cursor:pointer;font-family:var(--ff-body,'Inter',sans-serif);box-shadow:0 2px 8px rgba(8,47,73,.25);visibility:visible!important;position:relative;z-index:1}
+  nav .nav-hamburger{display:flex!important;visibility:visible!important;align-items:center;justify-content:center;padding:0!important;width:52px!important;height:52px!important;border-radius:14px!important;background:var(--c-off,#f8fafc)!important;border:1.5px solid var(--c-border,#e2e8f0)!important;color:var(--c-navy,#155e75)!important;flex-shrink:0;cursor:pointer}
   nav .nav-hamburger svg{width:26px!important;height:26px!important;display:block!important}
   nav .nav-hamburger:active{background:var(--c-grey,#e2e8f0)!important;transform:scale(.96)}
   body{padding-top:88px!important}
@@ -375,7 +375,7 @@ nav{background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1p
 }
 
 /* === MOBILE MENU (overlay panel) === */
-.mob-menu{display:none;position:fixed!important;inset:0!important;z-index:9998!important;background:linear-gradient(160deg,#0f2444 0%,#0a1628 100%)!important;flex-direction:column!important;padding:0!important;overflow:hidden!important}
+.mob-menu{display:none;position:fixed!important;inset:0!important;z-index:9998!important;background:linear-gradient(160deg,#0e7490 0%,#155e75 100%)!important;flex-direction:column!important;padding:0!important;overflow:hidden!important}
 .mob-menu.open{display:flex!important}
 
 .mob-menu__header{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.08);flex-shrink:0;gap:12px}
@@ -409,8 +409,8 @@ nav{background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1p
 .mob-phone:hover{opacity:1;color:var(--c-accent)}
 
 /* === Mobile CTA: moving spark travels along the rim === */
-.mob-cta-wrap{position:relative;padding:3px;border-radius:17px;background:linear-gradient(160deg,#0f2444 0%,#0a1628 100%);isolation:isolate;overflow:hidden}
-.mob-cta-wrap::before{content:'';position:absolute;inset:0;border-radius:17px;background:conic-gradient(from var(--rim-angle),transparent 0% 74%,#3b82f6 80%,#93c5fd 87%,#dbeafe 91%,#93c5fd 94%,#3b82f6 98%,transparent 100%);animation:rimSpin 3s linear infinite;z-index:-1}
+.mob-cta-wrap{position:relative;padding:3px;border-radius:17px;background:linear-gradient(160deg,#0e7490 0%,#155e75 100%);isolation:isolate;overflow:hidden}
+.mob-cta-wrap::before{content:'';position:absolute;inset:0;border-radius:17px;background:conic-gradient(from var(--rim-angle),transparent 0% 74%,#38bdf8 80%,#93c5fd 87%,#dbeafe 91%,#93c5fd 94%,#38bdf8 98%,transparent 100%);animation:rimSpin 3s linear infinite;z-index:-1}
 .mob-menu__footer .mob-cta{display:block;background:var(--c-blue);color:#fff!important;text-align:center;padding:20px 24px;border-radius:15px;font-weight:800;font-size:19px;text-decoration:none;margin:0;letter-spacing:-.01em;box-shadow:0 4px 24px rgba(59,130,246,.4);font-family:var(--ff-body);position:relative;z-index:1}
 .mob-menu__footer .mob-cta:hover{background:#1e40af}
 /* Respect reduced motion preferences */
