@@ -221,7 +221,6 @@ function customerRows(type, data, lang) {
         [t.postal, data.zip],
         [t.email, data.email],
         [t.phone, data.phone],
-        [t.source, data.source],
       ];
   return rows.filter(([, value]) => plain(value));
 }
@@ -290,9 +289,8 @@ async function sendCustomerConfirmation(type, data) {
   const lang = langOf(data);
   const subject = customerSubject(type, data, lang);
   const info = await transport.sendMail({
-    from: `"Cleava Siivouspalvelut" <${EMAIL_FROM}>`,
+    from: `"Laura K | Cleava Siivouspalvelut" <${EMAIL_FROM}>`,
     to,
-    replyTo: EMAIL_FROM,
     subject,
     text: customerText(type, data, lang),
     html: customerHtml(type, data),
