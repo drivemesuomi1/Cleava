@@ -25,10 +25,10 @@ const SERVICE_LABELS = {
 
 const CUSTOMER_TEXT = {
   fi: {
-    subjectLead:'Kiitos yhteydenotostasi - Cleava',
-    subjectBooking:'Varauspyynt\u00f6si on vastaanotettu - Cleava',
-    titleLead:'Kiitos yhteydenotostasi',
-    titleBooking:'Varauspyynt\u00f6si on vastaanotettu',
+    subjectLead:'Kiitos, ett\u00e4 valitsit Cleavan kotisiivouspalvelun!',
+    subjectBooking:'Kiitos, ett\u00e4 valitsit Cleavan kotisiivouspalvelun!',
+    titleLead:'Kiitos, ett\u00e4 valitsit Cleavan kotisiivouspalvelun!',
+    titleBooking:'Kiitos, ett\u00e4 valitsit Cleavan kotisiivouspalvelun!',
     intro:'Olemme vastaanottaneet tietosi ja otamme sinuun yhteytt\u00e4 pian. T\u00e4ss\u00e4 ovat l\u00e4hett\u00e4m\u00e4si tiedot:',
     name:'Nimi',
     email:'S\u00e4hk\u00f6posti',
@@ -47,10 +47,10 @@ const CUSTOMER_TEXT = {
     signature:'Yst\u00e4v\u00e4llisin terveisin'
   },
   en: {
-    subjectLead:'We received your request - Cleava',
-    subjectBooking:'We received your booking request - Cleava',
+    subjectLead:'Thank you for contacting Cleava',
+    subjectBooking:'Thank you for contacting Cleava',
     titleLead:'Thank you for contacting Cleava',
-    titleBooking:'Your booking request has been received',
+    titleBooking:'Thank you for contacting Cleava',
     intro:'We have received your information and will get back to you shortly. Here is what you submitted:',
     name:'Name',
     email:'Email',
@@ -114,6 +114,7 @@ function textSummary(type, d) {
   return [
     `Type: ${type}`,
     `Service: ${SVC[d.service] || d.service || '-'}`,
+    `Page: ${pageSource(d) || '-'}`,
     `Name: ${d.name || d.buyer_name || '-'}`,
     `Email: ${d.email || d.buyer_email || '-'}`,
     `Phone: ${d.phone || d.buyer_phone || '-'}`,
@@ -191,6 +192,25 @@ function customerAddress(data) {
   return plain(data.email || data.buyer_email);
 }
 
+function pageSource(data) {
+  return plain(data.page || data.path || data.referrer || data.referer || data.url);
+}
+
+function sourceLabel(data) {
+  const page = pageSource(data);
+  const source = plain(data.source);
+  return [page, source].filter(Boolean).join(' | ');
+}
+
+function hydrateRequestContext(data, event) {
+  const headers = event.headers || {};
+  const referer = headers.referer || headers.referrer || headers.Referer || headers.Referrer || '';
+  if (!data.page && referer) data.page = referer;
+  if (!data.referrer && referer) data.referrer = referer;
+  if (!data.lang) data.lang = langOf(data);
+  return data;
+}
+
 function extrasText(data, lang) {
   const labels = lang === 'en'
     ? {extra_oven:'Oven', extra_fridge:'Fridge', extra_balcony:'Balcony', extra_cabinets:'Cabinets'}
@@ -232,28 +252,16 @@ function customerSubject(type, data, lang) {
 
 function customerSignatureHtml(lang) {
   if (lang === 'en') {
-    return `<table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;margin:28px 0 0;background:#f8fafc;border:1px solid #dbeafe;border-radius:12px;overflow:hidden;">
-      <tr><td style="padding:16px 18px 8px;color:#334155!important;font-size:14px;line-height:1.6;">Best regards,</td></tr>
-      <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;"><strong>Laura K</strong> | Service Manager</td></tr>
-      <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;">Cleava Cleaning Services</td></tr>
-      <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;"><a style="color:#0284c7!important;" href="mailto:info@cleava.fi">info@cleava.fi</a> | +358 45 187 8083 | <a style="color:#0284c7!important;" href="https://cleava.fi">cleava.fi</a></td></tr>
-      <tr><td style="padding:0 18px 16px;color:#334155!important;font-size:14px;line-height:1.6;">Business ID 3631044-9</td></tr>
-    </table>`;
+    return `<p style="margin:28px 0 0;color:#111827!important;font-size:15px;line-height:1.7;">Best regards,<br><br>- Cleava team</p>`;
   }
-  return `<table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;margin:28px 0 0;background:#f8fafc;border:1px solid #dbeafe;border-radius:12px;overflow:hidden;">
-      <tr><td style="padding:16px 18px 8px;color:#334155!important;font-size:14px;line-height:1.6;">Yst&auml;v&auml;llisin terveisin,</td></tr>
-      <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;"><strong>Laura K</strong> | Palveluvastaava</td></tr>
-      <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;">Cleava Siivouspalvelut</td></tr>
-      <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;"><a style="color:#0284c7!important;" href="mailto:info@cleava.fi">info@cleava.fi</a> | +358 45 187 8083 | <a style="color:#0284c7!important;" href="https://cleava.fi">cleava.fi</a></td></tr>
-      <tr><td style="padding:0 18px 16px;color:#334155!important;font-size:14px;line-height:1.6;">Y-tunnus 3631044-9</td></tr>
-    </table>`;
+  return `<p style="margin:28px 0 0;color:#111827!important;font-size:15px;line-height:1.7;">Yst&auml;v&auml;llisin terveisin,<br><br>&ndash; Cleava-tiimi</p>`;
 }
 
 function customerSignatureText(lang) {
   if (lang === 'en') {
-    return `Best regards,\n\nLaura K | Service Manager\nCleava Cleaning Services\ninfo@cleava.fi | +358 45 187 8083 | cleava.fi\nBusiness ID 3631044-9`;
+    return `Best regards,\n\n- Cleava team`;
   }
-  return `Yst\u00e4v\u00e4llisin terveisin,\n\nLaura K | Palveluvastaava\nCleava Siivouspalvelut\ninfo@cleava.fi | +358 45 187 8083 | cleava.fi\nY-tunnus 3631044-9`;
+  return `Yst\u00e4v\u00e4llisin terveisin,\n\n- Cleava-tiimi`;
 }
 
 function customerText(type, data, lang) {
@@ -271,21 +279,21 @@ function customerHtml(type, data) {
   const title = type === 'booking' ? t.titleBooking : t.titleLead;
   const rows = customerRows(type, data, lang).map(([label, value]) => `
     <tr>
-      <th style="background:#e0f2fe;color:#0f3f5c;text-align:left;padding:12px 14px;border-bottom:1px solid #dbeafe;font-size:13px;">${esc(label)}</th>
-      <td style="padding:12px 14px;border-bottom:1px solid #e5edf7;color:#1e293b;font-size:14px;">${esc(value)}</td>
+      <th style="background:#f3f4f6;color:#111827;text-align:left;padding:12px 14px;border-bottom:1px solid #e5e7eb;font-size:13px;">${esc(label)}</th>
+      <td style="padding:12px 14px;border-bottom:1px solid #e5e7eb;color:#111827;font-size:14px;">${esc(value)}</td>
     </tr>`).join('');
 
   return `<!DOCTYPE html><html lang="${lang}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
-<body style="margin:0;background:#f0f9ff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:#142033;">
+<body style="margin:0;background:#ffffff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:#111827;">
   <div style="padding:28px 14px;">
-    <div style="max-width:620px;margin:0 auto;background:#ffffff;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(14,116,144,.16);">
-      <div style="background:linear-gradient(135deg,#0284c7,#0e7490);padding:30px 32px;color:#ffffff;">
-        <div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.82;">Cleava Siivouspalvelut</div>
-        <h1 style="margin:18px 0 8px;font-size:26px;line-height:1.2;">${esc(title)}</h1>
+    <div style="max-width:620px;margin:0 auto;background:#ffffff;">
+      <div style="background:#ffffff;padding:0 0 22px;color:#111827;border-bottom:1px solid #e5e7eb;">
+        <div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#111827;">Cleava Siivouspalvelut</div>
+        <h1 style="margin:18px 0 8px;font-size:26px;line-height:1.2;color:#111827;">${esc(title)}</h1>
       </div>
-      <div style="padding:26px 32px;">
-        <p style="margin:0 0 22px;color:#334155!important;font-size:16px;line-height:1.7;">${esc(t.intro)}</p>
-        <table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;border:1px solid #dbeafe;border-radius:12px;overflow:hidden;">${rows}</table>
+      <div style="padding:24px 0;">
+        <p style="margin:0 0 22px;color:#111827!important;font-size:16px;line-height:1.7;">${esc(t.intro)}</p>
+        <table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;border:1px solid #e5e7eb;">${rows}</table>
         ${customerSignatureHtml(lang)}
       </div>
     </div>
@@ -377,6 +385,19 @@ function wrap(bg, badge, badgeColor, icon, title, subtitle, body) {
 </div></div></body></html>`;
 }
 
+function cleanWrap(badge, title, subtitle, body) {
+  return `<!DOCTYPE html><html lang="fi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">${CSS}</head>
+<body><div class="w"><div class="c" style="box-shadow:none;border:1px solid #e5e7eb;border-radius:0;">
+<div class="hdr" style="background:#ffffff;color:#111827;border-bottom:1px solid #e5e7eb;">
+  <div class="ht"><span class="logo" style="color:#111827;">CLEAVA</span><span class="badge" style="background:#f3f4f6;color:#111827;">${badge}</span></div>
+  <div class="htitle" style="color:#111827;">${title}</div>
+  <div class="hsub" style="color:#4b5563;">${subtitle}</div>
+</div>
+<div class="body">${body}</div>
+<div class="ftr"><span class="ft">cleava.fi &middot; 045&thinsp;187&thinsp;8083 &middot; info@cleava.fi</span><span class="ft">${ts()}</span></div>
+</div></div></body></html>`;
+}
+
 function row(l, v, cls) {
   return `<div class="row"><div class="rl">${l}</div><div class="rv ${cls||''}">${v||'—'}</div></div>`;
 }
@@ -413,6 +434,39 @@ function bookingInternalHtml(d) {
 }
 
 // ── BOOKING CUSTOMER ──────────────────────────────────────────────────────────
+function leadHtml(d) {
+  const svc = SVC[d.service] || d.service || '';
+  const email = plain(d.email);
+  const phone = plain(d.phone);
+  const source = sourceLabel(d);
+  return cleanWrap('LEAD',
+    'Uusi tarjouspyynt&ouml;', `${esc(svc || '-')}${d.zip ? ` &middot; ${esc(d.zip)}` : ''}`,
+    row('Palvelutyyppi', svc ? esc(svc) : '&mdash;') +
+    row('Sivu / l&auml;hde', source ? esc(source) : '&mdash;') +
+    row('Postinumero', d.zip ? esc(d.zip) : '&mdash;') +
+    row('S&auml;hk&ouml;posti', email ? `<a href="mailto:${esc(email)}">${esc(email)}</a>` : '&mdash;', 'rv-blue') +
+    row('Puhelin', phone ? `<a href="tel:${esc(phone)}">${esc(phone)}</a>` : '&mdash;', 'rv-blue') +
+    `<div class="ay"><strong>Soita saman p&auml;iv&auml;n aikana!</strong><br>Nopea vastaus = enemm&auml;n tilauksia.</div>`
+  );
+}
+
+function bookingInternalHtml(d) {
+  const svc = SVC[d.service] || d.service || '';
+  const email = plain(d.email);
+  const phone = plain(d.phone);
+  const message = plain(d.notes || d.message);
+  const source = sourceLabel(d);
+  return cleanWrap('TILAUS',
+    `Uusi tilaus &mdash; ${esc(svc || '-')}`, `${esc(d.name || '')}${d.city ? ` &middot; ${esc(d.city)}` : ''}`,
+    row('Palvelutyyppi', svc ? esc(svc) : '&mdash;') +
+    row('Sivu / l&auml;hde', source ? esc(source) : '&mdash;') +
+    row('Nimi', d.name ? esc(d.name) : '&mdash;') +
+    row('S&auml;hk&ouml;posti', email ? `<a href="mailto:${esc(email)}">${esc(email)}</a>` : '&mdash;', 'rv-blue') +
+    row('Puhelin', phone ? `<a href="tel:${esc(phone)}">${esc(phone)}</a>` : '&mdash;', 'rv-blue') +
+    row('Message', message ? esc(message) : '&mdash;')
+  );
+}
+
 function bookingCustomerHtml(d) {
   const svc = SVC[d.service]||d.service||'—';
   return wrap('#0284c7','VAHVISTUS','rgba(255,255,255,.25)','✅',
@@ -540,6 +594,7 @@ exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') return {statusCode:405,body:'Method Not Allowed'};
   let data;
   try { data = JSON.parse(event.body); } catch { return {statusCode:400,body:'Invalid JSON'}; }
+  data = hydrateRequestContext(data, event);
 
   // GIFTCARD
   if (data.type === 'lahjakortti') {
