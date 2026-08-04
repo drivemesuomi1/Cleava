@@ -252,9 +252,21 @@ function customerSubject(type, data, lang) {
 
 function customerSignatureHtml(lang) {
   if (lang === 'en') {
-    return `<p style="margin:28px 0 0;color:#111827!important;font-size:15px;line-height:1.7;">Best regards,<br><br><strong>-Cleava team</strong><br>Cleava Siivouspalvelut<br><a href="mailto:info@cleava.fi" style="color:#0284c7;">info@cleava.fi</a> | +358 45 187 8083 | <a href="https://cleava.fi/" style="color:#0284c7;">cleava.fi</a><br>Y-tunnus 3631044-9</p>`;
+    return `<table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;margin:28px 0 0;border-collapse:collapse;color:#111827!important;font-size:15px;line-height:1.7;">
+      <tr><td style="padding:0 0 18px;color:#111827!important;">Best regards,</td></tr>
+      <tr><td style="padding:0 0 8px;color:#111827!important;font-weight:700;">-Cleava team</td></tr>
+      <tr><td style="padding:0;color:#111827!important;">Cleava Siivouspalvelut</td></tr>
+      <tr><td style="padding:0;color:#111827!important;"><a href="mailto:info@cleava.fi" style="color:#0284c7;">info@cleava.fi</a> | +358 45 187 8083 | <a href="https://cleava.fi/" style="color:#0284c7;">cleava.fi</a></td></tr>
+      <tr><td style="padding:0;color:#111827!important;">Y-tunnus 3631044-9</td></tr>
+    </table>`;
   }
-  return `<p style="margin:28px 0 0;color:#111827!important;font-size:15px;line-height:1.7;">Yst&auml;v&auml;llisin terveisin,<br><br><strong>-Cleava tiimi</strong><br>Cleava Siivouspalvelut<br><a href="mailto:info@cleava.fi" style="color:#0284c7;">info@cleava.fi</a> | +358 45 187 8083 | <a href="https://cleava.fi/" style="color:#0284c7;">cleava.fi</a><br>Y-tunnus 3631044-9</p>`;
+  return `<table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;margin:28px 0 0;border-collapse:collapse;color:#111827!important;font-size:15px;line-height:1.7;">
+    <tr><td style="padding:0 0 18px;color:#111827!important;">Yst&auml;v&auml;llisin terveisin,</td></tr>
+    <tr><td style="padding:0 0 8px;color:#111827!important;font-weight:700;">-Cleava tiimi</td></tr>
+    <tr><td style="padding:0;color:#111827!important;">Cleava Siivouspalvelut</td></tr>
+    <tr><td style="padding:0;color:#111827!important;"><a href="mailto:info@cleava.fi" style="color:#0284c7;">info@cleava.fi</a> | +358 45 187 8083 | <a href="https://cleava.fi/" style="color:#0284c7;">cleava.fi</a></td></tr>
+    <tr><td style="padding:0;color:#111827!important;">Y-tunnus 3631044-9</td></tr>
+  </table>`;
 }
 
 function customerSignatureText(lang) {
