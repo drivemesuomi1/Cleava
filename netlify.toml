@@ -1,5 +1,6 @@
 [build]
   base = "deploy-6a25c0b5b971448233fc1a51"
+  command = "npm install"
   publish = "."
   functions = "functions"
 
