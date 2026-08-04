@@ -2394,14 +2394,43 @@ function toggleMobAcc(accId, btnId) {
 function submitCtaForm(e, source) {
  e.preventDefault();
  var form = e.target;
- var zip = (form.zip && form.zip.value || '').trim();
- var phone = (form.phone && form.phone.value || '').trim();
- var service = (form.service && form.service.value || '').trim();
- if(!zip || !phone) return;
- fetch('/.netlify/functions/submit-offer-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({zip:zip,phone:phone,service:service,source:source})}).catch(function(){});
  var btn = form.querySelector('button[type="submit"]');
- if(btn){btn.textContent='✓ Lähetetty!';btn.disabled=true;}
- setTimeout(function(){ history.pushState({}, '', '/kiitos'); }, 600);
+ var originalLabel = btn ? btn.textContent : '';
+ try {
+  var zip = (form.zip && form.zip.value || '').trim();
+  var phone = (form.phone && form.phone.value || '').trim();
+  var email = (form.email && form.email.value || '').trim();
+  var service = (form.service && form.service.value || '').trim();
+  if(!zip || !phone || (form.email && !email)) return false;
+  var params = new URLSearchParams();
+  params.append('form-name', 'footer-cta');
+  params.append('zip', zip);
+  params.append('phone', phone);
+  if(email) params.append('email', email);
+  if(service) params.append('service', service);
+  params.append('source', source || 'footer-cta');
+  params.append('page', location.pathname || '/');
+  var htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
+  var isEnglish = htmlLang.indexOf('en') === 0 || location.pathname.indexOf('/en/') === 0 || location.pathname === '/en' || location.pathname.indexOf('/blog/') === 0;
+  params.append('lang', isEnglish ? 'en' : 'fi');
+  if(btn){ btn.textContent = 'L\u00e4hetet\u00e4\u00e4n...'; btn.disabled = true; }
+  fetch('/.netlify/functions/submit-offer-lead', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(Object.fromEntries(params)) })
+   .then(function(res){ if(!res.ok) throw new Error('Lead submit failed: '+res.status); return res.json().catch(function(){ return {}; }); })
+   .then(function(){
+    if(btn){ btn.textContent = '\u2713 L\u00e4hetetty!'; btn.disabled = true; btn.style.background = '#22c55e'; }
+    if(typeof showTyPopup==='function') showTyPopup();
+   })
+   .catch(function(err){
+    console.error('Lead submit failed', err);
+    if(btn){ btn.textContent = originalLabel; btn.disabled = false; btn.style.background = ''; }
+    alert('L\u00e4hetys ep\u00e4onnistui. Yrit\u00e4 uudelleen tai soita 045 187 8083.');
+   });
+ } catch(err) {
+  console.error('Lead submit failed', err);
+  if(btn){ btn.textContent = originalLabel; btn.disabled = false; btn.style.background = ''; }
+  alert('L\u00e4hetys ep\u00e4onnistui. Yrit\u00e4 uudelleen tai soita 045 187 8083.');
+ }
+ return false;
 }
 
 function cleavaFaqToggle(qEl){
