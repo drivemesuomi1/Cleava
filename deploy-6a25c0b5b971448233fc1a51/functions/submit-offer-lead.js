@@ -232,9 +232,9 @@ function customerSubject(type, data, lang) {
 
 function customerSignatureHtml(lang) {
   if (lang === 'en') {
-    return `Best regards,<br><br>--<br><strong>Laura K</strong> | Service Manager<br>Cleava Cleaning Services<br><a href="mailto:info@cleava.fi">info@cleava.fi</a> | <a href="tel:+358451878083">+358 45 187 8083</a> | <a href="https://cleava.fi">cleava.fi</a><br>Business ID 3631044-9`;
+    return `<span style="color:#334155!important;">Best regards,</span><br><br><span style="color:#334155!important;">--</span><br><strong style="color:#334155!important;">Laura K</strong><span style="color:#334155!important;"> | Service Manager</span><br><span style="color:#334155!important;">Cleava Cleaning Services</span><br><a style="color:#0284c7!important;" href="mailto:info@cleava.fi">info@cleava.fi</a><span style="color:#334155!important;"> | +358 45 187 8083 | </span><a style="color:#0284c7!important;" href="https://cleava.fi">cleava.fi</a><br><span style="color:#334155!important;">Business ID 3631044-9</span>`;
   }
-  return `Yst&auml;v&auml;llisin terveisin,<br><br>--<br><strong>Laura K</strong> | Palveluvastaava<br>Cleava Siivouspalvelut<br><a href="mailto:info@cleava.fi">info@cleava.fi</a> | <a href="tel:+358451878083">+358 45 187 8083</a> | <a href="https://cleava.fi">cleava.fi</a><br>Y-tunnus 3631044-9`;
+  return `<span style="color:#334155!important;">Yst&auml;v&auml;llisin terveisin,</span><br><br><span style="color:#334155!important;">--</span><br><strong style="color:#334155!important;">Laura K</strong><span style="color:#334155!important;"> | Palveluvastaava</span><br><span style="color:#334155!important;">Cleava Siivouspalvelut</span><br><a style="color:#0284c7!important;" href="mailto:info@cleava.fi">info@cleava.fi</a><span style="color:#334155!important;"> | +358 45 187 8083 | </span><a style="color:#0284c7!important;" href="https://cleava.fi">cleava.fi</a><br><span style="color:#334155!important;">Y-tunnus 3631044-9</span>`;
 }
 
 function customerSignatureText(lang) {
@@ -274,7 +274,7 @@ function customerHtml(type, data) {
       </div>
       <div style="padding:26px 32px;">
         <table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;border:1px solid #dbeafe;border-radius:12px;overflow:hidden;">${rows}</table>
-        <p style="margin:28px 0 0;color:#334155;font-size:14px;line-height:1.75;">${customerSignatureHtml(lang)}</p>
+        <div style="margin:28px 0 0;color:#334155!important;font-size:14px;line-height:1.75;">${customerSignatureHtml(lang)}</div>
       </div>
     </div>
   </div>
@@ -385,23 +385,15 @@ function leadHtml(d) {
 // ── BOOKING INTERNAL ──────────────────────────────────────────────────────────
 function bookingInternalHtml(d) {
   const svc = SVC[d.service]||d.service||'—';
-  const extras = ['extra_oven','extra_fridge','extra_balcony','extra_cabinets']
-    .filter(k=>d[k]==='yes')
-    .map(k=>({extra_oven:'Uuni',extra_fridge:'Jääkaappi',extra_balcony:'Parveke',extra_cabinets:'Kaapit'}[k]))
-    .join(' · ')||'—';
+  const email = plain(d.email);
+  const phone = plain(d.phone);
+  const message = plain(d.notes || d.message);
   return wrap('#155e75','TILAUS','rgba(52,211,153,.45)','📋',
     `Uusi tilaus — ${svc}`,`${d.name||''} &middot; ${d.city||''}`,
-    row('Nimi', d.name) +
-    row('Sähköposti', d.email?`<a href="mailto:${d.email}">${d.email}</a>`:'—') +
-    row('Puhelin', d.phone?`<a href="tel:${d.phone}">${d.phone}</a>`:'—','rv-blue') +
-    row('Palvelu', svc) +
-    row('Tyyppi', d.cleaning_type==='recurring'?'Säännöllinen':'Kertaluonteinen') +
-    row('Osoite', `${d.address||'—'}, ${d.city||'—'}`) +
-    row('Koko', d.size?`${d.size} m²`:'—') +
-    row('Toivottu aika', (d.date&&d.time)?`${d.date} klo ${d.time}`:'—','rv-blue') +
-    row('Lisäpalvelut', extras) +
-    row('Source', d.source||'-') +
-    ((d.notes||d.message)?row('Message', d.notes||d.message):'')
+    row('Nimi', d.name ? esc(d.name) : '—') +
+    row('Sähköposti', email ? `<a href="mailto:${esc(email)}">${esc(email)}</a>` : '—') +
+    row('Puhelin', phone ? `<a href="tel:${esc(phone)}">${esc(phone)}</a>` : '—','rv-blue') +
+    row('Message', message ? esc(message) : '—')
   );
 }
 
