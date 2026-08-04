@@ -232,16 +232,16 @@ function customerSubject(type, data, lang) {
 
 function customerSignatureHtml(lang) {
   if (lang === 'en') {
-    return `<span style="color:#334155!important;">Best regards,</span><br><br><span style="color:#334155!important;">--</span><br><strong style="color:#334155!important;">Laura K</strong><span style="color:#334155!important;"> | Service Manager</span><br><span style="color:#334155!important;">Cleava Cleaning Services</span><br><a style="color:#0284c7!important;" href="mailto:info@cleava.fi">info@cleava.fi</a><span style="color:#334155!important;"> | +358 45 187 8083 | </span><a style="color:#0284c7!important;" href="https://cleava.fi">cleava.fi</a><br><span style="color:#334155!important;">Business ID 3631044-9</span>`;
+    return `<span style="color:#334155!important;">Best regards,</span><br><br><strong style="color:#334155!important;">Laura K</strong><span style="color:#334155!important;"> | Service Manager</span><br><span style="color:#334155!important;">Cleava Cleaning Services</span><br><a style="color:#0284c7!important;" href="mailto:info@cleava.fi">info@cleava.fi</a><span style="color:#334155!important;"> | +358 45 187 8083 | </span><a style="color:#0284c7!important;" href="https://cleava.fi">cleava.fi</a><br><span style="color:#334155!important;">Business ID 3631044-9</span>`;
   }
-  return `<span style="color:#334155!important;">Yst&auml;v&auml;llisin terveisin,</span><br><br><span style="color:#334155!important;">--</span><br><strong style="color:#334155!important;">Laura K</strong><span style="color:#334155!important;"> | Palveluvastaava</span><br><span style="color:#334155!important;">Cleava Siivouspalvelut</span><br><a style="color:#0284c7!important;" href="mailto:info@cleava.fi">info@cleava.fi</a><span style="color:#334155!important;"> | +358 45 187 8083 | </span><a style="color:#0284c7!important;" href="https://cleava.fi">cleava.fi</a><br><span style="color:#334155!important;">Y-tunnus 3631044-9</span>`;
+  return `<span style="color:#334155!important;">Yst&auml;v&auml;llisin terveisin,</span><br><br><strong style="color:#334155!important;">Laura K</strong><span style="color:#334155!important;"> | Palveluvastaava</span><br><span style="color:#334155!important;">Cleava Siivouspalvelut</span><br><a style="color:#0284c7!important;" href="mailto:info@cleava.fi">info@cleava.fi</a><span style="color:#334155!important;"> | +358 45 187 8083 | </span><a style="color:#0284c7!important;" href="https://cleava.fi">cleava.fi</a><br><span style="color:#334155!important;">Y-tunnus 3631044-9</span>`;
 }
 
 function customerSignatureText(lang) {
   if (lang === 'en') {
-    return `Best regards,\n\n--\nLaura K | Service Manager\nCleava Cleaning Services\ninfo@cleava.fi | +358 45 187 8083 | cleava.fi\nBusiness ID 3631044-9`;
+    return `Best regards,\n\nLaura K | Service Manager\nCleava Cleaning Services\ninfo@cleava.fi | +358 45 187 8083 | cleava.fi\nBusiness ID 3631044-9`;
   }
-  return `Yst\u00e4v\u00e4llisin terveisin,\n\n--\nLaura K | Palveluvastaava\nCleava Siivouspalvelut\ninfo@cleava.fi | +358 45 187 8083 | cleava.fi\nY-tunnus 3631044-9`;
+  return `Yst\u00e4v\u00e4llisin terveisin,\n\nLaura K | Palveluvastaava\nCleava Siivouspalvelut\ninfo@cleava.fi | +358 45 187 8083 | cleava.fi\nY-tunnus 3631044-9`;
 }
 
 function customerText(type, data, lang) {
