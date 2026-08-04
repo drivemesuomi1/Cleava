@@ -236,7 +236,7 @@ function customerSignatureHtml(lang) {
       <tr><td style="padding:16px 18px 8px;color:#334155!important;font-size:14px;line-height:1.6;">Best regards,</td></tr>
       <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;"><strong>Laura K</strong> | Service Manager</td></tr>
       <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;">Cleava Cleaning Services</td></tr>
-      <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;"><a style="color:#0284c7!important;" href="mailto:info@cleava.fi">info@cleava.fi</a> | +358 45 187 8083 | <a style="color:#0284c7!important;" href="https://cleava.fi">cleava.fi</a></td></tr>
+      <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;word-break:break-word;overflow-wrap:anywhere;"><a style="color:#0284c7!important;" href="mailto:info@cleava.fi">info@cleava.fi</a> | +358 45 187 8083 | <a style="color:#0284c7!important;" href="https://cleava.fi">cleava.fi</a></td></tr>
       <tr><td style="padding:0 18px 16px;color:#334155!important;font-size:14px;line-height:1.6;">Business ID 3631044-9</td></tr>
     </table>`;
   }
@@ -244,7 +244,7 @@ function customerSignatureHtml(lang) {
       <tr><td style="padding:16px 18px 8px;color:#334155!important;font-size:14px;line-height:1.6;">Yst&auml;v&auml;llisin terveisin,</td></tr>
       <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;"><strong>Laura K</strong> | Palveluvastaava</td></tr>
       <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;">Cleava Siivouspalvelut</td></tr>
-      <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;"><a style="color:#0284c7!important;" href="mailto:info@cleava.fi">info@cleava.fi</a> | +358 45 187 8083 | <a style="color:#0284c7!important;" href="https://cleava.fi">cleava.fi</a></td></tr>
+      <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;word-break:break-word;overflow-wrap:anywhere;"><a style="color:#0284c7!important;" href="mailto:info@cleava.fi">info@cleava.fi</a> | +358 45 187 8083 | <a style="color:#0284c7!important;" href="https://cleava.fi">cleava.fi</a></td></tr>
       <tr><td style="padding:0 18px 16px;color:#334155!important;font-size:14px;line-height:1.6;">Y-tunnus 3631044-9</td></tr>
     </table>`;
 }
@@ -271,21 +271,25 @@ function customerHtml(type, data) {
   const title = type === 'booking' ? t.titleBooking : t.titleLead;
   const rows = customerRows(type, data, lang).map(([label, value]) => `
     <tr>
-      <th style="background:#e0f2fe;color:#0f3f5c;text-align:left;padding:12px 14px;border-bottom:1px solid #dbeafe;font-size:13px;">${esc(label)}</th>
-      <td style="padding:12px 14px;border-bottom:1px solid #e5edf7;color:#1e293b;font-size:14px;">${esc(value)}</td>
+      <td style="padding:0 0 10px;">
+        <table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;background:#f8fafc;border:1px solid #dbeafe;border-radius:10px;overflow:hidden;">
+          <tr><td style="background:#e0f2fe;color:#0f3f5c;text-align:left;padding:9px 12px;font-size:12px;font-weight:700;line-height:1.35;">${esc(label)}</td></tr>
+          <tr><td style="padding:11px 12px;color:#1e293b;font-size:14px;line-height:1.5;word-break:break-word;overflow-wrap:anywhere;">${esc(value)}</td></tr>
+        </table>
+      </td>
     </tr>`).join('');
 
   return `<!DOCTYPE html><html lang="${lang}"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>
 <body style="margin:0;background:#f0f9ff;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;color:#142033;">
-  <div style="padding:28px 14px;">
-    <div style="max-width:620px;margin:0 auto;background:#ffffff;border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(14,116,144,.16);">
-      <div style="background:linear-gradient(135deg,#0284c7,#0e7490);padding:30px 32px;color:#ffffff;">
-        <div style="font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;opacity:.82;">Cleava Siivouspalvelut</div>
-        <h1 style="margin:18px 0 8px;font-size:26px;line-height:1.2;">${esc(title)}</h1>
+  <div style="padding:18px 8px;">
+    <div style="max-width:620px;width:100%;margin:0 auto;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 18px 50px rgba(14,116,144,.16);">
+      <div style="background:linear-gradient(135deg,#0284c7,#0e7490);padding:24px 18px;color:#ffffff;">
+        <div style="font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.82;">Cleava Siivouspalvelut</div>
+        <h1 style="margin:16px 0 0;font-size:24px;line-height:1.2;">${esc(title)}</h1>
       </div>
-      <div style="padding:26px 32px;">
-        <p style="margin:0 0 22px;color:#334155!important;font-size:16px;line-height:1.7;">${esc(t.intro)}</p>
-        <table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;border:1px solid #dbeafe;border-radius:12px;overflow:hidden;">${rows}</table>
+      <div style="padding:22px 18px;">
+        <p style="margin:0 0 18px;color:#334155!important;font-size:15px;line-height:1.65;">${esc(t.intro)}</p>
+        <table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;">${rows}</table>
         ${customerSignatureHtml(lang)}
       </div>
     </div>
