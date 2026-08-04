@@ -1,4 +1,4 @@
-const nodemailer = require('nodemailer');
+const nodemailer = require('./vendor/nodemailer');
 
 const EMAIL_TO = process.env.LEADS_EMAIL_TO || process.env.EMAIL_TO_CLEAVA || leadCopyAddress(process.env.SMTP_USER);
 const DIRECT_EMAIL_TO = process.env.LEADS_DIRECT_EMAIL_TO || leadCopyAddress(process.env.SMTP_USER);
