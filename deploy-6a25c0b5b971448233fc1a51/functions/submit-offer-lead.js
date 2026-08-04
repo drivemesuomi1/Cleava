@@ -232,9 +232,21 @@ function customerSubject(type, data, lang) {
 
 function customerSignatureHtml(lang) {
   if (lang === 'en') {
-    return `<span style="color:#334155!important;">Best regards,</span><br><br><strong style="color:#334155!important;">Laura K</strong><span style="color:#334155!important;"> | Service Manager</span><br><span style="color:#334155!important;">Cleava Cleaning Services</span><br><a style="color:#0284c7!important;" href="mailto:info@cleava.fi">info@cleava.fi</a><span style="color:#334155!important;"> | +358 45 187 8083 | </span><a style="color:#0284c7!important;" href="https://cleava.fi">cleava.fi</a><br><span style="color:#334155!important;">Business ID 3631044-9</span>`;
+    return `<table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;margin:28px 0 0;background:#f8fafc;border:1px solid #dbeafe;border-radius:12px;overflow:hidden;">
+      <tr><td style="padding:16px 18px 8px;color:#334155!important;font-size:14px;line-height:1.6;">Best regards,</td></tr>
+      <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;"><strong>Laura K</strong> | Service Manager</td></tr>
+      <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;">Cleava Cleaning Services</td></tr>
+      <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;"><a style="color:#0284c7!important;" href="mailto:info@cleava.fi">info@cleava.fi</a> | +358 45 187 8083 | <a style="color:#0284c7!important;" href="https://cleava.fi">cleava.fi</a></td></tr>
+      <tr><td style="padding:0 18px 16px;color:#334155!important;font-size:14px;line-height:1.6;">Business ID 3631044-9</td></tr>
+    </table>`;
   }
-  return `<span style="color:#334155!important;">Yst&auml;v&auml;llisin terveisin,</span><br><br><strong style="color:#334155!important;">Laura K</strong><span style="color:#334155!important;"> | Palveluvastaava</span><br><span style="color:#334155!important;">Cleava Siivouspalvelut</span><br><a style="color:#0284c7!important;" href="mailto:info@cleava.fi">info@cleava.fi</a><span style="color:#334155!important;"> | +358 45 187 8083 | </span><a style="color:#0284c7!important;" href="https://cleava.fi">cleava.fi</a><br><span style="color:#334155!important;">Y-tunnus 3631044-9</span>`;
+  return `<table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;margin:28px 0 0;background:#f8fafc;border:1px solid #dbeafe;border-radius:12px;overflow:hidden;">
+      <tr><td style="padding:16px 18px 8px;color:#334155!important;font-size:14px;line-height:1.6;">Yst&auml;v&auml;llisin terveisin,</td></tr>
+      <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;"><strong>Laura K</strong> | Palveluvastaava</td></tr>
+      <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;">Cleava Siivouspalvelut</td></tr>
+      <tr><td style="padding:0 18px 6px;color:#334155!important;font-size:14px;line-height:1.6;"><a style="color:#0284c7!important;" href="mailto:info@cleava.fi">info@cleava.fi</a> | +358 45 187 8083 | <a style="color:#0284c7!important;" href="https://cleava.fi">cleava.fi</a></td></tr>
+      <tr><td style="padding:0 18px 16px;color:#334155!important;font-size:14px;line-height:1.6;">Y-tunnus 3631044-9</td></tr>
+    </table>`;
 }
 
 function customerSignatureText(lang) {
@@ -274,9 +286,7 @@ function customerHtml(type, data) {
       <div style="padding:26px 32px;">
         <p style="margin:0 0 22px;color:#334155!important;font-size:16px;line-height:1.7;">${esc(t.intro)}</p>
         <table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;border:1px solid #dbeafe;border-radius:12px;overflow:hidden;">${rows}</table>
-        <table role="presentation" cellspacing="0" cellpadding="0" style="width:100%;border-collapse:collapse;margin:28px 0 0;">
-          <tr><td style="color:#334155!important;font-size:14px;line-height:1.75;">${customerSignatureHtml(lang)}</td></tr>
-        </table>
+        ${customerSignatureHtml(lang)}
       </div>
     </div>
   </div>
