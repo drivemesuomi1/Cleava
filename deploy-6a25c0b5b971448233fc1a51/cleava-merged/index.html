@@ -1998,7 +1998,7 @@ nav {
  <div class="hero__card reveal">
  <h2 data-i18n="25">Pyydä ilmainen tarjous</h2>
  <p data-i18n="27">Vastaamme saman päivän aikana</p>
- <form onsubmit="submitForm(event,'hero')">
+ <form onsubmit="return submitForm(event,'hero')">
  <div class="form-group">
  <label class="form-label" data-i18n="28">Palvelu</label>
  <div class="form-select-wrap">
@@ -2017,6 +2017,10 @@ nav {
  <div class="form-row">
  <div class="form-group"><label class="form-label" data-i18n="30">Postinumero</label><input class="form-input" type="text" name="zip" inputmode="numeric" placeholder="00100" required></div>
  <div class="form-group"><label class="form-label" data-i18n="31">Puhelin</label><input class="form-input" type="tel" name="phone" placeholder="040 123 4567" required></div>
+ </div>
+ <div class="form-group">
+ <label class="form-label" data-i18n-fi="Sähköposti" data-i18n-en="Email">Sähköposti</label>
+ <input class="form-input" type="email" name="email" placeholder="sahkoposti@example.fi" required data-i18n-fi-placeholder="sahkoposti@example.fi" data-i18n-en-placeholder="email@example.fi">
  </div>
  <button type="submit" class="form-submit" id="hero-btn" data-i18n="26">Pyydä tarjous nyt →</button>
  <p class="form-note">
@@ -4941,14 +4945,23 @@ function submitForm(e, source) {
  var form = e.target;
  var zip = (form.zip && form.zip.value || '').trim();
  var phone = (form.phone && form.phone.value || '').trim();
- if(!zip || !phone) return;
- var payload = {zip:zip, phone:phone, source:source};
+ var email = (form.email && form.email.value || '').trim();
+ if(!zip || !phone || (source === 'hero' && !email)) return false;
+ var payload = {
+  zip: zip,
+  phone: phone,
+  email: email,
+  source: source,
+  page: window.location.href,
+  lang: (document.documentElement.lang || '').slice(0,2) || 'fi'
+ };
  if(form.service) payload.service = form.service.value;
  if(form.size) payload.size = form.size.value;
  fetch('/.netlify/functions/submit-offer-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)}).catch(function(){});
  var btn = form.querySelector('button[type="submit"]');
  if(btn){btn.disabled=true;}
  setTimeout(function(){ showTyPopup(); }, 300);
+ return false;
 }
 function submitCtaForm(e, source) {
  e.preventDefault();

@@ -59,15 +59,36 @@ try {
 var form = e.target;
 var zip = (form.zip && form.zip.value || '').trim();
 var phone = (form.phone && form.phone.value || '').trim();
-if(!zip || !phone) return false;
+var email = (form.email && form.email.value || '').trim();
+if(!zip || !phone || (source === 'hero' && !email)) return false;
 var formName = source === 'hero' ? 'hero-lead' : 'contact-quick';
+var service = form.service ? form.service.value : '';
+var size = form.size ? form.size.value : '';
+var payload = {
+service: service,
+zip: zip,
+phone: phone,
+email: email,
+source: source,
+page: window.location.href,
+lang: (document.documentElement.lang || '').slice(0,2) || 'fi'
+};
+if(size) payload.size = size;
+fetch('/.netlify/functions/submit-offer-lead', {
+method:'POST',
+headers:{'Content-Type':'application/json'},
+body: JSON.stringify(payload)
+}).catch(function(){});
 var params = new URLSearchParams();
 params.append('form-name', formName);
 params.append('zip', zip);
 params.append('phone', phone);
+if(email) params.append('email', email);
 params.append('source', source);
-if(form.service) params.append('service', form.service.value);
-if(form.size) params.append('size', form.size.value);
+params.append('page', window.location.href);
+params.append('lang', payload.lang);
+if(service) params.append('service', service);
+if(size) params.append('size', size);
 fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: params.toString() }).catch(function(){});
 var btn = form.querySelector('button[type="submit"]');
 if(btn){ btn.textContent = '✓ Lähetetty!'; btn.disabled = true; btn.style.background = '#22c55e'; }
