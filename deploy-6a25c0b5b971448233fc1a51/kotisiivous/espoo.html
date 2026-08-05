@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <script>/*v94-langcleanup*/try{localStorage.removeItem("cleava_lang");}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,9 +106,9 @@
 </head>
 <body>
 <nav id="cleava-nav"></nav>
-<script src="/assets/navbar.js?v=v126"></script>
+<script src="/assets/navbar.js?v=v124"></script>
 <div id="cleava-mobmenu"></div>
-<section class="sp-hero" style="background-image:linear-gradient(105deg,rgba(8,47,73,.78) 0%,rgba(8,47,73,.55) 50%,rgba(8,47,73,.25) 100%),url('/assets/kotisiivous-hero.png');background-size:cover;background-position:center center;background-repeat:no-repeat;">
+<section class="sp-hero" style="background-image:linear-gradient(105deg,rgba(10,22,40,.78) 0%,rgba(10,22,40,.55) 50%,rgba(10,22,40,.25) 100%),url('/assets/kotisiivous-hero.png');background-size:cover;background-position:center center;background-repeat:no-repeat;">
   <div class="sp-hero__content">
     <div class="sp-hero__eyebrow">KOTISIIVOUS · ESPOO</div>
     <h1 class="sp-hero__title">Kotisiivous Espoo — <em>puhdas koti ilman huolia</em></h1>
@@ -125,7 +130,7 @@
       </div>
       <div class="sp-incl-mid" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
         <div style="width:1.5px;flex:1;background:var(--c-navy);"></div>
-        <svg style="margin:16px 0;flex-shrink:0;" width="28" height="28" viewBox="0 0 24 24" fill="#0e7490"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <svg style="margin:16px 0;flex-shrink:0;" width="28" height="28" viewBox="0 0 24 24" fill="#0f2444"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
         <div style="width:1.5px;flex:1;background:var(--c-navy);"></div>
       </div>
       <div class="sp-incl-right" style="padding-left:60px;display:flex;flex-direction:column;justify-content:center;">
@@ -221,9 +226,6 @@
  </select>
  <input type="text" name="zip" placeholder="Postinumero" data-placeholder-fi="Postinumero" data-placeholder-en="Postal code" inputmode="numeric" required>
  <input type="tel" name="phone" placeholder="Puhelinnumero" data-placeholder-fi="Puhelinnumero" data-placeholder-en="Phone number" required>
-
- <input type="email" name="email" placeholder="Sahkoposti" data-placeholder-fi="Sahkoposti" data-placeholder-en="Email" required>
-
  <button type="submit" class="fcta-pill-btn" data-i18n-fi="Pyydä tarjous" data-i18n-en="Request quote">Pyydä tarjous</button>
  </form>
  <p class="fcta-footer__note" data-i18n="65">Otamme yhteyttä 24h sisällä.</p>
@@ -273,15 +275,14 @@
  <ul>
  <li><a href="https://cleava.fi/varaa/tietosuojaseloste">Tietosuoja &amp; Palveluehdot</a></li>
  <li><a href="https://cleava.fi/cookies">Evästekäytäntö</a></li>
- <li style="font-size:12px;color:rgba(255,255,255,.3);padding-top:6px;">Y-tunnus: 3631044-9</li>
- <li style="font-size:12px;color:rgba(255,255,255,.3);">Mansio Group Oy</li>
- <li style="font-size:12px;color:rgba(255,255,255,.3);">Aputoiminimi: Cleava Siivouspalvelut</li>
+ <li style="font-size:12px;color:rgba(255,255,255,.3);padding-top:6px;">Y-tunnus: 3567546-2</li>
+ <li style="font-size:12px;color:rgba(255,255,255,.3);">Bloomhive</li>
  <li style="font-size:12px;color:rgba(255,255,255,.3);">Holmankorpi 3F, 02210 Espoo</li>
  </ul>
  </div>
  </div>
  <div class="footer-bottom">
- <span>© 2025 Cleava Siivouspalvelut — Mansio Group Oy</span>
+ <span>© 2025 Cleava Siivouspalvelut — Bloomhive</span>
  <div style="display:flex;gap:16px;">
  <a href="https://cleava.fi/varaa/tietosuojaseloste">Tietosuoja</a>
  
@@ -333,7 +334,7 @@ function submitBookingForm(e) {
   var formData = new FormData(form);
   var params = new URLSearchParams();
   formData.forEach(function(v, k){ params.append(k, v); });
-  fetch('/.netlify/functions/submit-offer-lead', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(Object.fromEntries(params)) }).catch(function(){});
+  fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: params.toString() }).catch(function(){});
   var btn = document.getElementById('booking-submit-btn');
   if(btn){ btn.textContent = '✓ Lähetetty!'; btn.disabled = true; btn.style.background = '#22c55e'; }
   closeBookingModal();
@@ -361,43 +362,23 @@ function toggleMobAcc(accId, btnId) {
 }
 function submitCtaForm(e, source) {
  e.preventDefault();
- var form = e.target;
- var btn = form.querySelector('button[type="submit"]');
- var originalLabel = btn ? btn.textContent : '';
  try {
+  var form = e.target;
   var zip = (form.zip && form.zip.value || '').trim();
   var phone = (form.phone && form.phone.value || '').trim();
-  var email = (form.email && form.email.value || '').trim();
   var service = (form.service && form.service.value || '').trim();
-  if(!zip || !phone || (form.email && !email)) return false;
+  if(!zip || !phone) return false;
   var params = new URLSearchParams();
   params.append('form-name', 'footer-cta');
   params.append('zip', zip);
   params.append('phone', phone);
-  if(email) params.append('email', email);
   if(service) params.append('service', service);
-  params.append('source', source || 'footer-cta');
-  params.append('page', location.pathname || '/');
-  var htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
-  var isEnglish = htmlLang.indexOf('en') === 0 || location.pathname.indexOf('/en/') === 0 || location.pathname === '/en' || location.pathname.indexOf('/blog/') === 0;
-  params.append('lang', isEnglish ? 'en' : 'fi');
-  if(btn){ btn.textContent = 'L\u00e4hetet\u00e4\u00e4n...'; btn.disabled = true; }
-  fetch('/.netlify/functions/submit-offer-lead', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(Object.fromEntries(params)) })
-   .then(function(res){ if(!res.ok) throw new Error('Lead submit failed: '+res.status); return res.json().catch(function(){ return {}; }); })
-   .then(function(){
-    if(btn){ btn.textContent = '\u2713 L\u00e4hetetty!'; btn.disabled = true; btn.style.background = '#22c55e'; }
-    if(typeof showTyPopup==='function') showTyPopup();
-   })
-   .catch(function(err){
-    console.error('Lead submit failed', err);
-    if(btn){ btn.textContent = originalLabel; btn.disabled = false; btn.style.background = ''; }
-    alert('L\u00e4hetys ep\u00e4onnistui. Yrit\u00e4 uudelleen tai soita 045 187 8083.');
-   });
- } catch(err) {
-  console.error('Lead submit failed', err);
-  if(btn){ btn.textContent = originalLabel; btn.disabled = false; btn.style.background = ''; }
-  alert('L\u00e4hetys ep\u00e4onnistui. Yrit\u00e4 uudelleen tai soita 045 187 8083.');
- }
+  params.append('source', source);
+  fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: params.toString() }).catch(function(){});
+  var btn = form.querySelector('button[type="submit"]');
+  if(btn){ btn.textContent = '✓ Lähetetty!'; btn.disabled = true; btn.style.background = '#22c55e'; }
+  if(typeof showTyPopup==='function') showTyPopup();
+ } catch(err) {}
  return false;
 }
 
@@ -439,7 +420,7 @@ function closeTyPopup(){
 
 <div id="cleava-batch-v13" style="display:none">CLEAVA-BATCH1-V13-LIVE</div>
 
-<div id="tyPopup" style="display:none;position:fixed;inset:0;background:rgba(8,47,73,.75);z-index:99999;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px);">
+<div id="tyPopup" style="display:none;position:fixed;inset:0;background:rgba(10,22,40,.75);z-index:99999;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px);">
   <div style="background:#fff;border-radius:24px;padding:56px 44px;max-width:480px;width:100%;text-align:center;box-shadow:0 32px 80px rgba(0,0,0,.3);">
     <div style="width:88px;height:88px;background:#f0fdf4;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;">
       <svg width="44" height="44" viewBox="0 0 52 52" fill="none">
@@ -447,9 +428,9 @@ function closeTyPopup(){
         <polyline id="tyChk" points="15,27 23,35 37,19" stroke="#22c55e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:42;stroke-dashoffset:42;transition:stroke-dashoffset .5s ease .1s;"/>
       </svg>
     </div>
-    <h2 style="font-size:1.9rem;font-weight:600;color:#0e7490;margin-bottom:12px;">Kiitos!</h2>
+    <h2 style="font-size:1.9rem;font-weight:600;color:#0f2444;margin-bottom:12px;">Kiitos!</h2>
     <p style="font-size:16px;color:#64748b;line-height:1.7;margin-bottom:32px;">Kiitos viestist&#228;si &mdash; vastaamme 24h sis&#228;ll&#228;.</p>
-    <button onclick="closeTyPopup()" style="padding:16px 44px;background:#0e7490;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Sulje</button>
+    <button onclick="closeTyPopup()" style="padding:16px 44px;background:#0f2444;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Sulje</button>
   </div>
 </div>
 <script>

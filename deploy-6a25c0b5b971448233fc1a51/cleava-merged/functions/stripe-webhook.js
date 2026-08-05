@@ -35,11 +35,11 @@ function wrap(headerBg, badge, badgeColor, icon, title, subtitle, body) {
 .hdr-title{font-size:22px;font-weight:700;color:#fff;line-height:1.2;}.hdr-sub{font-size:13px;color:rgba(255,255,255,.6);margin-top:4px;}
 .body{background:#fff;padding:28px 32px;}
 .row{display:flex;margin-bottom:1px;}.row-label{font-size:11px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.07em;width:140px;flex-shrink:0;padding:12px 0;}
-.row-val{font-size:14px;font-weight:600;color:#0f172a;padding:12px 0 12px 16px;flex:1;}.row-val a{color:#0284c7;}
+.row-val{font-size:14px;font-weight:600;color:#0f172a;padding:12px 0 12px 16px;flex:1;}.row-val a{color:#1d4ed8;}
 .divider{height:1px;background:#f1f5f9;margin:0;}
-.price-box{background:#155e75;border-radius:12px;padding:28px;text-align:center;margin:0 0 20px;}
+.price-box{background:#0a1628;border-radius:12px;padding:28px;text-align:center;margin:0 0 20px;}
 .voucher-box{background:#fff;border-radius:10px;padding:20px;text-align:center;margin:20px 0;}
-.voucher-code{font-size:28px;font-weight:800;color:#155e75;font-family:monospace;letter-spacing:.15em;}
+.voucher-code{font-size:28px;font-weight:800;color:#0a1628;font-family:monospace;letter-spacing:.15em;}
 .alert-blue{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:16px 18px;margin-top:20px;}
 .alert-green{background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:16px 18px;margin-top:20px;}
 .ftr{background:#f8fafc;border-top:1px solid #e2e8f0;padding:16px 32px;display:flex;justify-content:space-between;}
@@ -54,12 +54,12 @@ function wrap(headerBg, badge, badgeColor, icon, title, subtitle, body) {
 }
 
 function row(label, value, blue) {
-  return `<div class="row"><div class="row-label">${label}</div><div class="row-val"${blue ? ' style="color:#0284c7;"' : ''}>${value || '—'}</div></div><div class="divider"></div>`;
+  return `<div class="row"><div class="row-label">${label}</div><div class="row-val"${blue ? ' style="color:#1d4ed8;"' : ''}>${value || '—'}</div></div><div class="divider"></div>`;
 }
 
 // Internal notification to Cleava team
 function internalEmail(m, amount) {
-  return wrap('#155e75', 'MAKSETTU ✓', 'rgba(52,211,153,.5)', '💰',
+  return wrap('#0a1628', 'MAKSETTU ✓', 'rgba(52,211,153,.5)', '💰',
     `Lahjakortti maksettu — ${amount}€`,
     `${m.buyer_name} · ${m.voucher_code}`,
     `<div class="alert-green"><strong style="color:#15803d;">✅ Maksu vahvistunut Stripessä!</strong><br><span style="color:#166534;font-size:13px;">Lahjakortti on lähetetty automaattisesti sähköpostiin.</span></div>` +
@@ -68,7 +68,7 @@ function internalEmail(m, amount) {
     row('Sähköposti', `<a href="mailto:${m.buyer_email}">${m.buyer_email}</a>`, true) +
     row('Paketti', m.package) +
     row('Arvo', `<strong>${amount}€</strong>`) +
-    row('Voucher-koodi', `<span style="font-family:monospace;font-size:15px;color:#0284c7;">${m.voucher_code}</span>`, true) +
+    row('Voucher-koodi', `<span style="font-family:monospace;font-size:15px;color:#1d4ed8;">${m.voucher_code}</span>`, true) +
     row('Toimitettu', m.send_to_email, true) +
     row('Voimassa', m.expiry) +
     (m.recipient_name ? row('Saaja', m.recipient_name) : '') +
@@ -79,12 +79,12 @@ function internalEmail(m, amount) {
 
 // Gift card voucher to customer
 function voucherEmail(m, amount) {
-  return wrap('#155e75', 'LAHJAKORTTI', 'rgba(251,191,36,.5)', '🎁',
+  return wrap('#0a1628', 'LAHJAKORTTI', 'rgba(251,191,36,.5)', '🎁',
     'Cleava Lahjakortti',
     `${m.package} · ${amount}€`,
     `<div class="price-box">
       <div style="font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;">Lahjakortin arvo</div>
-      <div style="font-size:52px;font-weight:800;color:#7dd3fc;line-height:1;">${amount}€</div>
+      <div style="font-size:52px;font-weight:800;color:#60a5fa;line-height:1;">${amount}€</div>
       <div style="font-size:14px;color:rgba(255,255,255,.6);margin-top:6px;">${m.package}</div>
     </div>
     <div class="voucher-box" style="background:#f8fafc;border-radius:12px;padding:24px;text-align:center;margin-bottom:20px;">
@@ -93,14 +93,14 @@ function voucherEmail(m, amount) {
       <div style="font-size:12px;color:#94a3b8;margin-top:10px;">Voimassa: ${m.expiry}</div>
     </div>` +
     (m.recipient_name ? `<p style="font-size:16px;font-weight:600;color:#0f172a;margin-bottom:12px;">Hei ${m.recipient_name}! 👋</p>` : '') +
-    (m.message ? `<div style="background:#f8fafc;border-left:3px solid #0284c7;border-radius:0 8px 8px 0;padding:14px 16px;margin-bottom:16px;font-style:italic;color:#475569;">"${m.message}"</div>` : '') +
+    (m.message ? `<div style="background:#f8fafc;border-left:3px solid #1d4ed8;border-radius:0 8px 8px 0;padding:14px 16px;margin-bottom:16px;font-style:italic;color:#475569;">"${m.message}"</div>` : '') +
     `<div class="alert-blue">
       <p style="font-size:13px;color:#1e40af;line-height:1.7;margin:0;">
         Käytä lahjakorttia mainitsemalla koodi <strong>${m.voucher_code}</strong> varatessasi siivouksen:<br>
-        📞 <a href="tel:+358451878083" style="color:#0284c7;">045 187 8083</a> &nbsp;·&nbsp;
-        ✉️ <a href="mailto:info@cleava.fi" style="color:#0284c7;">info@cleava.fi</a><br>
-        🌐 <a href="https://cleava.fi" style="color:#0284c7;">cleava.fi</a><br>
-        <span style="font-size:11px;color:#38bdf8;">Käy kaikkiin Cleava-palveluihin. Ei voi vaihtaa rahaksi.</span>
+        📞 <a href="tel:+358451878083" style="color:#1d4ed8;">045 187 8083</a> &nbsp;·&nbsp;
+        ✉️ <a href="mailto:info@cleava.fi" style="color:#1d4ed8;">info@cleava.fi</a><br>
+        🌐 <a href="https://cleava.fi" style="color:#1d4ed8;">cleava.fi</a><br>
+        <span style="font-size:11px;color:#3b82f6;">Käy kaikkiin Cleava-palveluihin. Ei voi vaihtaa rahaksi.</span>
       </p>
     </div>`
   );
@@ -109,19 +109,19 @@ function voucherEmail(m, amount) {
 
 // ─── BUYER ORDER CONFIRMATION (always sent to buyer) ─────────────────────────
 function buyerConfirmEmail(m, amount) {
-  return wrap('#0284c7', 'TILAUSVAHVISTUS', 'rgba(255,255,255,.25)', '✅',
+  return wrap('#1d4ed8', 'TILAUSVAHVISTUS', 'rgba(255,255,255,.25)', '✅',
     'Tilauksesi on vastaanotettu!',
     `Hei ${m.buyer_name}! Maksusi on vahvistunut.`,
     `<div style="background:#f8fafc;border-radius:10px;padding:20px;margin-bottom:16px;">` +
     row('Paketti', m.package) +
     row('Arvo', `<strong>${amount}€</strong>`) +
-    row('Voucher-koodi', `<span style="font-family:monospace;font-size:15px;color:#0284c7;">${m.voucher_code}</span>`, true) +
+    row('Voucher-koodi', `<span style="font-family:monospace;font-size:15px;color:#1d4ed8;">${m.voucher_code}</span>`, true) +
     row('Toimitettu', m.send_to_email, true) +
     row('Voimassa', m.expiry) +
     `</div>` +
     `<div style="background:#eff6ff;border:1px solid #bfdbfe;border-radius:8px;padding:14px 16px;font-size:13px;color:#1e40af;line-height:1.7;">
       Lahjakortti on lähetetty osoitteeseen <strong>${m.send_to_email}</strong>.<br>
-      Kysymyksiä? <a href="tel:+358451878083" style="color:#0284c7;">045 187 8083</a> · <a href="mailto:info@cleava.fi" style="color:#0284c7;">info@cleava.fi</a>
+      Kysymyksiä? <a href="tel:+358451878083" style="color:#1d4ed8;">045 187 8083</a> · <a href="mailto:info@cleava.fi" style="color:#1d4ed8;">info@cleava.fi</a>
     </div>`
   );
 }

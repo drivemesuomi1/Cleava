@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <script>/*v94-langcleanup*/try{localStorage.removeItem("cleava_lang");}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,8 +29,6 @@
     page_path: window.location.pathname
   });
 </script>
- <link rel="icon" type="image/png" href="/assets/extracted/cleava-favicon.png">
- <link rel="shortcut icon" type="image/png" href="/assets/extracted/cleava-favicon.png">
 <meta charset="UTF-8">
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <link rel="preconnect" href="https://lh3.googleusercontent.com" crossorigin>
@@ -53,16 +56,16 @@
  DESIGN SYSTEM — Dark Navy / White
  ============================== */
 :root{
- --c-navy:#155e75;
- --c-navy-light:#0e7490;
- --c-navy-mid:#0891b2;
- --c-blue:#0284c7;
- --c-blue-light:#38bdf8;
- --c-accent:#7dd3fc;
+ --c-navy:#0a1628;
+ --c-navy-light:#142035;
+ --c-navy-mid:#1e3a5f;
+ --c-blue:#1d4ed8;
+ --c-blue-light:#3b82f6;
+ --c-accent:#60a5fa;
  --c-white:#ffffff;
- --c-off:#f0f9ff;
- --c-grey:#e0f2fe;
- --c-border:#bae6fd;
+ --c-off:#f8fafc;
+ --c-grey:#e2e8f0;
+ --c-border:#e2e8f0;
  --c-text:#0f172a;
  --c-muted:#475569;
  --c-muted-light:#94a3b8;
@@ -148,7 +151,7 @@ input,select,textarea{font-family:var(--ff-body);}
  transition:all .2s;box-shadow:none;
  cursor:pointer;white-space:nowrap;
 }
-.btn-primary:hover{background:#1e40af;transform:translateY(-2px);box-shadow:0 8px 28px rgba(2,132,199,.4);}
+.btn-primary:hover{background:#1e40af;transform:translateY(-2px);box-shadow:0 8px 28px rgba(29,78,216,.4);}
 .btn-outline{
  display:inline-flex;align-items:center;gap:8px;
  background:transparent;color:var(--c-navy);
@@ -187,7 +190,7 @@ input,select,textarea{font-family:var(--ff-body);}
  transition:border-color .18s,box-shadow .18s;
 }
 .form-input:focus,.form-select:focus{
- border-color:var(--c-blue);box-shadow:0 0 0 3px rgba(2,132,199,.1);
+ border-color:var(--c-blue);box-shadow:0 0 0 3px rgba(29,78,216,.1);
 }
 .form-input::placeholder{color:var(--c-muted-light);}
 .form-select-wrap{position:relative;}
@@ -208,14 +211,14 @@ input,select,textarea{font-family:var(--ff-body);}
  background:var(--c-navy);
  min-height:calc(100vh - 106px);display:flex;align-items:center;
 }
-.hero__video-wrap{position:absolute;inset:0;z-index:0;background:#155e75;}
+.hero__video-wrap{position:absolute;inset:0;z-index:0;background:#0a1628;}
 .hero__video-wrap video{
  width:100%;height:100%;object-fit:cover;
  display:block;
 }
 .hero__overlay{
  position:absolute;inset:0;
- background:linear-gradient(110deg,rgba(8,47,73,.88) 0%,rgba(8,47,73,.65) 55%,rgba(8,47,73,.4) 100%);
+ background:linear-gradient(110deg,rgba(10,22,40,.88) 0%,rgba(10,22,40,.65) 55%,rgba(10,22,40,.4) 100%);
 }
 .hero__inner{
  position:relative;z-index:2;
@@ -225,7 +228,7 @@ input,select,textarea{font-family:var(--ff-body);}
 }
 .hero__eyebrow{
  display:inline-flex;align-items:center;gap:8px;
- background:rgba(125,211,252,.15);border:1px solid rgba(125,211,252,.3);
+ background:rgba(96,165,250,.15);border:1px solid rgba(96,165,250,.3);
  color:var(--c-accent);font-size:11px;font-weight:700;letter-spacing:.12em;
  text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:22px;
 }
@@ -264,7 +267,7 @@ input,select,textarea{font-family:var(--ff-body);}
  width:100%;padding:16px;background:var(--c-navy);color:#fff;
  border:none;border-radius:10px;font-size:15px;font-weight:700;
  cursor:pointer;transition:all .2s;margin-top:4px;
- box-shadow:0 4px 16px rgba(8,47,73,.25);
+ box-shadow:0 4px 16px rgba(10,22,40,.25);
 }
 .form-submit:hover{background:var(--c-navy-mid);transform:translateY(-1px);}
 .form-submit.success{background:#16a34a!important;}
@@ -305,7 +308,7 @@ input,select,textarea{font-family:var(--ff-body);}
  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
  padding:0;border-radius:0;margin-bottom:12px;
 }
-.section--navy .section-eyebrow{background:rgba(125,211,252,.15);color:var(--c-accent);border:1px solid rgba(125,211,252,.25);}
+.section--navy .section-eyebrow{background:rgba(96,165,250,.15);color:var(--c-accent);border:1px solid rgba(96,165,250,.25);}
 .section-title{
  font-family:var(--ff-display);font-size:clamp(1.9rem,3.5vw,2.9rem);
  font-weight:400;color:var(--c-navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:14px;
@@ -322,9 +325,9 @@ input,select,textarea{font-family:var(--ff-body);}
  background:#fff;cursor:pointer;transition:transform .22s,box-shadow .22s,border-color .22s;
  display:block;
 }
-.service-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);border-color:rgba(2,132,199,.2);}
+.service-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);border-color:rgba(29,78,216,.2);}
 .service-card__img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 15%;display:block;}
-.service-card__vid{width:100%;aspect-ratio:4/3;overflow:hidden;background:#155e75;position:relative;}
+.service-card__vid{width:100%;aspect-ratio:4/3;overflow:hidden;background:#0a1628;position:relative;}
 .service-card__vid video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;}
 .service-card__body{padding:22px;}
 .service-card__title{
@@ -345,17 +348,12 @@ input,select,textarea{font-family:var(--ff-body);}
 .how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;margin-top:56px;}
 .how-step__num{
  width:48px;height:48px;
- background:rgba(125,211,252,.15);border:1.5px solid rgba(125,211,252,.3);
+ background:rgba(96,165,250,.15);border:1.5px solid rgba(96,165,250,.3);
  border-radius:50%;display:flex;align-items:center;justify-content:center;
  font-family:var(--ff-display);font-size:1.3rem;color:var(--c-accent);margin-bottom:18px;
 }
 .how-step__title{font-family:var(--ff-display);font-size:1.1rem;font-weight:400;color:#fff;margin-bottom:8px;}
 .how-step__desc{font-size:13.5px;color:rgba(255,255,255,.6);line-height:1.65;}
-#how .section-eyebrow{color:#e0f2fe!important;border-color:rgba(224,242,254,.32)!important;}
-#how .section-title,#how .how-step__title{color:#fff!important;}
-#how .section-title em{color:#bae6fd!important;}
-#how .section-subtitle{color:rgba(255,255,255,.82)!important;}
-#how .how-step__desc{color:rgba(255,255,255,.86)!important;}
 
 /* ==============================
  WHY CLEAVA (homepage)
@@ -428,7 +426,7 @@ input,select,textarea{font-family:var(--ff-body);}
 }
 .reviews-arrow:hover{background:var(--c-navy);color:#fff;border-color:var(--c-navy);}
 .reviews-dots{display:flex;gap:6px;}
-.reviews-dot{width:7px;height:7px;border-radius:50%;background:rgba(8,47,73,.15);border:none;padding:0;cursor:pointer;transition:all .2s;}
+.reviews-dot{width:7px;height:7px;border-radius:50%;background:rgba(10,22,40,.15);border:none;padding:0;cursor:pointer;transition:all .2s;}
 .reviews-dot.active{background:var(--c-blue);width:22px;border-radius:3px;}
 
 /* ==============================
@@ -440,7 +438,7 @@ input,select,textarea{font-family:var(--ff-body);}
  padding:8px 18px;font-size:14px;font-weight:500;color:var(--c-navy);
  transition:all .18s;
 }
-.area-pill:hover{background:#eff6ff;border-color:rgba(2,132,199,.25);color:var(--c-blue);}
+.area-pill:hover{background:#eff6ff;border-color:rgba(29,78,216,.25);color:var(--c-blue);}
 
 /* ==============================
  FRESKA-STYLE CTA SECTION
@@ -450,7 +448,7 @@ input,select,textarea{font-family:var(--ff-body);}
 }
 .cta-section::before{
  content:'';position:absolute;inset:0;
- background:radial-gradient(ellipse 800px 600px at 60% 50%,rgba(2,132,199,.25) 0%,transparent 70%);
+ background:radial-gradient(ellipse 800px 600px at 60% 50%,rgba(29,78,216,.25) 0%,transparent 70%);
 }
 .cta-inner{position:relative;z-index:1;max-width:var(--max);margin:0 auto;}
 .cta-split{display:grid;grid-template-columns:1fr 480px;gap:72px;align-items:center;}
@@ -501,7 +499,7 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
  ============================== */
 .modal-overlay{
  position:fixed;inset:0;z-index:9999;
- background:rgba(8,47,73,.65);backdrop-filter:blur(8px);
+ background:rgba(10,22,40,.65);backdrop-filter:blur(8px);
  display:none;align-items:center;justify-content:center;padding:24px;
 }
 .modal-overlay.open{display:flex;}
@@ -529,12 +527,12 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
  background:var(--c-blue);color:#fff;border:none;
  border-radius:999px;padding:13px 24px;
  font-size:14px;font-weight:700;
- box-shadow:0 8px 28px rgba(2,132,199,.4);
+ box-shadow:0 8px 28px rgba(29,78,216,.4);
  display:flex;align-items:center;gap:8px;
  transition:all .2s;
 
 }
-.fab:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 14px 36px rgba(2,132,199,.5);}
+.fab:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 14px 36px rgba(29,78,216,.5);}
 
 
 /* ==============================
@@ -554,7 +552,7 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
 }
 .sp-hero__bg::after{
  content:'';position:absolute;inset:0;
- background:linear-gradient(105deg,rgba(8,47,73,.96) 0%,rgba(8,47,73,.88) 44%,rgba(8,47,73,.55) 72%,rgba(8,47,73,.2) 100%);
+ background:linear-gradient(105deg,rgba(10,22,40,.96) 0%,rgba(10,22,40,.88) 44%,rgba(10,22,40,.55) 72%,rgba(10,22,40,.2) 100%);
 }
 .sp-hero__content{
  position:relative;z-index:2;
@@ -566,7 +564,7 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
 }
 .sp-hero__eyebrow{
  display:inline-flex;align-items:center;gap:7px;
- background:rgba(125,211,252,.15);border:1px solid rgba(125,211,252,.3);
+ background:rgba(96,165,250,.15);border:1px solid rgba(96,165,250,.3);
  color:var(--c-accent);font-size:11px;font-weight:700;letter-spacing:.12em;
  text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:18px;
 }
@@ -685,7 +683,7 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
 }
 .freska-cta::before{
  content:'';position:absolute;inset:0;
- background:radial-gradient(circle 600px at center,rgba(2,132,199,.2) 0%,transparent 70%);
+ background:radial-gradient(circle 600px at center,rgba(29,78,216,.2) 0%,transparent 70%);
 }
 .freska-cta__inner{position:relative;z-index:1;max-width:680px;margin:0 auto;}
 .freska-cta__title{
@@ -714,7 +712,7 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
 .pc--name{font-weight:600;color:var(--c-navy);}
 .pc--price{font-family:var(--ff-display);font-size:1.3rem;color:var(--c-blue);}
 .pc--note{color:var(--c-muted);font-size:13px;}
-.pricing-info{background:#eff6ff;border:1px solid rgba(2,132,199,.12);border-radius:var(--r);padding:20px 24px;margin-bottom:48px;}
+.pricing-info{background:#eff6ff;border:1px solid rgba(29,78,216,.12);border-radius:var(--r);padding:20px 24px;margin-bottom:48px;}
 .pricing-info h3{font-size:14px;font-weight:700;color:var(--c-navy);margin-bottom:8px;}
 .pricing-info p{font-size:13.5px;color:var(--c-muted);line-height:1.7;margin:0;}
 
@@ -1312,8 +1310,8 @@ video{will-change:auto;}
  position:relative;
  text-align:center;
 }
-.lk-card:hover { border-color:var(--c-blue); transform:translateY(-3px); box-shadow:0 8px 28px rgba(2,132,199,.12); }
-.lk-card.selected { border-color:var(--c-blue); background:#eff6ff; box-shadow:0 8px 28px rgba(2,132,199,.15); }
+.lk-card:hover { border-color:var(--c-blue); transform:translateY(-3px); box-shadow:0 8px 28px rgba(29,78,216,.12); }
+.lk-card.selected { border-color:var(--c-blue); background:#eff6ff; box-shadow:0 8px 28px rgba(29,78,216,.15); }
 .lk-badge {
  position:absolute; top:-12px; left:50%; transform:translateX(-50%);
  background:linear-gradient(135deg,var(--c-blue),#1e40af);
@@ -1682,7 +1680,7 @@ no Soita,no tai */
 <!-- NAV -->
 <nav id="cleava-nav"></nav>
 <script defer src="/assets/i18n.js?v=v124"></script>
-<script src="/assets/navbar.js?v=v126"></script>
+<script src="/assets/navbar.js?v=v124"></script>
 
 <!-- MOBILE MENU -->
 <div id="cleava-mobmenu"></div>
@@ -1694,7 +1692,7 @@ no Soita,no tai */
 <section class="hero" id="heroTop">
  <div class="hero__video-wrap">
  <video id="heroVideo" autoplay muted loop playsinline preload="auto"
- style="width:100%;height:100%;object-fit:cover;display:block;background:#155e75;"
+ style="width:100%;height:100%;object-fit:cover;display:block;background:#0a1628;"
  disablePictureInPicture disableRemotePlayback>
  <source src="/assets/hero-video-mobile.mp4" type="video/mp4" media="(max-width: 768px)">
  <source src="/assets/hero-video.mp4" type="video/mp4">
@@ -1741,9 +1739,6 @@ no Soita,no tai */
  <div class="form-group"><label class="form-label" data-i18n="30">Postinumero</label><input class="form-input" type="text" name="zip" inputmode="numeric" placeholder="00100" required></div>
  <div class="form-group"><label class="form-label" data-i18n="31">Puhelin</label><input class="form-input" type="tel" name="phone" placeholder="040 123 4567" required></div>
  </div>
-
- <div class="form-group"><label class="form-label" data-i18n-fi="Sahkoposti" data-i18n-en="Email">Sahkoposti</label><input class="form-input" type="email" name="email" placeholder="sahkoposti@example.fi" required data-placeholder-fi="sahkoposti@example.fi" data-placeholder-en="you@example.com"></div>
-
  <button type="submit" class="form-submit" id="hero-btn" data-i18n="26">Pyydä tarjous nyt →</button>
  <p class="form-note">
  <svg width="13" height="13" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
@@ -2266,7 +2261,7 @@ no Soita,no tai */
  <section style="background:var(--c-navy);padding:96px 24px 80px;position:relative;overflow:hidden;">
  <div style="position:absolute;inset:0;opacity:.06;background:radial-gradient(ellipse 800px 600px at 70% 50%,var(--c-blue) 0%,transparent 70%);"></div>
  <div style="max-width:760px;margin:0 auto;position:relative;z-index:1;">
- <div class="section-eyebrow" style="background:rgba(125,211,252,.15);color:var(--c-accent);border:1px solid rgba(125,211,252,.25);display:inline-flex;padding:5px 14px;border-radius:999px;margin-bottom:20px;" data-i18n-fi="Tarinamme" data-i18n-en="Our Story">Tarinamme</div>
+ <div class="section-eyebrow" style="background:rgba(96,165,250,.15);color:var(--c-accent);border:1px solid rgba(96,165,250,.25);display:inline-flex;padding:5px 14px;border-radius:999px;margin-bottom:20px;" data-i18n-fi="Tarinamme" data-i18n-en="Our Story">Tarinamme</div>
  <h2 style="font-family:var(--ff-display);font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:400;color:#fff;line-height:1.08;letter-spacing:-.03em;margin-bottom:20px;" data-i18n-fi="Tervetuloa Cleavaan – paikkaan, jossa puhtaus kohtaa luottamuksen" data-i18n-en="Welcome to Cleava, where cleanliness meets trust" data-orig-h1="1">Tervetuloa Cleavaan – paikkaan, jossa <em style="color:var(--c-accent);font-style:italic;">puhtaus kohtaa luottamuksen</em></h2>
  <p style="font-size:1.1rem;color:rgba(255,255,255,.72);line-height:1.75;max-width:600px;" data-i18n="288">Cleava syntyi aidosta tarpeesta. Tässä on tarina siitä, miksi ja miten.</p>
  </div>
@@ -2364,11 +2359,11 @@ no Soita,no tai */
  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
  <div>
  <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c-muted);margin-bottom:6px;" data-i18n="291">Yrityksen nimi</div>
- <div style="font-size:14px;color:var(--c-navy);font-weight:600;" data-i18n="295">Mansio Group Oy</div>
+ <div style="font-size:14px;color:var(--c-navy);font-weight:600;" data-i18n="295">Bloomhive (Cleava)</div>
  </div>
  <div>
  <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c-muted);margin-bottom:6px;" data-i18n="292">Y-tunnus</div>
- <div style="font-size:14px;color:var(--c-navy);font-weight:600;">3631044-9</div>
+ <div style="font-size:14px;color:var(--c-navy);font-weight:600;">3567546-2</div>
  </div>
  <div>
  <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--c-muted);margin-bottom:6px;" data-i18n="293">Osoite</div>
@@ -2523,10 +2518,10 @@ no Soita,no tai */
 
  <!-- HERO -->
  <section style="background:var(--c-navy);padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden;">
- <div style="position:absolute;inset:0;background:radial-gradient(ellipse 700px 500px at 50% 0%,rgba(125,211,252,.12) 0%,transparent 70%);pointer-events:none;"></div>
+ <div style="position:absolute;inset:0;background:radial-gradient(ellipse 700px 500px at 50% 0%,rgba(96,165,250,.12) 0%,transparent 70%);pointer-events:none;"></div>
  <div style="position:relative;z-index:1;max-width:680px;margin:0 auto;">
  <div style="font-size:48px;margin-bottom:20px;">🎁</div>
- <div class="section-eyebrow" style="background:rgba(125,211,252,.15);color:var(--c-accent);border:1px solid rgba(125,211,252,.25);display:inline-flex;padding:5px 14px;border-radius:999px;margin-bottom:20px;" data-i18n="72">Lahjakortti</div>
+ <div class="section-eyebrow" style="background:rgba(96,165,250,.15);color:var(--c-accent);border:1px solid rgba(96,165,250,.25);display:inline-flex;padding:5px 14px;border-radius:999px;margin-bottom:20px;" data-i18n="72">Lahjakortti</div>
  <h2 style="font-family:var(--ff-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:400;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;" data-i18n-fi="Cleava Lahjakortti – anna puhdas koti lahjaksi" data-i18n-en="Cleava Gift Card – give a clean home as a gift" data-orig-h1="1"><span data-i18n-fi="Cleava Lahjakortti – " data-i18n-en="Cleava Gift Card – ">Cleava Lahjakortti – </span><em style="color:var(--c-accent);font-style:italic;" data-i18n-fi="anna puhdas koti lahjaksi" data-i18n-en="give a clean home as a gift">anna puhdas koti lahjaksi</em></h2>
  <p style="font-size:1.05rem;color:rgba(255,255,255,.7);line-height:1.7;max-width:560px;margin:0 auto;" data-i18n-fi="Cleava-lahjakortti on täydellinen lahja ystävälle, perheelle tai itsellesi. Lahjakorttia voi käyttää kaikkiin Cleava Siivouspalvelut -palveluihin kuten kotisiivoukseen, ikkunanpesuun, muuttosiivoukseen tai suursiivoukseen." data-i18n-en="The Cleava gift card is the perfect gift for a friend, family or yourself. It can be used for all Cleava services including home cleaning, window cleaning, moving cleaning or deep cleaning.">Cleava-lahjakortti on täydellinen lahja ystävälle, perheelle tai itsellesi. Lahjakorttia voi käyttää kaikkiin Cleava Siivouspalvelut -palveluihin kuten kotisiivoukseen, ikkunanpesuun, muuttosiivoukseen tai suursiivoukseen.</p>
  </div>
@@ -2611,7 +2606,7 @@ no Soita,no tai */
  <form id="lahjakorttiForm" onsubmit="submitLahjakortti(event)" style="background:#fff;border:1px solid var(--c-border);border-radius:var(--r-lg);padding:36px 32px;">
 
  <!-- Selected package summary -->
- <div id="selectedSummary" style="background:#eff6ff;border:1.5px solid rgba(2,132,199,.15);border-radius:var(--r);padding:16px 20px;margin-bottom:28px;display:flex;justify-content:space-between;align-items:center;">
+ <div id="selectedSummary" style="background:#eff6ff;border:1.5px solid rgba(29,78,216,.15);border-radius:var(--r);padding:16px 20px;margin-bottom:28px;display:flex;justify-content:space-between;align-items:center;">
  <div>
  <p style="font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--c-blue);margin-bottom:3px;" data-i18n-fi="Valittu lahjakortti" data-i18n-en="Selected gift card">Valittu lahjakortti</p>
  <p id="selectedLabel" style="font-size:16px;font-weight:700;color:var(--c-navy);" data-i18n="304">Valitse paketti yllä</p>
@@ -2661,7 +2656,7 @@ no Soita,no tai */
 
  <!-- Payment info -->
  <div id="lkFormError" style="display:none;color:#dc2626;font-size:13px;margin-top:8px;"></div>
- <button type="submit" class="form-submit" id="lkSubmitBtn" style="font-size:16px;padding:18px;background:#155e75;" data-i18n="306">Maksa</button>
+ <button type="submit" class="form-submit" id="lkSubmitBtn" style="font-size:16px;padding:18px;background:#0a1628;" data-i18n="306">Maksa</button>
  
 
  <!-- Success message -->
@@ -3107,10 +3102,10 @@ id="page-porrassiivous">
 
  <!-- HERO -->
  <section style="background:var(--c-navy);padding:80px 24px 64px;text-align:center;position:relative;overflow:hidden;">
- <div style="position:absolute;inset:0;background:radial-gradient(ellipse 700px 500px at 50% 0%,rgba(125,211,252,.12) 0%,transparent 70%);pointer-events:none;"></div>
+ <div style="position:absolute;inset:0;background:radial-gradient(ellipse 700px 500px at 50% 0%,rgba(96,165,250,.12) 0%,transparent 70%);pointer-events:none;"></div>
  <div style="position:relative;z-index:1;max-width:680px;margin:0 auto;">
  <div style="font-size:48px;margin-bottom:20px;">🎁</div>
- <div class="section-eyebrow" style="background:rgba(125,211,252,.15);color:var(--c-accent);border:1px solid rgba(125,211,252,.25);display:inline-flex;padding:5px 14px;border-radius:999px;margin-bottom:20px;" data-i18n-fi="Lahjakortti" data-i18n-en="Gift Card">Lahjakortti</div>
+ <div class="section-eyebrow" style="background:rgba(96,165,250,.15);color:var(--c-accent);border:1px solid rgba(96,165,250,.25);display:inline-flex;padding:5px 14px;border-radius:999px;margin-bottom:20px;" data-i18n-fi="Lahjakortti" data-i18n-en="Gift Card">Lahjakortti</div>
  <h2 style="font-family:var(--ff-display);font-size:clamp(2rem,4vw,3.2rem);font-weight:400;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;" data-orig-h1="1">Cleava Lahjakortti – <em style="color:var(--c-accent);font-style:italic;">anna puhdas koti lahjaksi</em></h2>
  <p style="font-size:1.05rem;color:rgba(255,255,255,.7);line-height:1.7;max-width:560px;margin:0 auto;">Cleava-lahjakortti on täydellinen lahja ystävälle, perheelle tai itsellesi. Lahjakorttia voi käyttää kaikkiin Cleava Siivouspalvelut -palveluihin kuten kotisiivoukseen, ikkunanpesuun, muuttosiivoukseen tai suursiivoukseen.</p>
  </div>
@@ -3195,7 +3190,7 @@ id="page-porrassiivous">
  <form id="lahjakorttiForm" onsubmit="submitLahjakortti(event)" style="background:#fff;border:1px solid var(--c-border);border-radius:var(--r-lg);padding:36px 32px;">
 
  <!-- Selected package summary -->
- <div id="selectedSummary" style="background:#eff6ff;border:1.5px solid rgba(2,132,199,.15);border-radius:var(--r);padding:16px 20px;margin-bottom:28px;display:flex;justify-content:space-between;align-items:center;">
+ <div id="selectedSummary" style="background:#eff6ff;border:1.5px solid rgba(29,78,216,.15);border-radius:var(--r);padding:16px 20px;margin-bottom:28px;display:flex;justify-content:space-between;align-items:center;">
  <div>
  <p style="font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--c-blue);margin-bottom:3px;">Valittu lahjakortti</p>
  <p id="selectedLabel" style="font-size:16px;font-weight:700;color:var(--c-navy);">Valitse paketti yllä</p>
@@ -3245,7 +3240,7 @@ id="page-porrassiivous">
 
  <!-- Payment info -->
  <div id="lkFormError" style="display:none;color:#dc2626;font-size:13px;margin-top:8px;"></div>
- <button type="submit" class="form-submit" id="lkSubmitBtn" style="font-size:16px;padding:18px;background:#155e75;">Maksa</button>
+ <button type="submit" class="form-submit" id="lkSubmitBtn" style="font-size:16px;padding:18px;background:#0a1628;">Maksa</button>
  
 
  <!-- Success message -->
@@ -3927,10 +3922,10 @@ id="page-porrassiivous">
  <div class="legal-page">
  <div class="section-eyebrow" style="display:inline-flex;margin-bottom:16px;" data-i18n-fi="Tietosuoja &amp; Käytännöt" data-i18n-en="Privacy &amp; Policies">Tietosuoja &amp; Käytännöt</div>
  <h2 data-orig-h1="1">Tietosuojaseloste ja palveluehdot</h2>
- <p class="meta">Päivitetty: huhtikuu 2025 · Mansio Group Oy (aputoiminimi: Cleava Siivouspalvelut)</p>
+ <p class="meta">Päivitetty: huhtikuu 2025 · Bloomhive (Cleava Siivouspalvelut)</p>
 
  <h2>1. Rekisterinpitäjä</h2>
- <p>Mansio Group Oy (aputoiminimi: Cleava Siivouspalvelut) · Y-tunnus: 3631044-9 · Sähköposti: <a href="mailto:info@cleava.fi">info@cleava.fi</a> · Puhelin: 045 187 8083</p>
+ <p>Bloomhive (Cleava Siivouspalvelut) · Y-tunnus: 3567546-2 · Sähköposti: <a href="mailto:info@cleava.fi">info@cleava.fi</a> · Puhelin: 045 187 8083</p>
 
  <h2>2. Käsiteltävät henkilötiedot</h2>
  <ul>
@@ -3999,7 +3994,7 @@ id="page-porrassiivous">
  <hr style="border:none;border-top:1px solid var(--c-border);margin:40px 0;">
 
  <h2>Yhteystiedot</h2>
- <p>Mansio Group Oy · Holmankorpi 3F, 02210 Espoo<br>
+ <p>Bloomhive · Holmankorpi 3F, 02210 Espoo<br>
  Sähköposti: <a href="mailto:info@cleava.fi">info@cleava.fi</a><br>
  Puhelin: 045 187 8083<br>
  Asiakaspalvelu: Ma–Pe 8–18, La–Su 12–16</p>
@@ -4011,7 +4006,7 @@ id="page-porrassiivous">
  <div class="legal-page">
  <div class="section-eyebrow" style="display:inline-flex;margin-bottom:16px;" data-i18n="70">Evästeet</div>
  <h2 data-i18n="71" data-orig-h1="1">Evästekäytäntö</h2>
- <p class="meta">Päivitetty: huhtikuu 2025 · Mansio Group Oy</p>
+ <p class="meta">Päivitetty: huhtikuu 2025 · Bloomhive</p>
  <h2>Mitä evästeet ovat?</h2>
  <p>Evästeet ovat pieniä tekstitiedostoja, jotka tallennetaan selaimeesi. Ne auttavat sivustoa muistamaan asetuksesi.</p>
  <h2>Käyttämämme evästeet</h2>
@@ -4023,15 +4018,15 @@ id="page-porrassiivous">
 
 <!-- ==================== ESPOO INTERNAL LINKS (v125 SEO) ============= -->
 <section aria-label="Siivouspalvelut Espoossa" style="max-width:1100px;margin:0 auto;padding:48px 20px;">
-  <h2 style="font-size:1.6rem;color:#155e75;margin-bottom:8px;">Siivouspalvelut Espoossa</h2>
+  <h2 style="font-size:1.6rem;color:#0a1628;margin-bottom:8px;">Siivouspalvelut Espoossa</h2>
   <p style="color:#475569;margin-bottom:24px;max-width:640px;">Cleava palvelee koko Espoota Leppävaarasta Espoonlahteen. Valitse palvelu:</p>
   <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;">
-    <li><a href="/siivouspalvelu/espoo/" style="display:block;padding:14px 18px;background:#f1f5f9;border-radius:10px;color:#155e75;text-decoration:none;font-weight:600;">Siivouspalvelu Espoo →</a></li>
-    <li><a href="/kotisiivous/espoo/" style="display:block;padding:14px 18px;background:#f1f5f9;border-radius:10px;color:#155e75;text-decoration:none;font-weight:600;">Kotisiivous Espoossa →</a></li>
-    <li><a href="/muuttosiivous/espoo/" style="display:block;padding:14px 18px;background:#f1f5f9;border-radius:10px;color:#155e75;text-decoration:none;font-weight:600;">Muuttosiivous Espoo →</a></li>
-    <li><a href="/ikkunanpesu/espoo/" style="display:block;padding:14px 18px;background:#f1f5f9;border-radius:10px;color:#155e75;text-decoration:none;font-weight:600;">Ikkunanpesu Espoossa →</a></li>
-    <li><a href="/toimistosiivous/espoo/" style="display:block;padding:14px 18px;background:#f1f5f9;border-radius:10px;color:#155e75;text-decoration:none;font-weight:600;">Toimistosiivous Espoo →</a></li>
-    <li><a href="/suursiivous/espoo/" style="display:block;padding:14px 18px;background:#f1f5f9;border-radius:10px;color:#155e75;text-decoration:none;font-weight:600;">Suursiivous Espoossa →</a></li>
+    <li><a href="/siivouspalvelu/espoo/" style="display:block;padding:14px 18px;background:#f1f5f9;border-radius:10px;color:#0a1628;text-decoration:none;font-weight:600;">Siivouspalvelu Espoo →</a></li>
+    <li><a href="/kotisiivous/espoo/" style="display:block;padding:14px 18px;background:#f1f5f9;border-radius:10px;color:#0a1628;text-decoration:none;font-weight:600;">Kotisiivous Espoossa →</a></li>
+    <li><a href="/muuttosiivous/espoo/" style="display:block;padding:14px 18px;background:#f1f5f9;border-radius:10px;color:#0a1628;text-decoration:none;font-weight:600;">Muuttosiivous Espoo →</a></li>
+    <li><a href="/ikkunanpesu/espoo/" style="display:block;padding:14px 18px;background:#f1f5f9;border-radius:10px;color:#0a1628;text-decoration:none;font-weight:600;">Ikkunanpesu Espoossa →</a></li>
+    <li><a href="/toimistosiivous/espoo/" style="display:block;padding:14px 18px;background:#f1f5f9;border-radius:10px;color:#0a1628;text-decoration:none;font-weight:600;">Toimistosiivous Espoo →</a></li>
+    <li><a href="/suursiivous/espoo/" style="display:block;padding:14px 18px;background:#f1f5f9;border-radius:10px;color:#0a1628;text-decoration:none;font-weight:600;">Suursiivous Espoossa →</a></li>
   </ul>
 </section>
 
@@ -4061,9 +4056,6 @@ id="page-porrassiivous">
  </select>
  <input type="text" name="zip" placeholder="Postinumero" data-placeholder-fi="Postinumero" data-placeholder-en="Postal code" inputmode="numeric" required>
  <input type="tel" name="phone" placeholder="Puhelinnumero" data-placeholder-fi="Puhelinnumero" data-placeholder-en="Phone number" required>
-
- <input type="email" name="email" placeholder="Sahkoposti" data-placeholder-fi="Sahkoposti" data-placeholder-en="Email" required>
-
  <button type="submit" class="fcta-pill-btn" data-i18n-fi="Pyydä tarjous" data-i18n-en="Request quote">Pyydä tarjous</button>
  </form>
  <p class="fcta-footer__note" data-i18n="65">Otamme yhteyttä 24h sisällä.</p>
@@ -4242,9 +4234,6 @@ id="page-porrassiivous">
  </select>
  <input type="text" name="zip" placeholder="Postinumero" data-placeholder-fi="Postinumero" data-placeholder-en="Postal code" inputmode="numeric" required>
  <input type="tel" name="phone" placeholder="Puhelinnumero" data-placeholder-fi="Puhelinnumero" data-placeholder-en="Phone number" required>
-
- <input type="email" name="email" placeholder="Sahkoposti" data-placeholder-fi="Sahkoposti" data-placeholder-en="Email" required>
-
  <button type="submit" class="fcta-pill-btn" data-i18n-fi="Pyydä tarjous" data-i18n-en="Request quote">Pyydä tarjous</button>
  </form>
  <p class="fcta-footer__note" data-i18n-fi="Otamme yhteyttä 24h sisällä." data-i18n-en="We'll contact you within 24 hours.">Otamme yhteyttä 24h sisällä.</p>
@@ -4325,9 +4314,6 @@ id="page-porrassiivous">
  </select>
  <input type="text" name="zip" placeholder="Postinumero" data-placeholder-fi="Postinumero" data-placeholder-en="Postal code" inputmode="numeric" required>
  <input type="tel" name="phone" placeholder="Puhelinnumero" data-placeholder-fi="Puhelinnumero" data-placeholder-en="Phone number" required>
-
- <input type="email" name="email" placeholder="Sahkoposti" data-placeholder-fi="Sahkoposti" data-placeholder-en="Email" required>
-
  <button type="submit" class="fcta-pill-btn" data-i18n-fi="Pyydä tarjous" data-i18n-en="Request quote">Pyydä tarjous</button>
  </form>
  <p class="fcta-footer__note" data-i18n-fi="Otamme yhteyttä 24h sisällä." data-i18n-en="We'll contact you within 24 hours.">Otamme yhteyttä 24h sisällä.</p>
@@ -4408,9 +4394,6 @@ id="page-porrassiivous">
  </select>
  <input type="text" name="zip" placeholder="Postinumero" data-placeholder-fi="Postinumero" data-placeholder-en="Postal code" inputmode="numeric" required>
  <input type="tel" name="phone" placeholder="Puhelinnumero" data-placeholder-fi="Puhelinnumero" data-placeholder-en="Phone number" required>
-
- <input type="email" name="email" placeholder="Sahkoposti" data-placeholder-fi="Sahkoposti" data-placeholder-en="Email" required>
-
  <button type="submit" class="fcta-pill-btn" data-i18n-fi="Pyydä tarjous" data-i18n-en="Request quote">Pyydä tarjous</button>
  </form>
  <p class="fcta-footer__note" data-i18n-fi="Otamme yhteyttä 24h sisällä." data-i18n-en="We'll contact you within 24 hours.">Otamme yhteyttä 24h sisällä.</p>
@@ -4468,15 +4451,14 @@ id="page-porrassiivous">
  <ul>
  <li><a href="#" onclick="showPage('privacy');return false;">Tietosuoja &amp; Palveluehdot</a></li>
  <li><a href="#" onclick="showPage('cookies');return false;">Evästekäytäntö</a></li>
- <li style="font-size:12px;color:rgba(255,255,255,.3);padding-top:6px;">Y-tunnus: 3631044-9</li>
- <li style="font-size:12px;color:rgba(255,255,255,.3);">Mansio Group Oy</li>
- <li style="font-size:12px;color:rgba(255,255,255,.3);">Aputoiminimi: Cleava Siivouspalvelut</li>
+ <li style="font-size:12px;color:rgba(255,255,255,.3);padding-top:6px;">Y-tunnus: 3567546-2</li>
+ <li style="font-size:12px;color:rgba(255,255,255,.3);">Bloomhive</li>
  <li style="font-size:12px;color:rgba(255,255,255,.3);">Holmankorpi 3F, 02210 Espoo</li>
  </ul>
  </div>
  </div>
  <div class="footer-bottom">
- <span>© 2025 Cleava Siivouspalvelut — Mansio Group Oy</span>
+ <span>© 2025 Cleava Siivouspalvelut — Bloomhive</span>
  <div style="display:flex;gap:16px;">
  <a href="#" onclick="showPage('privacy');return false;">Tietosuoja</a>
  <a href="#" onclick="showPage('cookies');return false;">Evästeet</a>
@@ -4516,9 +4498,6 @@ id="page-porrassiivous">
  <p style="display:none;" aria-hidden="true"><label>Älä täytä: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
  <div class="form-group"><label class="form-label">Postinumero</label><input class="form-input" type="text" name="zip" inputmode="numeric" placeholder="00100" required></div>
  <div class="form-group"><label class="form-label">Puhelinnumero</label><input class="form-input" type="tel" name="phone" placeholder="040 123 4567" required></div>
-
- <div class="form-group"><label class="form-label" data-i18n-fi="Sahkoposti" data-i18n-en="Email">Sahkoposti</label><input class="form-input" type="email" name="email" placeholder="sahkoposti@example.fi" required data-placeholder-fi="sahkoposti@example.fi" data-placeholder-en="you@example.com"></div>
-
  <button type="submit" class="form-submit" id="modal-btn">Lähetä</button>
  </form>
  </div>
@@ -4530,22 +4509,22 @@ id="page-porrassiivous">
  Varaa nyt
 </button>
 
-<script defer src="/assets/spa-routing.js?v=v127"></script>
+<script defer src="/assets/spa-routing.js?v=v124"></script>
 
 
 <!-- TILAA POPUP -->
-<div id="tilaaOverlay" style="display:none;position:fixed;inset:0;background:rgba(8,47,73,.72);z-index:9999;backdrop-filter:blur(6px);align-items:flex-start;justify-content:center;padding:24px;overflow-y:auto;" onclick="if(event.target===this)closeTilaaPopup()">
+<div id="tilaaOverlay" style="display:none;position:fixed;inset:0;background:rgba(10,22,40,.72);z-index:9999;backdrop-filter:blur(6px);align-items:flex-start;justify-content:center;padding:24px;overflow-y:auto;" onclick="if(event.target===this)closeTilaaPopup()">
 
   <!-- Step 1 -->
   <div id="tS1" style="background:#fff;border-radius:24px;padding:48px 44px;max-width:520px;width:100%;position:relative;box-shadow:0 32px 80px rgba(0,0,0,.25);margin:auto;">
     <button onclick="closeTilaaPopup()" style="position:absolute;top:16px;right:16px;background:#f1f5f9;border:none;border-radius:50%;width:36px;height:36px;font-size:20px;cursor:pointer;color:#475569;line-height:1;">&#215;</button>
-    <div id="tLabelEl" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#38bdf8;margin-bottom:12px;">PYYDÄ TARJOUS</div>
-    <h2 id="tH1El" style="font-size:1.75rem;font-weight:600;color:#0e7490;margin-bottom:8px;line-height:1.2;">Kuinka suuri on kotisi?</h2>
+    <div id="tLabelEl" style="font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#3b82f6;margin-bottom:12px;">PYYDÄ TARJOUS</div>
+    <h2 id="tH1El" style="font-size:1.75rem;font-weight:600;color:#0f2444;margin-bottom:8px;line-height:1.2;">Kuinka suuri on kotisi?</h2>
     <p id="tDescEl" style="font-size:15px;color:#64748b;margin-bottom:32px;line-height:1.6;">Kerro kodin koko ja postinumero. Otamme yhteyttä saman päivän aikana.</p>
     <div style="margin-bottom:22px;">
-      <label id="tSizeLabelEl" style="display:block;font-size:13px;font-weight:600;color:#0e7490;margin-bottom:9px;">Asunnon koko</label>
+      <label id="tSizeLabelEl" style="display:block;font-size:13px;font-weight:600;color:#0f2444;margin-bottom:9px;">Asunnon koko</label>
       <div style="position:relative;">
-        <select id="tSize" style="width:100%;padding:15px 44px 15px 16px;border:2px solid #e2e8f0;border-radius:12px;font-size:15px;font-family:inherit;color:#0e7490;background:#fff;appearance:none;-webkit-appearance:none;outline:none;box-sizing:border-box;cursor:pointer;">
+        <select id="tSize" style="width:100%;padding:15px 44px 15px 16px;border:2px solid #e2e8f0;border-radius:12px;font-size:15px;font-family:inherit;color:#0f2444;background:#fff;appearance:none;-webkit-appearance:none;outline:none;box-sizing:border-box;cursor:pointer;">
           <option value="">Valitse koko</option>
           <option>alle 35 m²</option>
           <option>35–49 m²</option>
@@ -4561,25 +4540,25 @@ id="page-porrassiivous">
       </div>
     </div>
     <div style="margin-bottom:30px;">
-      <label id="tZipLabelEl" style="display:block;font-size:13px;font-weight:600;color:#0e7490;margin-bottom:9px;">Postinumero</label>
-      <input id="tZip" type="text" inputmode="numeric" placeholder="00100" maxlength="5" style="width:100%;padding:15px 16px;border:2px solid #e2e8f0;border-radius:12px;font-size:15px;font-family:inherit;color:#0e7490;outline:none;box-sizing:border-box;">
+      <label id="tZipLabelEl" style="display:block;font-size:13px;font-weight:600;color:#0f2444;margin-bottom:9px;">Postinumero</label>
+      <input id="tZip" type="text" inputmode="numeric" placeholder="00100" maxlength="5" style="width:100%;padding:15px 16px;border:2px solid #e2e8f0;border-radius:12px;font-size:15px;font-family:inherit;color:#0f2444;outline:none;box-sizing:border-box;">
     </div>
-    <button id="tNextBtn" onclick="tNext()" style="width:100%;padding:18px;background:#0e7490;color:#fff;border:none;border-radius:13px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Jatka →</button>
+    <button id="tNextBtn" onclick="tNext()" style="width:100%;padding:18px;background:#0f2444;color:#fff;border:none;border-radius:13px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Jatka →</button>
     <p id="tPrivacy1" style="font-size:12px;color:#94a3b8;text-align:center;margin-top:14px;">Tietojasi ei jaeta kolmansille osapuolille</p>
   </div>
 
   <!-- Step 2 -->
   <div id="tS2" style="display:none;background:#fff;border-radius:24px;padding:48px 44px;max-width:520px;width:100%;position:relative;box-shadow:0 32px 80px rgba(0,0,0,.25);margin:auto;">
     <button onclick="closeTilaaPopup()" style="position:absolute;top:16px;right:16px;background:#f1f5f9;border:none;border-radius:50%;width:36px;height:36px;font-size:20px;cursor:pointer;color:#475569;line-height:1;">&#215;</button>
-    <button id="tBackBtn" onclick="tBack()" style="background:#f1f5f9;border:none;border-radius:10px;padding:10px 16px;font-size:14px;font-weight:600;color:#0e7490;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;margin-bottom:24px;">← Takaisin</button>
-    <h2 id="tH2El" style="font-size:1.75rem;font-weight:600;color:#0e7490;margin-bottom:8px;line-height:1.2;">Anna puhelinnumerosi</h2>
+    <button id="tBackBtn" onclick="tBack()" style="background:#f1f5f9;border:none;border-radius:10px;padding:10px 16px;font-size:14px;font-weight:600;color:#0f2444;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;margin-bottom:24px;">← Takaisin</button>
+    <h2 id="tH2El" style="font-size:1.75rem;font-weight:600;color:#0f2444;margin-bottom:8px;line-height:1.2;">Anna puhelinnumerosi</h2>
     <p id="tDesc2El" style="font-size:15px;color:#64748b;margin-bottom:22px;line-height:1.6;">Soitamme sinulle saman päivän aikana.</p>
-    <div id="tSum" style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:11px;padding:13px 16px;margin-bottom:26px;font-size:14px;color:#0e7490;font-weight:600;"></div>
+    <div id="tSum" style="background:#f8fafc;border:1.5px solid #e2e8f0;border-radius:11px;padding:13px 16px;margin-bottom:26px;font-size:14px;color:#0f2444;font-weight:600;"></div>
     <div style="margin-bottom:30px;">
-      <label id="tPhoneLabelEl" style="display:block;font-size:13px;font-weight:600;color:#0e7490;margin-bottom:9px;">Puhelinnumero</label>
-      <input id="tPhone" type="tel" placeholder="040 123 4567" style="width:100%;padding:15px 16px;border:2px solid #e2e8f0;border-radius:12px;font-size:15px;font-family:inherit;color:#0e7490;outline:none;box-sizing:border-box;">
+      <label id="tPhoneLabelEl" style="display:block;font-size:13px;font-weight:600;color:#0f2444;margin-bottom:9px;">Puhelinnumero</label>
+      <input id="tPhone" type="tel" placeholder="040 123 4567" style="width:100%;padding:15px 16px;border:2px solid #e2e8f0;border-radius:12px;font-size:15px;font-family:inherit;color:#0f2444;outline:none;box-sizing:border-box;">
     </div>
-    <button id="tBtn" onclick="tSubmit()" style="width:100%;padding:18px;background:#0e7490;color:#fff;border:none;border-radius:13px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Jätä soittopyyntö</button>
+    <button id="tBtn" onclick="tSubmit()" style="width:100%;padding:18px;background:#0f2444;color:#fff;border:none;border-radius:13px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Jätä soittopyyntö</button>
     <p id="tPrivacy2" style="font-size:12px;color:#94a3b8;text-align:center;margin-top:14px;">Tietojasi ei jaeta kolmansille osapuolille</p>
   </div>
 
@@ -4591,9 +4570,9 @@ id="page-porrassiivous">
         <polyline id="tCheck" points="15,27 23,35 37,19" stroke="#22c55e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:42;stroke-dashoffset:42;transition:stroke-dashoffset .5s ease .15s;"/>
       </svg>
     </div>
-    <h2 style="font-size:2rem;font-weight:600;color:#0e7490;margin-bottom:14px;">Kiitos!</h2>
+    <h2 style="font-size:2rem;font-weight:600;color:#0f2444;margin-bottom:14px;">Kiitos!</h2>
     <p style="font-size:16px;color:#64748b;line-height:1.75;margin-bottom:36px;">Kiitos viestistäsi — vastaamme 24h sisällä.</p>
-    <button onclick="closeTilaaPopup()" style="padding:16px 44px;background:#0e7490;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Sulje</button>
+    <button onclick="closeTilaaPopup()" style="padding:16px 44px;background:#0f2444;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Sulje</button>
   </div>
 
 </div>
@@ -4650,7 +4629,7 @@ function tSubmit(){
     params.append('phone',phone);
     params.append('size',sz);
     params.append('source','tilaa-popup');
-    fetch('/.netlify/functions/submit-offer-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(params))}).catch(function(){});
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:params.toString()}).catch(function(){});
   } catch(err) {}
   return false;
 }
@@ -4722,7 +4701,7 @@ function _updatePopupLang(l) {
 </script>
 
 <!-- GLOBAL THANK YOU POPUP -->
-<div id="tyOverlay" style="display:none;position:fixed;inset:0;background:rgba(8,47,73,.72);z-index:99999;align-items:center;justify-content:center;padding:24px;" onclick="if(event.target===this)closeTyPopup()">
+<div id="tyOverlay" style="display:none;position:fixed;inset:0;background:rgba(10,22,40,.72);z-index:99999;align-items:center;justify-content:center;padding:24px;" onclick="if(event.target===this)closeTyPopup()">
   <div style="background:#fff;border-radius:24px;padding:56px 44px;max-width:480px;width:100%;text-align:center;box-shadow:0 32px 80px rgba(0,0,0,.25);">
     <div style="width:80px;height:80px;background:#f0fdf4;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;">
       <svg width="40" height="40" viewBox="0 0 52 52" fill="none">
@@ -4730,9 +4709,9 @@ function _updatePopupLang(l) {
         <polyline id="tyCheck" points="15,27 23,35 37,19" stroke="#22c55e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:42;stroke-dashoffset:42;transition:stroke-dashoffset .5s ease .1s;"/>
       </svg>
     </div>
-    <h2 style="font-size:1.9rem;font-weight:600;color:#0e7490;margin-bottom:12px;">Kiitos!</h2>
+    <h2 style="font-size:1.9rem;font-weight:600;color:#0f2444;margin-bottom:12px;">Kiitos!</h2>
     <p style="font-size:16px;color:#64748b;line-height:1.7;margin-bottom:32px;">Olemme yhteydessä saman päivän aikana ja sovimme ajankohdan.</p>
-    <button onclick="closeTyPopup()" style="padding:16px 44px;background:#0e7490;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Sulje</button>
+    <button onclick="closeTyPopup()" style="padding:16px 44px;background:#0f2444;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Sulje</button>
   </div>
 </div>
 
@@ -4742,7 +4721,7 @@ function _updatePopupLang(l) {
 </script>
 
 <!-- THANK YOU POPUP -->
-<div id="tyPopup" style="display:none;position:fixed;inset:0;background:rgba(8,47,73,.75);z-index:99999;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px);">
+<div id="tyPopup" style="display:none;position:fixed;inset:0;background:rgba(10,22,40,.75);z-index:99999;align-items:center;justify-content:center;padding:24px;backdrop-filter:blur(4px);">
   <div style="background:#fff;border-radius:24px;padding:56px 44px;max-width:480px;width:100%;text-align:center;box-shadow:0 32px 80px rgba(0,0,0,.3);">
     <div style="width:88px;height:88px;background:#f0fdf4;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 28px;">
       <svg width="44" height="44" viewBox="0 0 52 52" fill="none">
@@ -4750,9 +4729,9 @@ function _updatePopupLang(l) {
         <polyline id="tyChk" points="15,27 23,35 37,19" stroke="#22c55e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" style="stroke-dasharray:42;stroke-dashoffset:42;transition:stroke-dashoffset .5s ease .1s;"/>
       </svg>
     </div>
-    <h2 style="font-size:1.9rem;font-weight:600;color:#0e7490;margin-bottom:12px;">Kiitos!</h2>
+    <h2 style="font-size:1.9rem;font-weight:600;color:#0f2444;margin-bottom:12px;">Kiitos!</h2>
     <p style="font-size:16px;color:#64748b;line-height:1.7;margin-bottom:32px;">Kiitos viestist&#228;si &mdash; vastaamme 24h sis&#228;ll&#228;.</p>
-    <button onclick="closeTyPopup()" style="padding:16px 44px;background:#0e7490;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Sulje</button>
+    <button onclick="closeTyPopup()" style="padding:16px 44px;background:#0f2444;color:#fff;border:none;border-radius:12px;font-size:16px;font-weight:700;cursor:pointer;font-family:inherit;">Sulje</button>
   </div>
 </div>
 <script>

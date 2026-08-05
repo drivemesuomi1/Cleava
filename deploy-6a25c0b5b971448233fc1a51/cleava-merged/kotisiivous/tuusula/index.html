@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Kotisiivous Tuusula — Cleava | alkaen 39 €/h</title>
@@ -16,16 +21,16 @@
  DESIGN SYSTEM — Dark Navy / White
  ============================== */
 :root{
- --c-navy:#155e75;
- --c-navy-light:#0e7490;
- --c-navy-mid:#0891b2;
- --c-blue:#0284c7;
- --c-blue-light:#38bdf8;
- --c-accent:#7dd3fc;
+ --c-navy:#0a1628;
+ --c-navy-light:#142035;
+ --c-navy-mid:#1e3a5f;
+ --c-blue:#1d4ed8;
+ --c-blue-light:#3b82f6;
+ --c-accent:#60a5fa;
  --c-white:#ffffff;
- --c-off:#f0f9ff;
- --c-grey:#e0f2fe;
- --c-border:#bae6fd;
+ --c-off:#f8fafc;
+ --c-grey:#e2e8f0;
+ --c-border:#e2e8f0;
  --c-text:#0f172a;
  --c-muted:#475569;
  --c-muted-light:#94a3b8;
@@ -122,7 +127,7 @@ nav{
  ============================== */
 .mob-menu{
  display:none;position:fixed;inset:0;z-index:9998;
- background:linear-gradient(160deg, #0e7490 0%, #155e75 100%);
+ background:linear-gradient(160deg, #0f2444 0%, #0a1628 100%);
  flex-direction:column;
  padding:80px 24px 36px;overflow-y:auto;
 }
@@ -208,7 +213,7 @@ nav{
  transition:all .2s;box-shadow:none;
  cursor:pointer;white-space:nowrap;
 }
-.btn-primary:hover{background:#1e40af;transform:translateY(-2px);box-shadow:0 8px 28px rgba(2,132,199,.4);}
+.btn-primary:hover{background:#1e40af;transform:translateY(-2px);box-shadow:0 8px 28px rgba(29,78,216,.4);}
 .btn-outline{
  display:inline-flex;align-items:center;gap:8px;
  background:transparent;color:var(--c-navy);
@@ -247,7 +252,7 @@ nav{
  transition:border-color .18s,box-shadow .18s;
 }
 .form-input:focus,.form-select:focus{
- border-color:var(--c-blue);box-shadow:0 0 0 3px rgba(2,132,199,.1);
+ border-color:var(--c-blue);box-shadow:0 0 0 3px rgba(29,78,216,.1);
 }
 .form-input::placeholder{color:var(--c-muted-light);}
 .form-select-wrap{position:relative;}
@@ -275,7 +280,7 @@ nav{
 }
 .hero__overlay{
  position:absolute;inset:0;
- background:linear-gradient(110deg,rgba(8,47,73,.88) 0%,rgba(8,47,73,.65) 55%,rgba(8,47,73,.4) 100%);
+ background:linear-gradient(110deg,rgba(10,22,40,.88) 0%,rgba(10,22,40,.65) 55%,rgba(10,22,40,.4) 100%);
 }
 .hero__inner{
  position:relative;z-index:2;
@@ -285,7 +290,7 @@ nav{
 }
 .hero__eyebrow{
  display:inline-flex;align-items:center;gap:8px;
- background:rgba(125,211,252,.15);border:1px solid rgba(125,211,252,.3);
+ background:rgba(96,165,250,.15);border:1px solid rgba(96,165,250,.3);
  color:var(--c-accent);font-size:11px;font-weight:700;letter-spacing:.12em;
  text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:22px;
 }
@@ -324,7 +329,7 @@ nav{
  width:100%;padding:16px;background:var(--c-navy);color:#fff;
  border:none;border-radius:10px;font-size:15px;font-weight:700;
  cursor:pointer;transition:all .2s;margin-top:4px;
- box-shadow:0 4px 16px rgba(8,47,73,.25);
+ box-shadow:0 4px 16px rgba(10,22,40,.25);
 }
 .form-submit:hover{background:var(--c-navy-mid);transform:translateY(-1px);}
 .form-submit.success{background:#16a34a!important;}
@@ -365,7 +370,7 @@ nav{
  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
  padding:0;border-radius:0;margin-bottom:12px;
 }
-.section--navy .section-eyebrow{background:rgba(125,211,252,.15);color:var(--c-accent);border:1px solid rgba(125,211,252,.25);}
+.section--navy .section-eyebrow{background:rgba(96,165,250,.15);color:var(--c-accent);border:1px solid rgba(96,165,250,.25);}
 .section-title{
  font-family:var(--ff-display);font-size:clamp(1.9rem,3.5vw,2.9rem);
  font-weight:400;color:var(--c-navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:14px;
@@ -382,9 +387,9 @@ nav{
  background:#fff;cursor:pointer;transition:transform .22s,box-shadow .22s,border-color .22s;
  display:block;
 }
-.service-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);border-color:rgba(2,132,199,.2);}
+.service-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);border-color:rgba(29,78,216,.2);}
 .service-card__img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center 15%;display:block;}
-.service-card__vid{width:100%;aspect-ratio:4/3;overflow:hidden;background:#155e75;position:relative;}
+.service-card__vid{width:100%;aspect-ratio:4/3;overflow:hidden;background:#0a1628;position:relative;}
 .service-card__vid video{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;}
 .service-card__body{padding:22px;}
 .service-card__title{
@@ -405,7 +410,7 @@ nav{
 .how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:36px;margin-top:56px;}
 .how-step__num{
  width:48px;height:48px;
- background:rgba(125,211,252,.15);border:1.5px solid rgba(125,211,252,.3);
+ background:rgba(96,165,250,.15);border:1.5px solid rgba(96,165,250,.3);
  border-radius:50%;display:flex;align-items:center;justify-content:center;
  font-family:var(--ff-display);font-size:1.3rem;color:var(--c-accent);margin-bottom:18px;
 }
@@ -483,7 +488,7 @@ nav{
 }
 .reviews-arrow:hover{background:var(--c-navy);color:#fff;border-color:var(--c-navy);}
 .reviews-dots{display:flex;gap:6px;}
-.reviews-dot{width:7px;height:7px;border-radius:50%;background:rgba(8,47,73,.15);border:none;padding:0;cursor:pointer;transition:all .2s;}
+.reviews-dot{width:7px;height:7px;border-radius:50%;background:rgba(10,22,40,.15);border:none;padding:0;cursor:pointer;transition:all .2s;}
 .reviews-dot.active{background:var(--c-blue);width:22px;border-radius:3px;}
 
 /* ==============================
@@ -495,7 +500,7 @@ nav{
  padding:8px 18px;font-size:14px;font-weight:500;color:var(--c-navy);
  transition:all .18s;
 }
-.area-pill:hover{background:#eff6ff;border-color:rgba(2,132,199,.25);color:var(--c-blue);}
+.area-pill:hover{background:#eff6ff;border-color:rgba(29,78,216,.25);color:var(--c-blue);}
 
 /* ==============================
  FRESKA-STYLE CTA SECTION
@@ -505,7 +510,7 @@ nav{
 }
 .cta-section::before{
  content:'';position:absolute;inset:0;
- background:radial-gradient(ellipse 800px 600px at 60% 50%,rgba(2,132,199,.25) 0%,transparent 70%);
+ background:radial-gradient(ellipse 800px 600px at 60% 50%,rgba(29,78,216,.25) 0%,transparent 70%);
 }
 .cta-inner{position:relative;z-index:1;max-width:var(--max);margin:0 auto;}
 .cta-split{display:grid;grid-template-columns:1fr 480px;gap:72px;align-items:center;}
@@ -556,7 +561,7 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
  ============================== */
 .modal-overlay{
  position:fixed;inset:0;z-index:9999;
- background:rgba(8,47,73,.65);backdrop-filter:blur(8px);
+ background:rgba(10,22,40,.65);backdrop-filter:blur(8px);
  display:none;align-items:center;justify-content:center;padding:24px;
 }
 .modal-overlay.open{display:flex;}
@@ -584,12 +589,12 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
  background:var(--c-blue);color:#fff;border:none;
  border-radius:999px;padding:13px 24px;
  font-size:14px;font-weight:700;
- box-shadow:0 8px 28px rgba(2,132,199,.4);
+ box-shadow:0 8px 28px rgba(29,78,216,.4);
  display:flex;align-items:center;gap:8px;
  transition:all .2s;
 
 }
-.fab:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 14px 36px rgba(2,132,199,.5);}
+.fab:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 14px 36px rgba(29,78,216,.5);}
 
 
 /* ==============================
@@ -609,7 +614,7 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
 }
 .sp-hero__bg::after{
  content:'';position:absolute;inset:0;
- background:linear-gradient(105deg,rgba(8,47,73,.96) 0%,rgba(8,47,73,.88) 44%,rgba(8,47,73,.55) 72%,rgba(8,47,73,.2) 100%);
+ background:linear-gradient(105deg,rgba(10,22,40,.96) 0%,rgba(10,22,40,.88) 44%,rgba(10,22,40,.55) 72%,rgba(10,22,40,.2) 100%);
 }
 .sp-hero__content{
  position:relative;z-index:2;
@@ -621,7 +626,7 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
 }
 .sp-hero__eyebrow{
  display:inline-flex;align-items:center;gap:7px;
- background:rgba(125,211,252,.15);border:1px solid rgba(125,211,252,.3);
+ background:rgba(96,165,250,.15);border:1px solid rgba(96,165,250,.3);
  color:var(--c-accent);font-size:11px;font-weight:700;letter-spacing:.12em;
  text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:18px;
 }
@@ -740,7 +745,7 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
 }
 .freska-cta::before{
  content:'';position:absolute;inset:0;
- background:radial-gradient(circle 600px at center,rgba(2,132,199,.2) 0%,transparent 70%);
+ background:radial-gradient(circle 600px at center,rgba(29,78,216,.2) 0%,transparent 70%);
 }
 .freska-cta__inner{position:relative;z-index:1;max-width:680px;margin:0 auto;}
 .freska-cta__title{
@@ -769,7 +774,7 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
 .pc--name{font-weight:600;color:var(--c-navy);}
 .pc--price{font-family:var(--ff-display);font-size:1.3rem;color:var(--c-blue);}
 .pc--note{color:var(--c-muted);font-size:13px;}
-.pricing-info{background:#eff6ff;border:1px solid rgba(2,132,199,.12);border-radius:var(--r);padding:20px 24px;margin-bottom:48px;}
+.pricing-info{background:#eff6ff;border:1px solid rgba(29,78,216,.12);border-radius:var(--r);padding:20px 24px;margin-bottom:48px;}
 .pricing-info h3{font-size:14px;font-weight:700;color:var(--c-navy);margin-bottom:8px;}
 .pricing-info p{font-size:13.5px;color:var(--c-muted);line-height:1.7;margin:0;}
 
@@ -1401,8 +1406,8 @@ video{will-change:auto;}
  position:relative;
  text-align:center;
 }
-.lk-card:hover { border-color:var(--c-blue); transform:translateY(-3px); box-shadow:0 8px 28px rgba(2,132,199,.12); }
-.lk-card.selected { border-color:var(--c-blue); background:#eff6ff; box-shadow:0 8px 28px rgba(2,132,199,.15); }
+.lk-card:hover { border-color:var(--c-blue); transform:translateY(-3px); box-shadow:0 8px 28px rgba(29,78,216,.12); }
+.lk-card.selected { border-color:var(--c-blue); background:#eff6ff; box-shadow:0 8px 28px rgba(29,78,216,.15); }
 .lk-badge {
  position:absolute; top:-12px; left:50%; transform:translateX(-50%);
  background:linear-gradient(135deg,var(--c-blue),#1e40af);
@@ -2027,7 +2032,7 @@ section.sp-includes-section{padding:56px 32px !important;}
 
  <a class="mob-cta" href="#" onclick="openBookingModal();closeMob();return false;">Tilaa Siivous</a>
 </div>
-<section class="sp-hero" style="background-image:linear-gradient(105deg,rgba(8,47,73,.78) 0%,rgba(8,47,73,.55) 50%,rgba(8,47,73,.25) 100%),url('/assets/kotisiivous-hero.png');background-size:cover;background-position:center center;background-repeat:no-repeat;">
+<section class="sp-hero" style="background-image:linear-gradient(105deg,rgba(10,22,40,.78) 0%,rgba(10,22,40,.55) 50%,rgba(10,22,40,.25) 100%),url('/assets/kotisiivous-hero.png');background-size:cover;background-position:center center;background-repeat:no-repeat;">
   <div class="sp-hero__content">
     <div class="sp-hero__eyebrow">KOTISIIVOUS · TUUSULA</div>
     <h1 class="sp-hero__title">Kotisiivous Tuusula — <em>luotettavasti ja huolellisesti</em></h1>
@@ -2048,7 +2053,7 @@ section.sp-includes-section{padding:56px 32px !important;}
         <div class="city-features"><div class="city-feature"><div class="city-feature-num">01</div><div class="city-feature-title">IMUROINTI &amp; LATTIAT</div><div class="city-feature-desc">Omakotitalojen ja rivitalojen lattiat — sekä parketit, laminaatit että laatat.</div></div><div class="city-feature"><div class="city-feature-num">02</div><div class="city-feature-title">PIHASTA TULLUT LIKA</div><div class="city-feature-desc">Tuusulassa pihatöistä kotiin tuotu hiekka ja lehdet siivotaan tehokkaasti pois.</div></div><div class="city-feature"><div class="city-feature-num">03</div><div class="city-feature-title">KEITTIÖ</div><div class="city-feature-desc">Tasopinnat, liesi, allas ja kalusteet — myös perinteisten puukalusteiden hellävarainen käsittely.</div></div><div class="city-feature"><div class="city-feature-num">04</div><div class="city-feature-title">KYLPYHUONE &amp; PEILIT</div><div class="city-feature-desc">Perusteellinen desinfiointi, kalkkien poisto ja ikkunoiden/peilien puhdistus.</div></div></div></div>
       <div class="sp-incl-mid" style="display:flex;flex-direction:column;align-items:center;justify-content:center;">
         <div style="width:1.5px;flex:1;background:var(--c-navy);"></div>
-        <svg style="margin:16px 0;flex-shrink:0;" width="28" height="28" viewBox="0 0 24 24" fill="#0e7490"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        <svg style="margin:16px 0;flex-shrink:0;" width="28" height="28" viewBox="0 0 24 24" fill="#0f2444"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
         <div style="width:1.5px;flex:1;background:var(--c-navy);"></div>
       </div>
       <div class="sp-incl-right" style="padding-left:60px;display:flex;flex-direction:column;justify-content:center;">
@@ -2200,15 +2205,14 @@ section.sp-includes-section{padding:56px 32px !important;}
  <ul>
  <li><a href="https://cleava.fi/varaa/tietosuojaseloste">Tietosuoja &amp; Palveluehdot</a></li>
  <li><a href="https://cleava.fi/cookies">Evästekäytäntö</a></li>
- <li style="font-size:12px;color:rgba(255,255,255,.3);padding-top:6px;">Y-tunnus: 3631044-9</li>
- <li style="font-size:12px;color:rgba(255,255,255,.3);">Mansio Group Oy</li>
- <li style="font-size:12px;color:rgba(255,255,255,.3);">Aputoiminimi: Cleava Siivouspalvelut</li>
+ <li style="font-size:12px;color:rgba(255,255,255,.3);padding-top:6px;">Y-tunnus: 3567546-2</li>
+ <li style="font-size:12px;color:rgba(255,255,255,.3);">Bloomhive</li>
  <li style="font-size:12px;color:rgba(255,255,255,.3);">Holmankorpi 3F, 02210 Espoo</li>
  </ul>
  </div>
  </div>
  <div class="footer-bottom">
- <span>© 2025 Cleava Siivouspalvelut — Mansio Group Oy</span>
+ <span>© 2025 Cleava Siivouspalvelut — Bloomhive</span>
  <div style="display:flex;gap:16px;">
  <a href="https://cleava.fi/varaa/tietosuojaseloste">Tietosuoja</a>
  
@@ -2394,43 +2398,14 @@ function toggleMobAcc(accId, btnId) {
 function submitCtaForm(e, source) {
  e.preventDefault();
  var form = e.target;
+ var zip = (form.zip && form.zip.value || '').trim();
+ var phone = (form.phone && form.phone.value || '').trim();
+ var service = (form.service && form.service.value || '').trim();
+ if(!zip || !phone) return;
+ fetch('/.netlify/functions/submit-offer-lead',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({zip:zip,phone:phone,service:service,source:source})}).catch(function(){});
  var btn = form.querySelector('button[type="submit"]');
- var originalLabel = btn ? btn.textContent : '';
- try {
-  var zip = (form.zip && form.zip.value || '').trim();
-  var phone = (form.phone && form.phone.value || '').trim();
-  var email = (form.email && form.email.value || '').trim();
-  var service = (form.service && form.service.value || '').trim();
-  if(!zip || !phone || (form.email && !email)) return false;
-  var params = new URLSearchParams();
-  params.append('form-name', 'footer-cta');
-  params.append('zip', zip);
-  params.append('phone', phone);
-  if(email) params.append('email', email);
-  if(service) params.append('service', service);
-  params.append('source', source || 'footer-cta');
-  params.append('page', location.pathname || '/');
-  var htmlLang = (document.documentElement.getAttribute('lang') || '').toLowerCase();
-  var isEnglish = htmlLang.indexOf('en') === 0 || location.pathname.indexOf('/en/') === 0 || location.pathname === '/en' || location.pathname.indexOf('/blog/') === 0;
-  params.append('lang', isEnglish ? 'en' : 'fi');
-  if(btn){ btn.textContent = 'L\u00e4hetet\u00e4\u00e4n...'; btn.disabled = true; }
-  fetch('/.netlify/functions/submit-offer-lead', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(Object.fromEntries(params)) })
-   .then(function(res){ if(!res.ok) throw new Error('Lead submit failed: '+res.status); return res.json().catch(function(){ return {}; }); })
-   .then(function(){
-    if(btn){ btn.textContent = '\u2713 L\u00e4hetetty!'; btn.disabled = true; btn.style.background = '#22c55e'; }
-    if(typeof showTyPopup==='function') showTyPopup();
-   })
-   .catch(function(err){
-    console.error('Lead submit failed', err);
-    if(btn){ btn.textContent = originalLabel; btn.disabled = false; btn.style.background = ''; }
-    alert('L\u00e4hetys ep\u00e4onnistui. Yrit\u00e4 uudelleen tai soita 045 187 8083.');
-   });
- } catch(err) {
-  console.error('Lead submit failed', err);
-  if(btn){ btn.textContent = originalLabel; btn.disabled = false; btn.style.background = ''; }
-  alert('L\u00e4hetys ep\u00e4onnistui. Yrit\u00e4 uudelleen tai soita 045 187 8083.');
- }
- return false;
+ if(btn){btn.textContent='✓ Lähetetty!';btn.disabled=true;}
+ setTimeout(function(){ history.pushState({}, '', '/kiitos'); }, 600);
 }
 
 function cleavaFaqToggle(qEl){
