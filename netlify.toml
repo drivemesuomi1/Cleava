@@ -8,4 +8,4 @@
   SECRETS_SCAN_OMIT_KEYS = "STRIPE_WEBHOOK_SECRET,STRIPE_SECRET_KEY"
 
 [functions]
-  included_files = ["deploy-6a25c0b5b971448233fc1a51/functions/vendor/**"]
+  included_files = ["functions/vendor/**"]
