@@ -235,12 +235,6 @@ function customerRows(type, data, lang) {
         [t.name, data.name],
         [t.email, data.email],
         [t.phone, data.phone],
-        [t.service, labelForService(data.service, lang)],
-        [t.cleaningType, data.cleaning_type === 'recurring' ? t.recurring : data.cleaning_type ? t.oneTime : ''],
-        [t.address, [data.address, data.city].filter(Boolean).join(', ')],
-        [t.size, data.size ? `${data.size} m2` : ''],
-        [t.time, [data.date, data.time].filter(Boolean).join(' ')],
-        [t.extras, extrasText(data, lang)],
         [t.message, data.notes || data.message],
       ]
     : [
@@ -638,7 +632,7 @@ exports.handler = async (event) => {
   if (data.type === 'booking' || data['form-name'] === 'booking' || (data.name && data.address)) {
     data.service = data.service || 'booking_form';
     data.source = data.source || 'booking-modal';
-    data.notes = data.notes || data.message || '';
+    data.notes = plain(data.message || data.notes);
     const payload = {
       ...data,
       html_internal: bookingInternalHtml(data),
