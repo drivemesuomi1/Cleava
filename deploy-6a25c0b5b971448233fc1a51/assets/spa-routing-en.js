@@ -59,7 +59,8 @@ try {
 var form = e.target;
 var zip = (form.zip && form.zip.value || '').trim();
 var phone = (form.phone && form.phone.value || '').trim();
-var email = (form.email && form.email.value || '').trim();
+var emailEl = form.querySelector('input[name="email"]');
+var email = (emailEl && emailEl.value || '').trim();
 if(!zip || !phone || (source === 'hero' && !email)) return false;
 var formName = source === 'hero' ? 'hero-lead' : 'contact-quick';
 var service = form.service ? form.service.value : '';
@@ -69,6 +70,8 @@ service: service,
 zip: zip,
 phone: phone,
 email: email,
+customer_email: email,
+send_to_email: email,
 source: source,
 page: window.location.href,
 lang: (document.documentElement.lang || '').slice(0,2) || 'en'

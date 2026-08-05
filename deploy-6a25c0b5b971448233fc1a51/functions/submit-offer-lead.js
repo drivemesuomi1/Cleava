@@ -210,6 +210,8 @@ function sourceLabel(data) {
 function hydrateRequestContext(data, event) {
   const headers = event.headers || {};
   const referer = headers.referer || headers.referrer || headers.Referer || headers.Referrer || '';
+  data.email = plain(data.email || data.customer_email || data.send_to_email || data.email_address);
+  data.buyer_email = plain(data.buyer_email);
   if (!data.page && referer) data.page = referer;
   if (!data.referrer && referer) data.referrer = referer;
   if (!data.lang) data.lang = langOf(data);
