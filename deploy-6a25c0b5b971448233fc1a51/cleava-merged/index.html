@@ -4323,7 +4323,8 @@ id="page-porrassiivous">
  </select>
  <input type="text" name="zip" placeholder="Postinumero" data-placeholder-fi="Postinumero" data-placeholder-en="Postal code" inputmode="numeric" required>
  <input type="tel" name="phone" placeholder="Puhelinnumero" data-placeholder-fi="Puhelinnumero" data-placeholder-en="Phone number" required>
- <button type="submit" class="fcta-pill-btn" data-i18n-fi="Pyydä tarjous" data-i18n-en="Request quote">Pyydä tarjous</button>
+  <input type="email" name="email" placeholder="Sähköposti" data-placeholder-fi="Sähköposti" data-placeholder-en="Email" autocomplete="email" required>
+<button type="submit" class="fcta-pill-btn" data-i18n-fi="Pyydä tarjous" data-i18n-en="Request quote">Pyydä tarjous</button>
  </form>
  <p class="fcta-footer__note" data-i18n="65">Otamme yhteyttä 24h sisällä.</p>
  </div>
@@ -4499,7 +4500,8 @@ id="page-porrassiivous">
  </select>
  <input type="text" name="zip" placeholder="Postinumero" data-placeholder-fi="Postinumero" data-placeholder-en="Postal code" inputmode="numeric" required>
  <input type="tel" name="phone" placeholder="Puhelinnumero" data-placeholder-fi="Puhelinnumero" data-placeholder-en="Phone number" required>
- <button type="submit" class="fcta-pill-btn" data-i18n-fi="Pyydä tarjous" data-i18n-en="Request quote">Pyydä tarjous</button>
+  <input type="email" name="email" placeholder="Sähköposti" data-placeholder-fi="Sähköposti" data-placeholder-en="Email" autocomplete="email" required>
+<button type="submit" class="fcta-pill-btn" data-i18n-fi="Pyydä tarjous" data-i18n-en="Request quote">Pyydä tarjous</button>
  </form>
  <p class="fcta-footer__note" data-i18n-fi="Otamme yhteyttä 24h sisällä." data-i18n-en="We'll contact you within 24 hours.">Otamme yhteyttä 24h sisällä.</p>
  </div>
@@ -4577,7 +4579,8 @@ id="page-porrassiivous">
  </select>
  <input type="text" name="zip" placeholder="Postinumero" data-placeholder-fi="Postinumero" data-placeholder-en="Postal code" inputmode="numeric" required>
  <input type="tel" name="phone" placeholder="Puhelinnumero" data-placeholder-fi="Puhelinnumero" data-placeholder-en="Phone number" required>
- <button type="submit" class="fcta-pill-btn" data-i18n-fi="Pyydä tarjous" data-i18n-en="Request quote">Pyydä tarjous</button>
+  <input type="email" name="email" placeholder="Sähköposti" data-placeholder-fi="Sähköposti" data-placeholder-en="Email" autocomplete="email" required>
+<button type="submit" class="fcta-pill-btn" data-i18n-fi="Pyydä tarjous" data-i18n-en="Request quote">Pyydä tarjous</button>
  </form>
  <p class="fcta-footer__note" data-i18n-fi="Otamme yhteyttä 24h sisällä." data-i18n-en="We'll contact you within 24 hours.">Otamme yhteyttä 24h sisällä.</p>
  </div>
@@ -4655,7 +4658,8 @@ id="page-porrassiivous">
  </select>
  <input type="text" name="zip" placeholder="Postinumero" data-placeholder-fi="Postinumero" data-placeholder-en="Postal code" inputmode="numeric" required>
  <input type="tel" name="phone" placeholder="Puhelinnumero" data-placeholder-fi="Puhelinnumero" data-placeholder-en="Phone number" required>
- <button type="submit" class="fcta-pill-btn" data-i18n-fi="Pyydä tarjous" data-i18n-en="Request quote">Pyydä tarjous</button>
+  <input type="email" name="email" placeholder="Sähköposti" data-placeholder-fi="Sähköposti" data-placeholder-en="Email" autocomplete="email" required>
+<button type="submit" class="fcta-pill-btn" data-i18n-fi="Pyydä tarjous" data-i18n-en="Request quote">Pyydä tarjous</button>
  </form>
  <p class="fcta-footer__note" data-i18n-fi="Otamme yhteyttä 24h sisällä." data-i18n-en="We'll contact you within 24 hours.">Otamme yhteyttä 24h sisällä.</p>
  </div>
@@ -5504,23 +5508,32 @@ function setBfType(btn, type) {
 }
 function submitBookingForm(e) {
  e.preventDefault();
- var form = e.target;
- var data = {};
- new FormData(form).forEach(function(v, k) { data[k] = v; });
- // Also get checkboxes
- ['extra_oven','extra_fridge','extra_balcony','extra_cabinets'].forEach(function(n) {
- data[n] = form.querySelector('[name="'+n+'"]').checked ? 'yes' : 'no';
- });
- fetch('/.netlify/functions/submit-offer-lead', {
- method: 'POST',
- headers: {'Content-Type': 'application/json'},
- body: JSON.stringify(data)
- }).catch(function(){});
- var btn = document.getElementById('booking-submit-btn');
- btn.textContent = '✓ Lähetetty!';
- btn.disabled = true;
- closeBookingModal();
- showTyPopup();
+ try {
+  var form = e.target;
+  var formData = new FormData(form);
+  var data = {};
+  formData.forEach(function(v, k){ data[k] = v; });
+  ['extra_oven','extra_fridge','extra_balcony','extra_cabinets'].forEach(function(n) {
+   var el = form.querySelector('[name="'+n+'"]');
+   if(el) data[n] = el.checked ? 'yes' : 'no';
+  });
+  var lang = (document.documentElement.lang || '').slice(0,2) || (location.pathname.indexOf('/en/') === 0 ? 'en' : 'fi');
+  data.type = 'booking';
+  data['form-name'] = 'booking';
+  data.source = data.source || 'booking-modal';
+  data.page = window.location.href;
+  data.lang = lang;
+  data.notes = data.notes || data.message || '';
+  fetch('/.netlify/functions/submit-offer-lead', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) }).catch(function(){});
+  var params = new URLSearchParams();
+  Object.keys(data).forEach(function(k){ if(data[k] !== undefined && data[k] !== null) params.append(k, data[k]); });
+  fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: params.toString() }).catch(function(){});
+  var btn = document.getElementById('booking-submit-btn');
+  if(btn){ btn.textContent = '✓ Lähetetty!'; btn.disabled = true; btn.style.background = '#22c55e'; }
+  closeBookingModal();
+  if(typeof showTyPopup==='function'){ showTyPopup(); }
+ } catch(err) {}
+ return false;
 }
 
 
@@ -5753,12 +5766,12 @@ function submitLahjakortti(e) {
 
 // ── GIFT CARD VOUCHER PDF ──
 function generateVoucherHTML(code, amount, pkg, expiry, recipientName, message) {
- return '<!DOCTYPE html><html lang="fi"><head>
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest"><meta charset="UTF-8">' +
+ return '<!DOCTYPE html><html lang="fi"><head>' +
+ '<link rel="icon" href="/favicon.ico" sizes="any">' +
+ '<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">' +
+ '<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">' +
+ '<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">' +
+ '<link rel="manifest" href="/site.webmanifest"><meta charset="UTF-8">' +
  '<title>Cleava Lahjakortti ' + code + '</title>' +
  '<style>' +
  '@import url(https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;1,400&family=Inter:wght@400;600;700;800&display=swap);' +

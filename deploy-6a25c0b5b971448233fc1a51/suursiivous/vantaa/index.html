@@ -287,7 +287,8 @@
  </select>
  <input type="text" name="zip" placeholder="Postinumero" data-placeholder-fi="Postinumero" data-placeholder-en="Postal code" inputmode="numeric" required>
  <input type="tel" name="phone" placeholder="Puhelinnumero" data-placeholder-fi="Puhelinnumero" data-placeholder-en="Phone number" required>
- <button type="submit" class="fcta-pill-btn" data-i18n-fi="Pyydä tarjous" data-i18n-en="Request quote">Pyydä tarjous</button>
+  <input type="email" name="email" placeholder="Sähköposti" data-placeholder-fi="Sähköposti" data-placeholder-en="Email" autocomplete="email" required>
+<button type="submit" class="fcta-pill-btn" data-i18n-fi="Pyydä tarjous" data-i18n-en="Request quote">Pyydä tarjous</button>
  </form>
  <p class="fcta-footer__note" data-i18n="65">Otamme yhteyttä 24h sisällä.</p>
  </div>
@@ -392,8 +393,22 @@ function submitBookingForm(e) {
  try {
   var form = e.target;
   var formData = new FormData(form);
+  var data = {};
+  formData.forEach(function(v, k){ data[k] = v; });
+  ['extra_oven','extra_fridge','extra_balcony','extra_cabinets'].forEach(function(n) {
+   var el = form.querySelector('[name="'+n+'"]');
+   if(el) data[n] = el.checked ? 'yes' : 'no';
+  });
+  var lang = (document.documentElement.lang || '').slice(0,2) || (location.pathname.indexOf('/en/') === 0 ? 'en' : 'fi');
+  data.type = 'booking';
+  data['form-name'] = 'booking';
+  data.source = data.source || 'booking-modal';
+  data.page = window.location.href;
+  data.lang = lang;
+  data.notes = data.notes || data.message || '';
+  fetch('/.netlify/functions/submit-offer-lead', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) }).catch(function(){});
   var params = new URLSearchParams();
-  formData.forEach(function(v, k){ params.append(k, v); });
+  Object.keys(data).forEach(function(k){ if(data[k] !== undefined && data[k] !== null) params.append(k, data[k]); });
   fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: params.toString() }).catch(function(){});
   var btn = document.getElementById('booking-submit-btn');
   if(btn){ btn.textContent = '✓ Lähetetty!'; btn.disabled = true; btn.style.background = '#22c55e'; }
@@ -427,13 +442,21 @@ function submitCtaForm(e, source) {
   var zip = (form.zip && form.zip.value || '').trim();
   var phone = (form.phone && form.phone.value || '').trim();
   var service = (form.service && form.service.value || '').trim();
-  if(!zip || !phone) return false;
+  var emailEl = form.querySelector('input[name="email"]');
+  var email = (emailEl && emailEl.value || '').trim();
+  if(!zip || !phone || !email) return false;
+  var lang = (document.documentElement.lang || '').slice(0,2) || (location.pathname.indexOf('/en/') === 0 ? 'en' : 'fi');
+  var payload = { service: service, zip: zip, phone: phone, email: email, customer_email: email, send_to_email: email, source: source || 'footer-cta', page: window.location.href, lang: lang };
+  fetch('/.netlify/functions/submit-offer-lead', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) }).catch(function(){});
   var params = new URLSearchParams();
   params.append('form-name', 'footer-cta');
   params.append('zip', zip);
   params.append('phone', phone);
+  params.append('email', email);
   if(service) params.append('service', service);
-  params.append('source', source);
+  params.append('source', source || 'footer-cta');
+  params.append('page', window.location.href);
+  params.append('lang', lang);
   fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: params.toString() }).catch(function(){});
   var btn = form.querySelector('button[type="submit"]');
   if(btn){ btn.textContent = '✓ Lähetetty!'; btn.disabled = true; btn.style.background = '#22c55e'; }

@@ -307,8 +307,22 @@ function submitBookingForm(e) {
  try {
   var form = e.target;
   var formData = new FormData(form);
+  var data = {};
+  formData.forEach(function(v, k){ data[k] = v; });
+  ['extra_oven','extra_fridge','extra_balcony','extra_cabinets'].forEach(function(n) {
+   var el = form.querySelector('[name="'+n+'"]');
+   if(el) data[n] = el.checked ? 'yes' : 'no';
+  });
+  var lang = (document.documentElement.lang || '').slice(0,2) || (location.pathname.indexOf('/en/') === 0 ? 'en' : 'fi');
+  data.type = 'booking';
+  data['form-name'] = 'booking';
+  data.source = data.source || 'booking-modal';
+  data.page = window.location.href;
+  data.lang = lang;
+  data.notes = data.notes || data.message || '';
+  fetch('/.netlify/functions/submit-offer-lead', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) }).catch(function(){});
   var params = new URLSearchParams();
-  formData.forEach(function(v, k){ params.append(k, v); });
+  Object.keys(data).forEach(function(k){ if(data[k] !== undefined && data[k] !== null) params.append(k, data[k]); });
   fetch('/', { method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body: params.toString() }).catch(function(){});
   var btn = document.getElementById('booking-submit-btn');
   if(btn){ btn.textContent = '✓ Lähetetty!'; btn.disabled = true; btn.style.background = '#22c55e'; }
