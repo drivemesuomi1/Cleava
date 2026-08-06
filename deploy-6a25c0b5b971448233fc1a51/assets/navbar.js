@@ -54,7 +54,7 @@
 
   // ─── Detect language from URL ─────────────────────────────────────────────
   var path = window.location.pathname;
-  var isEn = (path.indexOf('/en/') === 0) || (path === '/en');
+  var isEn = (path.indexOf('/en/') === 0) || (path === '/en') || /^\/blog(\/|$)/.test(path);
 
   // ─── Navbar HTML templates ────────────────────────────────────────────────
   var FI_NAV = `<nav>
@@ -212,7 +212,7 @@
    </button>
    <div class="mob-accordion" id="mobAccTarina">
      <a href="https://cleava.fi/tarinamme">Tarinamme</a>
-     <a href="https://cleava.fi/blog/">Blogi</a>
+     <a href="/blogi/">Blogi</a>
      <a href="https://cleava.fi/lahjakortti">🎁 Lahjakortit</a>
    </div>
 
@@ -271,7 +271,7 @@
    </button>
    <div class="mob-accordion" id="mobAccTarina">
      <a href="#" onclick="return cleavaNavTo('tarinamme')">Our Story</a>
-     <a href="https://cleava.fi/blog/">Blog</a>
+     <a href="/blog/">Blog</a>
      <a href="#" onclick="return cleavaNavTo('lahjakortti')">🎁 Gift Cards</a>
    </div>
 
@@ -389,11 +389,14 @@ nav{background:rgba(255,255,255,.97);backdrop-filter:blur(16px);border-bottom:1p
 .mob-menu__body .mob-accordion-btn,
 .mob-menu__body > .mob-nav-link{display:flex!important;align-items:center;justify-content:space-between;width:100%;background:none!important;border:none!important;border-bottom:1px solid rgba(255,255,255,.12)!important;color:#fff!important;font-size:22px!important;font-weight:600!important;font-family:var(--ff-body)!important;padding:22px 0!important;cursor:pointer;text-align:left;letter-spacing:-.015em;text-decoration:none;margin:0!important;line-height:1.2}
 .mob-menu__body .mob-accordion-btn svg{transition:transform .25s ease;flex-shrink:0;opacity:.6;width:22px;height:22px}
-.mob-menu__body .mob-accordion-btn.active svg{transform:rotate(180deg);opacity:1;color:var(--c-accent)}
-.mob-menu__body .mob-accordion-btn.active{color:var(--c-accent)!important;border-bottom-color:transparent!important}
+.mob-menu__body .mob-accordion-btn.active svg,
+.mob-menu__body .mob-accordion-btn.open svg{transform:rotate(180deg);opacity:1;color:var(--c-accent)}
+.mob-menu__body .mob-accordion-btn.active,
+.mob-menu__body .mob-accordion-btn.open{color:var(--c-accent)!important;border-bottom-color:transparent!important}
 
 .mob-menu__body .mob-accordion{max-height:0;overflow:hidden;transition:max-height .35s ease;margin:0;background:rgba(255,255,255,.03);border-radius:0 0 10px 10px;border-left:none}
-.mob-menu__body .mob-accordion.active{max-height:700px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:0}
+.mob-menu__body .mob-accordion.active,
+.mob-menu__body .mob-accordion.open{max-height:700px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:0}
 .mob-menu__body .mob-accordion a{display:flex;align-items:center;font-size:17px!important;color:rgba(255,255,255,.88)!important;padding:15px 0 15px 22px!important;border-bottom:1px solid rgba(255,255,255,.06)!important;text-decoration:none;font-weight:400!important;gap:0;line-height:1.3}
 .mob-menu__body .mob-accordion a:last-child{border-bottom:none!important}
 .mob-menu__body .mob-accordion a:hover{color:#fff!important;background:rgba(255,255,255,.04)}
@@ -496,26 +499,57 @@ body{padding-top:68px}
 
   // ─── Unified mobile menu functions (v96 — single source of truth) ─────────
   // These override any per-page definitions. Use class 'active' (matches CSS).
+  window.openMob = function() {
+    var m = document.getElementById('mobMenu');
+    if (!m) return false;
+    document.querySelectorAll('.mob-menu .mob-accordion').forEach(function(a) {
+      a.classList.remove('active');
+      a.classList.remove('open');
+    });
+    document.querySelectorAll('.mob-menu .mob-accordion-btn').forEach(function(b) {
+      b.classList.remove('active');
+      b.classList.remove('open');
+    });
+    m.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    return false;
+  };
   window.toggleMob = function() {
     var m = document.getElementById('mobMenu');
-    if (m) m.classList.toggle('open');
+    if (!m) return false;
+    if (m.classList.contains('open')) {
+      window.closeMob();
+    } else {
+      window.openMob();
+    }
+    return false;
   };
   window.closeMob = function() {
     var m = document.getElementById('mobMenu');
     if (m) m.classList.remove('open');
+    document.body.style.overflow = '';
+    return false;
   };
   window.toggleMobAcc = function(accId, btnId) {
     var acc = document.getElementById(accId);
     var btn = document.getElementById(btnId);
     if (!acc) return false;
-    var isOpen = acc.classList.contains('active');
+    var isOpen = acc.classList.contains('active') || acc.classList.contains('open');
     // Close all accordions in the mobile menu
-    document.querySelectorAll('.mob-menu .mob-accordion').forEach(function(a) { a.classList.remove('active'); });
-    document.querySelectorAll('.mob-menu .mob-accordion-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.querySelectorAll('.mob-menu .mob-accordion').forEach(function(a) {
+      a.classList.remove('active');
+      a.classList.remove('open');
+    });
+    document.querySelectorAll('.mob-menu .mob-accordion-btn').forEach(function(b) {
+      b.classList.remove('active');
+      b.classList.remove('open');
+    });
     // Open this one if it was closed
     if (!isOpen) {
       acc.classList.add('active');
+      acc.classList.add('open');
       if (btn) btn.classList.add('active');
+      if (btn) btn.classList.add('open');
       setTimeout(function() {
         var body = document.querySelector('.mob-menu__body');
         if (!btn || !body) return;
@@ -579,5 +613,29 @@ body{padding-top:68px}
   };
   // Alias used by desktop flag dropdown HTML (onclick="setLang('en')")
   window.setLang = window.cleavaLang;
+
+  // Some static pages still carry older inline mobile handlers after navbar.js.
+  // Reinstall this shared version after parsing so all pages use the same class names.
+  var sharedOpenMob = window.openMob;
+  var sharedCloseMob = window.closeMob;
+  var sharedToggleMob = window.toggleMob;
+  var sharedToggleMobAcc = window.toggleMobAcc;
+  var sharedCleavaNavTo = window.cleavaNavTo;
+  var sharedCleavaLang = window.cleavaLang;
+  function reinstallSharedMobileHandlers() {
+    window.openMob = sharedOpenMob;
+    window.closeMob = sharedCloseMob;
+    window.toggleMob = sharedToggleMob;
+    window.toggleMobAcc = sharedToggleMobAcc;
+    window.cleavaNavTo = sharedCleavaNavTo;
+    window.cleavaLang = sharedCleavaLang;
+    window.setLang = sharedCleavaLang;
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', reinstallSharedMobileHandlers, { once: true });
+  } else {
+    reinstallSharedMobileHandlers();
+  }
+  window.addEventListener('load', reinstallSharedMobileHandlers, { once: true });
 
 })();
