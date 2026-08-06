@@ -130,24 +130,24 @@
  </div>
  </li>
  <li class="nav-dd-wrap">
- <a href="https://cleava.fi/yrityssiivous">Commercial Cleaning <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg></a>
+ <a href="#" onclick="return cleavaNavTo('yrityssiivous')">Commercial Cleaning <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg></a>
  <div class="nav-dd" style="min-width:270px;">
 <a href="https://cleava.fi/en/office-cleaning/" data-i18n="322">Office Cleaning</a>
- <a href="https://cleava.fi/myymalasiivous" data-i18n="323">Retail and Commercial Cleaning</a>
- <a href="https://cleava.fi/porrassiivous" data-i18n="324">Stairwell Cleaning</a>
- <a href="https://cleava.fi/ravintolasiivous" data-i18n="325">️ Ravintola- and suurtaloussiivous</a>
+ <a href="#" onclick="return cleavaNavTo('myymalasiivous')" data-i18n="323">Retail and Commercial Cleaning</a>
+ <a href="#" onclick="return cleavaNavTo('porrassiivous')" data-i18n="324">Stairwell Cleaning</a>
+ <a href="#" onclick="return cleavaNavTo('ravintolasiivous')" data-i18n="325">Restaurant Cleaning</a>
  <div style="height:1px;background:var(--c-border);margin:4px 0;"></div>
  <a href="https://cleava.fi/en/window-cleaning/">Window Cleaning</a>
- <a href="https://cleava.fi/lattiahoito" data-i18n="327">Floor Maintenance</a>
+ <a href="#" onclick="return cleavaNavTo('lattiahoito')" data-i18n="327">Floor Maintenance</a>
  <a href="https://cleava.fi/en/deep-cleaning/" data-i18n="328">Deep Cleaning</a>
  </div>
  </li>
- <li><a href="https://cleava.fi/hinnasto" data-i18n="14">Pricing</a></li>
+ <li><a href="#" onclick="return cleavaNavTo('hinnasto')" data-i18n="14">Pricing</a></li>
  <li class="nav-dd-wrap">
- <a href="https://cleava.fi/tarinamme" data-i18n="15">Our Story <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg></a>
+ <a href="#" onclick="return cleavaNavTo('tarinamme')" data-i18n="15">Our Story <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg></a>
  <div class="nav-dd">
  <a href="/blog/">Blog</a>
- <a href="https://cleava.fi/lahjakortti" data-i18n="16">Gift Cards 🎁</a>
+ <a href="#" onclick="return cleavaNavTo('lahjakortti')" data-i18n="16">Gift Cards 🎁</a>
  </div>
  </li>
  </ul>
@@ -254,25 +254,25 @@
    </button>
    <div class="mob-accordion" id="mobAccYritys">
      <a href="https://cleava.fi/en/office-cleaning/">Office Cleaning</a>
-     <a href="https://cleava.fi/myymalasiivous">Retail and Commercial Cleaning</a>
-     <a href="https://cleava.fi/porrassiivous">Stairwell Cleaning</a>
-     <a href="https://cleava.fi/ravintolasiivous">Restaurant Cleaning</a>
+     <a href="#" onclick="return cleavaNavTo('myymalasiivous')">Retail and Commercial Cleaning</a>
+     <a href="#" onclick="return cleavaNavTo('porrassiivous')">Stairwell Cleaning</a>
+     <a href="#" onclick="return cleavaNavTo('ravintolasiivous')">Restaurant Cleaning</a>
      <div class="mob-accordion-divider"></div>
      <a href="https://cleava.fi/en/window-cleaning/">Window Cleaning</a>
-     <a href="https://cleava.fi/lattiahoito">Floor Maintenance</a>
+     <a href="#" onclick="return cleavaNavTo('lattiahoito')">Floor Maintenance</a>
      <a href="https://cleava.fi/en/deep-cleaning/">Deep Cleaning</a>
    </div>
 
-   <a class="mob-nav-link" href="https://cleava.fi/hinnasto">Pricing</a>
+   <a class="mob-nav-link" href="#" onclick="return cleavaNavTo('hinnasto')">Pricing</a>
 
    <button class="mob-accordion-btn" id="mobBtnTarina" onclick="toggleMobAcc('mobAccTarina','mobBtnTarina')">
      Our Story
      <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
    </button>
    <div class="mob-accordion" id="mobAccTarina">
-     <a href="https://cleava.fi/tarinamme">Our Story</a>
+     <a href="#" onclick="return cleavaNavTo('tarinamme')">Our Story</a>
      <a href="https://cleava.fi/blog/">Blog</a>
-     <a href="https://cleava.fi/lahjakortti">🎁 Gift Cards</a>
+     <a href="#" onclick="return cleavaNavTo('lahjakortti')">🎁 Gift Cards</a>
    </div>
 
    <div class="mob-lang-row">
@@ -436,9 +436,14 @@ body{padding-top:68px}
   }
 
   // ─── Inject mobile menu ───────────────────────────────────────────────────
-  var mobMount = document.getElementById('cleava-mobmenu');
-  if (mobMount) {
+  function injectMobileMenu() {
+    var mobMount = document.getElementById('cleava-mobmenu');
+    if (!mobMount) return false;
     mobMount.outerHTML = isEn ? EN_MOB : FI_MOB;
+    return true;
+  }
+  if (!injectMobileMenu() && document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', injectMobileMenu, { once: true });
   }
 
   // ─── Mark active page in nav (highlight current section) ─────────────────
@@ -502,7 +507,7 @@ body{padding-top:68px}
   window.toggleMobAcc = function(accId, btnId) {
     var acc = document.getElementById(accId);
     var btn = document.getElementById(btnId);
-    if (!acc) return;
+    if (!acc) return false;
     var isOpen = acc.classList.contains('active');
     // Close all accordions in the mobile menu
     document.querySelectorAll('.mob-menu .mob-accordion').forEach(function(a) { a.classList.remove('active'); });
@@ -511,7 +516,16 @@ body{padding-top:68px}
     if (!isOpen) {
       acc.classList.add('active');
       if (btn) btn.classList.add('active');
+      setTimeout(function() {
+        var body = document.querySelector('.mob-menu__body');
+        if (!btn || !body) return;
+        var bodyRect = body.getBoundingClientRect();
+        var btnRect = btn.getBoundingClientRect();
+        var target = body.scrollTop + btnRect.top - bodyRect.top - 10;
+        body.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
+      }, 40);
     }
+    return false;
   };
   // Language switching via URL navigation (v101+).
   // Works on every page — no i18n.js dependency.
@@ -537,6 +551,31 @@ body{padding-top:68px}
     if (target && target !== current) {
       window.location.href = target;
     }
+  };
+  window.cleavaNavTo = function(page) {
+    var fallback = {
+      yrityssiivous: '/yrityssiivous',
+      myymalasiivous: '/myymalasiivous',
+      porrassiivous: '/porrassiivous',
+      ravintolasiivous: '/ravintolasiivous',
+      lattiahoito: '/lattiahoito',
+      hinnasto: '/hinnasto',
+      tarinamme: '/tarinamme',
+      lahjakortti: '/lahjakortti'
+    };
+    if (typeof window.showPage === 'function') {
+      window.showPage(page, false);
+      try {
+        var nextUrl = isEn
+          ? (page === 'home' ? '/en/' : '/en/#' + page)
+          : (fallback[page] || '/');
+        window.history.pushState({ page: page }, '', nextUrl);
+      } catch (e) {}
+      window.closeMob();
+      return false;
+    }
+    window.location.href = isEn ? '/en/' : (fallback[page] || '/');
+    return false;
   };
   // Alias used by desktop flag dropdown HTML (onclick="setLang('en')")
   window.setLang = window.cleavaLang;
