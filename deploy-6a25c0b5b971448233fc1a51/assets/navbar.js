@@ -85,6 +85,16 @@
  <a href="https://cleava.fi/suursiivous/" data-i18n="328">Suursiivous</a>
  </div>
  </li>
+ <li class="nav-dd-wrap">
+ <a href="https://cleava.fi/kotisiivous/helsinki/">Palvelualueet <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg></a>
+ <div class="nav-dd" style="min-width:230px;">
+ <a href="https://cleava.fi/kotisiivous/helsinki/">Helsinki</a>
+ <a href="https://cleava.fi/kotisiivous/espoo/">Espoo</a>
+ <a href="https://cleava.fi/kotisiivous/vantaa/">Vantaa</a>
+ <a href="https://cleava.fi/kotisiivous/kauniainen/">Kauniainen</a>
+ <a href="https://cleava.fi/kotisiivous/jyvaskyla/">Jyväskylä</a>
+ </div>
+ </li>
  <li><a href="https://cleava.fi/hinnasto" data-i18n="14">Hinnasto</a></li>
  <li class="nav-dd-wrap">
  <a href="https://cleava.fi/tarinamme" data-i18n="15">Tarinamme <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg></a>
@@ -140,6 +150,16 @@
  <a href="https://cleava.fi/en/window-cleaning/">Window Cleaning</a>
  <a href="#" onclick="return cleavaNavTo('lattiahoito')" data-i18n="327">Floor Maintenance</a>
  <a href="https://cleava.fi/en/deep-cleaning/" data-i18n="328">Deep Cleaning</a>
+ </div>
+ </li>
+ <li class="nav-dd-wrap">
+ <a href="https://cleava.fi/en/home-cleaning/helsinki/">Service Areas <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg></a>
+ <div class="nav-dd" style="min-width:230px;">
+ <a href="https://cleava.fi/en/home-cleaning/helsinki/">Helsinki</a>
+ <a href="https://cleava.fi/en/home-cleaning/espoo/">Espoo</a>
+ <a href="https://cleava.fi/en/home-cleaning/vantaa/">Vantaa</a>
+ <a href="https://cleava.fi/en/home-cleaning/kauniainen/">Kauniainen</a>
+ <a href="https://cleava.fi/en/home-cleaning/jyvaskyla/">Jyväskylä</a>
  </div>
  </li>
  <li><a href="#" onclick="return cleavaNavTo('hinnasto')" data-i18n="14">Pricing</a></li>
@@ -204,6 +224,18 @@
      <a href="https://cleava.fi/suursiivous/">Suursiivous</a>
    </div>
 
+   <button class="mob-accordion-btn" id="mobBtnAreas" onclick="toggleMobAcc('mobAccAreas','mobBtnAreas')">
+     Palvelualueet
+     <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
+   </button>
+   <div class="mob-accordion" id="mobAccAreas">
+     <a href="https://cleava.fi/kotisiivous/helsinki/">Helsinki</a>
+     <a href="https://cleava.fi/kotisiivous/espoo/">Espoo</a>
+     <a href="https://cleava.fi/kotisiivous/vantaa/">Vantaa</a>
+     <a href="https://cleava.fi/kotisiivous/kauniainen/">Kauniainen</a>
+     <a href="https://cleava.fi/kotisiivous/jyvaskyla/">Jyväskylä</a>
+   </div>
+
    <a class="mob-nav-link" href="https://cleava.fi/hinnasto">Hinnasto</a>
 
    <button class="mob-accordion-btn" id="mobBtnTarina" onclick="toggleMobAcc('mobAccTarina','mobBtnTarina')">
@@ -261,6 +293,18 @@
      <a href="https://cleava.fi/en/window-cleaning/">Window Cleaning</a>
      <a href="#" onclick="return cleavaNavTo('lattiahoito')">Floor Maintenance</a>
      <a href="https://cleava.fi/en/deep-cleaning/">Deep Cleaning</a>
+   </div>
+
+   <button class="mob-accordion-btn" id="mobBtnAreas" onclick="toggleMobAcc('mobAccAreas','mobBtnAreas')">
+     Service Areas
+     <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
+   </button>
+   <div class="mob-accordion" id="mobAccAreas">
+     <a href="https://cleava.fi/en/home-cleaning/helsinki/">Helsinki</a>
+     <a href="https://cleava.fi/en/home-cleaning/espoo/">Espoo</a>
+     <a href="https://cleava.fi/en/home-cleaning/vantaa/">Vantaa</a>
+     <a href="https://cleava.fi/en/home-cleaning/kauniainen/">Kauniainen</a>
+     <a href="https://cleava.fi/en/home-cleaning/jyvaskyla/">Jyväskylä</a>
    </div>
 
    <a class="mob-nav-link" href="#" onclick="return cleavaNavTo('hinnasto')">Pricing</a>
