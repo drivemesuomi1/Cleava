@@ -214,6 +214,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/jyvaskyla/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/jyvaskyla/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/jyvaskyla/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/home-cleaning/jyvaskyla/</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/jyvaskyla/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/home-cleaning/jyvaskyla/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/jyvaskyla/"/>
   </url>
   <url>
@@ -600,6 +610,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/jyvaskyla/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/jyvaskyla/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/jyvaskyla/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/en/moving-cleaning/jyvaskyla/</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/jyvaskyla/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/jyvaskyla/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/jyvaskyla/"/>
   </url>
   <url>

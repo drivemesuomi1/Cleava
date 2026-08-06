@@ -132,8 +132,12 @@
 
 # === 3. ENGLANNINKIELISET SLUGIT ===
 /home-cleaning      /en/home-cleaning/      301!
+/en/home-cleaning/jyvaskyla      /en/home-cleaning/jyvaskyla/index.html       200!
+/en/home-cleaning/jyvaskyla/     /en/home-cleaning/jyvaskyla/index.html       200!
 
 /moving-cleaning    /en/moving-cleaning/    301!
+/en/moving-cleaning/jyvaskyla    /en/moving-cleaning/jyvaskyla/index.html     200!
+/en/moving-cleaning/jyvaskyla/   /en/moving-cleaning/jyvaskyla/index.html     200!
 
 /window-cleaning    /ikkunanpesu/     301!
 /deep-cleaning      /suursiivous/     301!
