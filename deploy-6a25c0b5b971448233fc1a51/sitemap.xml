@@ -209,6 +209,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/jarvenpaa/"/>
   </url>
   <url>
+    <loc>https://cleava.fi/kotisiivous/jyvaskyla/</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/kotisiivous/jyvaskyla/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/kotisiivous/jyvaskyla/"/>
+  </url>
+  <url>
     <loc>https://cleava.fi/en/home-cleaning/jarvenpaa/</loc>
     <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
@@ -585,6 +593,14 @@
     <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/jarvenpaa/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://cleava.fi/en/moving-cleaning/jarvenpaa/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/jarvenpaa/"/>
+  </url>
+  <url>
+    <loc>https://cleava.fi/muuttosiivous/jyvaskyla/</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://cleava.fi/muuttosiivous/jyvaskyla/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cleava.fi/muuttosiivous/jyvaskyla/"/>
   </url>
   <url>
     <loc>https://cleava.fi/en/moving-cleaning/jarvenpaa/</loc>
