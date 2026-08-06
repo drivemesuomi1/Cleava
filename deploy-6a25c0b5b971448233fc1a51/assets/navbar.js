@@ -96,13 +96,6 @@
  </div>
  </li>
  <li><a href="https://cleava.fi/hinnasto" data-i18n="14">Hinnasto</a></li>
- <li class="nav-dd-wrap">
- <a href="https://cleava.fi/tarinamme" data-i18n="15">Tarinamme <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg></a>
- <div class="nav-dd">
- <a href="/blogi">Blogi</a>
- <a href="https://cleava.fi/lahjakortti" data-i18n="16">Lahjakortit 🎁</a>
- </div>
- </li>
  </ul>
  <div class="nav-right">
  <div class="nav-lang nav-dd-wrap">
@@ -163,13 +156,6 @@
  </div>
  </li>
  <li><a href="#" onclick="return cleavaNavTo('hinnasto')" data-i18n="14">Pricing</a></li>
- <li class="nav-dd-wrap">
- <a href="#" onclick="return cleavaNavTo('tarinamme')" data-i18n="15">Our Story <svg width="12" height="12" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg></a>
- <div class="nav-dd">
- <a href="/blog/">Blog</a>
- <a href="#" onclick="return cleavaNavTo('lahjakortti')" data-i18n="16">Gift Cards 🎁</a>
- </div>
- </li>
  </ul>
  <div class="nav-right">
  <div class="nav-lang nav-dd-wrap">
@@ -237,17 +223,6 @@
    </div>
 
    <a class="mob-nav-link" href="https://cleava.fi/hinnasto">Hinnasto</a>
-
-   <button class="mob-accordion-btn" id="mobBtnTarina" onclick="toggleMobAcc('mobAccTarina','mobBtnTarina')">
-     Tarinamme
-     <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
-   </button>
-   <div class="mob-accordion" id="mobAccTarina">
-     <a href="https://cleava.fi/tarinamme">Tarinamme</a>
-     <a href="/blogi/">Blogi</a>
-     <a href="https://cleava.fi/lahjakortti">🎁 Lahjakortit</a>
-   </div>
-
    <div class="mob-lang-row">
      <button onclick="cleavaLang('fi')" id="mobLangFi" class="mob-lang-btn active">FI</button>
      <button onclick="cleavaLang('en')" id="mobLangEn" class="mob-lang-btn">EN</button>
@@ -308,17 +283,6 @@
    </div>
 
    <a class="mob-nav-link" href="#" onclick="return cleavaNavTo('hinnasto')">Pricing</a>
-
-   <button class="mob-accordion-btn" id="mobBtnTarina" onclick="toggleMobAcc('mobAccTarina','mobBtnTarina')">
-     Our Story
-     <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" stroke-width="2.5" stroke-linecap="round" d="M19 9l-7 7-7-7"/></svg>
-   </button>
-   <div class="mob-accordion" id="mobAccTarina">
-     <a href="#" onclick="return cleavaNavTo('tarinamme')">Our Story</a>
-     <a href="/blog/">Blog</a>
-     <a href="#" onclick="return cleavaNavTo('lahjakortti')">🎁 Gift Cards</a>
-   </div>
-
    <div class="mob-lang-row">
      <button onclick="cleavaLang('fi')" id="mobLangFi" class="mob-lang-btn">FI</button>
      <button onclick="cleavaLang('en')" id="mobLangEn" class="mob-lang-btn active">EN</button>

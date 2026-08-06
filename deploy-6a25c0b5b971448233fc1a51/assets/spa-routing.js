@@ -326,6 +326,13 @@ function fetchLiveReviews() {
 fetch('/.netlify/functions/get-reviews')
 .then(function(r){ return r.json(); })
 .then(function(data) {
+if (data.rating) {
+var ratingText = String(Math.round(Number(data.rating) * 10) / 10);
+document.querySelectorAll('.rating-score').forEach(function(el){ el.textContent = ratingText; });
+}
+if (data.total) {
+document.querySelectorAll('.rating-count').forEach(function(el){ el.textContent = data.total + ' arvostelua'; });
+}
 if (!data.reviews || !data.reviews.length) return;
 var colors = ['#1d4ed8','#7c3aed','#0891b2','#059669','#d97706','#be185d'];
 var liveReviews = data.reviews.map(function(r, i) {
