@@ -246,13 +246,14 @@ input,select,textarea{font-family:var(--ff-body);}
  max-width:520px;margin-bottom:36px;
 }
 .hero__actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
-.hero__stats{display:flex;gap:36px;margin-top:44px;}
+.hero__stats{display:flex;gap:36px;margin-top:44px;flex-wrap:wrap;}
+.hero__stat{min-width:86px;}
 .hero__stat__num{
  font-family:var(--ff-display);font-size:2.2rem;font-weight:400;
  color:var(--c-accent);line-height:1;
 }
 .hero__stat__num--rating{display:inline-flex;align-items:center;gap:8px;}
-.hero__stat__star{width:24px;height:24px;fill:#f59e0b;flex:0 0 auto;}
+.hero__stat__star{color:#f59e0b;font-family:var(--ff-body);font-size:.56em;line-height:1;flex:0 0 auto;}
 .hero__stat__label{font-size:12px;color:rgba(255,255,255,.5);margin-top:4px;}
 /* Hero quote card */
 .hero__card{
@@ -318,58 +319,6 @@ input,select,textarea{font-family:var(--ff-body);}
 }
 .section-title em{font-style:italic;color:var(--c-blue);}
 .section-subtitle{font-size:1.05rem;color:var(--c-muted);max-width:560px;line-height:1.65;}
-
-/* ==============================
- HOMEPAGE PROOF + RESULTS
- ============================== */
-.home-proof-bar{background:var(--c-navy-light);color:#fff;padding:22px 24px;}
-.home-proof-bar__inner{
- max-width:var(--max);margin:0 auto;
- display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;
-}
-.home-proof-stat{
- min-width:0;padding:18px 20px;border-radius:var(--r);
- background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
-}
-.home-proof-stat__num{
- display:flex;align-items:center;gap:7px;
- font-family:var(--ff-display);font-size:clamp(2rem,4vw,3rem);
- line-height:1;color:var(--c-accent);
-}
-.home-proof-stat__star{font-family:var(--ff-body);font-size:.56em;color:#f59e0b;line-height:1;}
-.home-proof-stat__label{margin-top:7px;font-size:13px;color:rgba(255,255,255,.68);line-height:1.45;}
-.home-evidence{background:#fff;padding:96px 24px;}
-.home-evidence__grid{
- max-width:var(--max);margin:0 auto;
- display:grid;grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
- gap:48px;align-items:start;
-}
-.home-evidence__header{position:static;}
-.home-testimonials{display:grid;gap:16px;}
-.home-testimonial{
- background:var(--c-off);border:1px solid var(--c-border);
- border-radius:var(--r);padding:22px;box-shadow:var(--sh);
-}
-.home-testimonial__quote{font-size:1rem;color:var(--c-text);line-height:1.7;margin-bottom:16px;}
-.home-testimonial__person{font-size:13px;font-weight:700;color:var(--c-blue);letter-spacing:.03em;}
-.before-after-grid{
- grid-column:1 / -1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
- gap:18px;margin-top:8px;
-}
-.before-after-card{
- min-height:220px;border-radius:var(--r-lg);overflow:hidden;
- background:linear-gradient(135deg,#eef5ff,#f8fafc);
- border:1px dashed rgba(29,78,216,.35);
- display:flex;align-items:flex-end;padding:18px;
- color:var(--c-navy);box-shadow:var(--sh);
-}
-.before-after-card__label{
- display:inline-flex;align-items:center;
- font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
- color:var(--c-blue);background:rgba(29,78,216,.08);
- border-radius:999px;padding:6px 10px;margin-bottom:8px;
-}
-.before-after-card__note{font-size:14px;color:var(--c-muted);}
 
 /* ==============================
  SERVICES GRID (homepage)
@@ -788,9 +737,6 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
  RESPONSIVE
  ============================== */
 @media(max-width:1024px){
- .home-proof-bar__inner{grid-template-columns:repeat(2,minmax(0,1fr));}
- .home-evidence__grid{grid-template-columns:1fr;gap:30px;}
- .home-evidence__header{position:static;}
  .services-grid{grid-template-columns:repeat(2,1fr);}
  .how-grid{grid-template-columns:repeat(2,1fr);gap:28px;}
  .footer-inner{grid-template-columns:1fr 1fr;gap:36px;}
@@ -806,11 +752,6 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
  .hero__inner{grid-template-columns:1fr;gap:36px;padding:80px 20px 60px;}
  .hero{min-height:auto;}
  .hero__stats{gap:20px;}
- .home-proof-bar{padding:18px 20px;}
- .home-proof-stat{padding:16px;}
- .home-evidence{padding:60px 20px;}
- .before-after-grid{grid-template-columns:1fr;}
- .before-after-card{min-height:180px;}
  .services-grid{grid-template-columns:1fr;}
  .how-grid{grid-template-columns:1fr;}
  .why-grid{grid-template-columns:1fr;}
@@ -832,7 +773,6 @@ footer{background:var(--c-navy);color:rgba(255,255,255,.65);padding:64px 24px 36
  .hero__card{padding:24px 20px;}
 }
 @media(max-width:480px){
- .home-proof-bar__inner{grid-template-columns:1fr;}
  .footer-inner{grid-template-columns:1fr;}
  .form-row{grid-template-columns:1fr;}
  .hero__actions{flex-direction:column;align-items:flex-start;}
@@ -1771,7 +1711,12 @@ no Soita,no tai */
  </div>
  <h1 class="hero__title">Trusted across<br><em data-i18n="20">the Helsinki region.</em></h1>
  <p class="hero__desc" data-i18n="21">Background-checked pros. Satisfaction guaranteed. No fine print.</p>
-
+ <div class="hero__stats" aria-label="Cleava trust statistics">
+  <div class="hero__stat"><div class="hero__stat__num hero__stat__num--rating">5<span class="hero__stat__star">&#9733;</span></div><div class="hero__stat__label">56 Google reviews</div></div>
+  <div class="hero__stat"><div class="hero__stat__num">100%</div><div class="hero__stat__label">Satisfaction guarantee</div></div>
+  <div class="hero__stat"><div class="hero__stat__num">24h</div><div class="hero__stat__label">Response guarantee</div></div>
+  <div class="hero__stat"><div class="hero__stat__num">10+</div><div class="hero__stat__label">Cities served</div></div>
+ </div>
  </div>
  <div class="hero__card reveal">
  <h2 data-i18n="25">Request a free quote</h2>
@@ -1809,16 +1754,6 @@ no Soita,no tai */
  </p>
  </form>
  </div>
- </div>
-</section>
-
-<!-- HOMEPAGE PROOF -->
-<section class="home-proof-bar" aria-label="Cleava trust statistics">
- <div class="home-proof-bar__inner">
-  <div class="home-proof-stat"><div class="home-proof-stat__num"><span class="rating-score">4.9</span><span class="home-proof-stat__star">&#9733;</span></div><div class="home-proof-stat__label">(<span class="rating-count">37 reviews</span>) on Google</div></div>
-  <div class="home-proof-stat"><div class="home-proof-stat__num">2026</div><div class="home-proof-stat__label">active since</div></div>
-  <div class="home-proof-stat"><div class="home-proof-stat__num">10+</div><div class="home-proof-stat__label">cleaners on the team</div></div>
-  <div class="home-proof-stat"><div class="home-proof-stat__num">10+</div><div class="home-proof-stat__label">cities served</div></div>
  </div>
 </section>
 
