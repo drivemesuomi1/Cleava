@@ -223,6 +223,7 @@
    </div>
 
    <a class="mob-nav-link" href="https://cleava.fi/hinnasto">Hinnasto</a>
+   <a class="mob-nav-link" href="#" onclick="return cleavaNavTo('tarinamme')">Tarinamme</a>
    <div class="mob-lang-row">
      <button onclick="cleavaLang('fi')" id="mobLangFi" class="mob-lang-btn active">FI</button>
      <button onclick="cleavaLang('en')" id="mobLangEn" class="mob-lang-btn">EN</button>
@@ -283,6 +284,7 @@
    </div>
 
    <a class="mob-nav-link" href="#" onclick="return cleavaNavTo('hinnasto')">Pricing</a>
+   <a class="mob-nav-link" href="#" onclick="return cleavaNavTo('tarinamme')">Our Story</a>
    <div class="mob-lang-row">
      <button onclick="cleavaLang('fi')" id="mobLangFi" class="mob-lang-btn">FI</button>
      <button onclick="cleavaLang('en')" id="mobLangEn" class="mob-lang-btn active">EN</button>
