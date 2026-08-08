@@ -343,7 +343,15 @@ async function settle(label, promise) {
     return {[label]: !(result && result.skipped), [`${label}Details`]: result || null};
   } catch (err) {
     console.error(`${label} failed`, err);
-    return {[label]: false};
+    return {
+      [label]: false,
+      [`${label}Error`]: {
+        code: err && err.code || '',
+        command: err && err.command || '',
+        responseCode: err && err.responseCode || '',
+        message: err && err.message || 'Unknown email error',
+      },
+    };
   }
 }
 
