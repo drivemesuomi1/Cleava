@@ -1,0 +1,25 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    {
+      "source": "/.netlify/functions/submit-offer-lead",
+      "destination": "/api/submit-offer-lead"
+    },
+    {
+      "source": "/.netlify/functions/submit-booking",
+      "destination": "/api/submit-offer-lead"
+    },
+    {
+      "source": "/.netlify/functions/get-reviews",
+      "destination": "/api/get-reviews"
+    },
+    {
+      "source": "/.netlify/functions/create-checkout",
+      "destination": "/api/create-checkout"
+    },
+    {
+      "source": "/.netlify/functions/stripe-webhook",
+      "destination": "/api/stripe-webhook"
+    }
+  ]
+}
